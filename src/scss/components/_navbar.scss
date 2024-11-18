@@ -1,0 +1,132 @@
+/*! Main navbar component */
+
+@use '../abstracts/' as *;
+
+.navbar {
+  display: flex;
+}
+
+.navbar-toggler {
+  display: none;
+}
+
+@include bp-navbar {
+  .navbar-toggler {
+    position: relative;
+    z-index: 101;
+    display: block;
+    order: 1;
+    width: 2.8rem;
+    height: 2.8rem;
+    padding: 0 0.2rem;
+    border: 0;
+    background-color: transparent;
+  }
+
+  .navbar-toggler__burger {
+    --burger-color: red;
+
+    display: block;
+    width: 2.4rem;
+    height: 0.3rem;
+    background-color: var(--burger-color);
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0.2rem;
+      width: 2.4rem;
+      height: 0.3rem;
+      background-color: var(--burger-color);
+      transition: transform var(--transition-long-cubic);
+    }
+    &::before {
+      transform: translateY(-0.7rem);
+    }
+    &::after {
+      transform: translateY(0.7rem);
+    }
+  }
+
+  .navbar-toggler[aria-expanded='true'] .navbar-toggler__burger {
+    background-color: transparent;
+    &::after,
+    &::before {
+      border-radius: 0;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    overflow: auto;
+    width: min(45rem, 85%);
+    height: 100%;
+    background-color: var(--color-white);
+    transition: transform var(--transition-long-cubic);
+  }
+
+  //? From right to left
+  .navbar--rtl {
+    right: 0;
+    transform: translateX(100%);
+  }
+  //? From left to right
+  .navbar--ltr {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  //? From top to bottom
+  .navbar--ttb {
+    transform: translateY(-100%);
+  }
+  //? From bottom to top
+  .navbar--btt {
+    top: initial;
+    bottom: 0;
+    transform: translateY(100%);
+  }
+
+  .navbar.is-visible {
+    &.navbar--rtl,
+    &.navbar--ltr {
+      transform: translateX(0%);
+    }
+    &.navbar--ttb,
+    &.navbar--btt {
+      transform: translateY(0%);
+    }
+  }
+
+  .navbar .nav-container {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .navbar .nav__list {
+    flex-direction: column;
+    align-items: initial;
+    padding: min(20vh, 10rem) 3rem;
+  }
+
+  body.is-fixed {
+    position: fixed;
+    width: 100%;
+  }
+
+  body.has-scroll {
+    overflow-y: scroll;
+    // Firefox
+    overflow-x: unset;
+  }
+}

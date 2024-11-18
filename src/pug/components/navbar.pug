@@ -1,0 +1,7 @@
+//- ** Main navbar
+
+mixin navbar(links)
+  button.navbar-toggler(aria-label='Toggle Main Menu', aria-controls='main-nav', aria-expanded='false')
+    span.navbar-toggler__burger
+
+  +nav(links, true)#main-nav.navbar.navbar--rtl(aria-label='Main Menu')&attributes(attributes)

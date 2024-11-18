@@ -1,0 +1,26 @@
+//- ** Nav component
+
+mixin nav(links, navbar)
+  nav.nav&attributes(attributes)
+    .nav-container
+      ul.nav__list
+        +navLinks(links)
+      if (navbar)
+        //- Navbar only related blocks (e.g., for mobile menu)
+        //- .mobile-navbar-logo, .mobile-navbar-auth, ...
+
+mixin navLinks(links, level = 1)
+  each link in links
+    li.nav__item
+      a.nav__link(
+        href=link.href,
+        class=link.cssClass,
+        class={ 'is-active': link.href === pageUrl + '.html' },
+        class={ 'nav__sublist-toggler': link.submenu },
+        class=link.submenu ? `nav__sublist-toggler-level-${level}` : ''
+      ) !{ link.text }
+        if (link.icon)
+          +icon(link.icon)
+      if (link.submenu)
+        ul.nav__sublist(aria-expanded='false', class=`nav__sublevel-${level}`)
+          +navLinks(link.submenu, level + 1)
