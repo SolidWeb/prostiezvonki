@@ -15,21 +15,53 @@
 // 900 > Black (Heavy)
 
 $fonts: (
-  'Montserrat Regular': (
-    'family': 'Montserrat',
-    'filename': 'montserrat-regular',
+  'Geologica Thin': (
+    'family': 'Geologica',
+    'filename': 'geologica-variable',
+    'style': normal,
+    'weight': 100,
+    'serif': sans-serif,
+    'root-var': '--font-geologica',
+  ),
+  'Geologica Light': (
+    'family': 'Geologica',
+    'filename': 'geologica-variable',
+    'style': normal,
+    'weight': 300,
+    'serif': sans-serif,
+    'root-var': '--font-geologica',
+  ),
+  'Geologica Regular': (
+    'family': 'Geologica',
+    'filename': 'geologica-variable',
     'style': normal,
     'weight': 400,
     'serif': sans-serif,
-    'root-var': '--font-regular',
+    'root-var': '--font-geologica',
   ),
-  'Montserrat Medium': (
-    'family': 'Montserrat',
-    'filename': 'montserrat-medium',
+  'Geologica Medium': (
+    'family': 'Geologica',
+    'filename': 'geologica-variable',
     'style': normal,
     'weight': 500,
     'serif': sans-serif,
-    'root-var': '--font-medium',
+    'root-var': '--font-geologica',
+  ),
+  'Geologica SemiBold': (
+    'family': 'Geologica',
+    'filename': 'geologica-variable',
+    'style': normal,
+    'weight': 600,
+    'serif': sans-serif,
+    'root-var': '--font-geologica',
+  ),
+  'Geologica Bold': (
+    'family': 'Geologica',
+    'filename': 'geologica-variable',
+    'style': normal,
+    'weight': 700,
+    'serif': sans-serif,
+    'root-var': '--font-geologica',
   ),
 );
 
@@ -51,10 +83,15 @@ $font-names: map.keys($fonts);
     } @else {
       font-family: map.get($props, family);
     }
-    src: url('@fonts/#{$filename}.woff2') format('woff2');
+    src: url('@fonts/#{$filename}.woff2') format('woff2-variations');
     font-weight: map.get($props, weight);
     font-style: map.get($props, style);
+    font-optical-sizing: auto;
     font-display: fallback;
+    font-variation-settings:
+      'slnt' 0,
+      'CRSV' 0,
+      'SHRP' 0;
   }
 }
 
@@ -62,7 +99,7 @@ $font-names: map.keys($fonts);
 :root {
   //! General font variables goes here
   // Add a variable for each font if $separated-font-classes are being used
-  --font-montserrat: 'Montserrat', sans-serif;
+  --font-geologica: 'Geologica', sans-serif;
 
   @if $separated-font-vars {
     @each $font, $props in $fonts {
@@ -131,7 +168,7 @@ $font-names: map.keys($fonts);
     }
   } @else {
     //! List each font family here
-    font-family: var(--font-montserrat);
+    font-family: var(--font-geologica);
   }
 }
 
@@ -140,4 +177,9 @@ $font-names: map.keys($fonts);
   font-family: var(--text-body-ff);
   font-size: var(--text-body-fz);
   line-height: var(--text-body-lh);
+}
+.f-small {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 300;
 }

@@ -10,13 +10,16 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  --swiper-navigation-color: var(--color-red);
+  --swiper-navigation-color: var(--color-blue);
 
   display: flex;
   justify-content: center;
   align-items: center;
   outline: 0;
   user-select: none;
+  @include bp(sm) {
+    display: none;
+  }
 
   &.swiper-button-lock {
     display: none;
@@ -25,40 +28,36 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  --swiper-navigation-size: 2rem;
-
-  content: '>';
-  width: initial;
-  height: initial;
-  font-family: inherit;
-  font-weight: 700;
-}
-
-.swiper-button-prev:after {
-  content: '<';
+  display: none;
 }
 
 .swiper-controls {
   position: absolute;
-  right: 2rem;
-  bottom: 0.5rem;
+  inset: auto 0 2.5rem;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 14rem;
-  height: 3rem;
+  gap: 1.1rem;
   border-radius: 2rem;
+  margin: 0 auto;
   background-color: var(--color-white);
   user-select: none;
+  @include bp(md) {
+    inset: auto 0 2.8rem;
+  }
   .swiper-button-next,
   .swiper-button-prev {
-    top: 0;
-    right: 0;
-    z-index: 11;
-    width: 2.5rem;
-    height: 3rem;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 1.6rem;
+    height: 1.6rem;
     margin-top: 0;
+    .icon {
+      font-size: 1.5rem;
+    }
   }
 
   .swiper-button-prev {
@@ -67,6 +66,39 @@
 
   .swiper-pagination {
     position: initial;
+    flex-shrink: 0;
+  }
+
+  &:has(.swiper-pagination-bullets) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
+  &:has(.swiper-pagination-fraction) {
+    width: fit-content;
+    @include bp(md) {
+      transform: translateX(1.5rem);
+    }
+    .swiper-pagination {
+      min-width: 3.5rem;
+      width: fit-content;
+      color: var(--color-blue);
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: static;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  --swiper-pagination-bullet-size: 0.8rem;
+  --swiper-pagination-bullet-horizontal-gap: 0.9rem;
+  --swiper-pagination-color: rgba(172, 172, 136, 0.25);
+  &-active {
+    --swiper-pagination-color: rgba(172, 172, 136, 0.25);
+    background: rgba(27, 117, 187, 0.6);
   }
 }
 

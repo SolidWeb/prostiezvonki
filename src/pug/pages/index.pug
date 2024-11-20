@@ -4,6 +4,12 @@ block globals
   - var pageUrl = 'index';
   - var pageTitle = 'Главная страница';
 
+block styles
+  link(href='vendor/swiper/swiper-bundle.min.css', rel='stylesheet')
+
+block scripts
+  script(defer, src='vendor/swiper/swiper-bundle.min.js')
+
 block content
   h1.h1 Главная страница
   section.graphic-snippets-section
@@ -27,3 +33,26 @@ block content
       .inline-svg-wrapper
         +imageSVG('inline/starter-zara.svg', 'Zara')
   hr.hr
+
+block header-notification
+  .header-notifications
+    .header-notification
+      .header-notification__text До конца 2024 года скидка на первый месяц&nbsp;обслуживания 50%.
+      a.link.link--white(href='#!') Подробнее #[+icon('arrow-right').icon--13]
+
+block embedded-scripts
+  script.
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.hero');
+
+    if (header && hero) {
+      setHeaderHeight();
+      window.addEventListener('resize', () => {
+        setHeaderHeight();
+      });
+    }
+
+    function setHeaderHeight() {
+      header.style.setProperty('--height', header.offsetHeight + 'px');
+      hero.style.setProperty('--padding-top', header.offsetHeight + 'px');
+    }

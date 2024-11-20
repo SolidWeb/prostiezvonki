@@ -2,26 +2,23 @@
 
 :root {
   // Pure Colors
-  --color-primary: #670;
-  --color-primary-rgb: 102, 119, 0;
-  --color-secondary: #188;
-  --color-secondary-rgb: 17, 136, 136;
-  --color-accent: #808;
-  --color-blue: blue;
-  --color-red: red;
-  --color-grey-1: gainsboro;
-  --color-grey-2: grey;
-  --color-grey-3: darkgrey;
+  --color-blue-light: #add1ed;
+  --color-blue: #1b75bb;
+  --color-blue-hover: #379eef;
+  --color-grey-lighter: #f0f0f0;
+  --color-grey-light: #cecece;
+  --color-grey: #a5a5a5;
+  --color-grey-dark: #1e1e1e;
   --color-black: black;
   --color-white: white;
 
   // UI Colors
   --html-bg-color: var(--color-white);
-  --text-body-color: var(--color-black);
-  --tab-focus-color: var(--color-black);
-  --content-link-color: var(--color-blue);
-  --content-link-color-hover: var(--color-red);
-  --content-link-color-active: var(--color-blue);
+  --text-body-color: var(--color-grey-dark);
+  --tab-focus-color: var(--color-blue-light);
+  --content-link-color: var(--color-grey);
+  --content-link-color-hover: var(--color-grey-dark);
+  --content-link-color-active: var(--color-grey);
 
   // UI Effects
   --shadow-dialog: 0 30px 50px 0 rgba(0, 0, 0, 0.75);
@@ -47,9 +44,6 @@
 }
 
 // Atomic theme classes
-.c-primary {
-  color: var(--color-primary);
-}
-.c-secondary {
-  color: var(--color-secondary);
+.c-blue {
+  color: var(--color-blue);
 }

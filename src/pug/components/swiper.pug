@@ -22,9 +22,9 @@ mixin swiper(...modules)
 
       if (module.compactControls)
         .swiper-controls
-          .swiper-button-prev
+          .swiper-button-prev #[+icon('arrow-left')]
           .swiper-pagination
-          .swiper-button-next
+          .swiper-button-next #[+icon('arrow-right')]
 
       if (module.scrollbar)
         .swiper-scrollbar

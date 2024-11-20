@@ -1,0 +1,12 @@
+/*! Common blocks */
+
+@use '../abstracts' as *;
+
+.advantage-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.3rem 1.1rem 0.4rem 0.5rem;
+  border: 1px solid var(--color-blue-light);
+  border-radius: 2rem;
+}

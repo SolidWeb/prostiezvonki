@@ -200,15 +200,16 @@ initDialog();
   Swiper settings
 =============== **/
 
-const basicSwiper =
+const heroSwiper =
   typeof Swiper !== 'undefined' &&
-  new Swiper('.basic-slider', {
+  new Swiper('.hero-slider', {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     pagination: {
       el: '.swiper-pagination',
+      type: 'bullets',
       clickable: true,
     },
     parallax: true,
@@ -216,12 +217,30 @@ const basicSwiper =
     centeredSlides: true,
     allowTouchMove: true,
     grabCursor: true,
+    speed: 600,
     breakpoints: {
-      992: {
+      960: {
         spaceBetween: 20,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction',
+        },
       },
-      1200: {
-        spaceBetween: 40,
+    },
+    on: {
+      // Change pagination type when breakpoint changes
+      breakpoint: function (swiper) {
+        if (swiper.pagination.el) {
+          if (swiper.pagination.el.classList.contains('swiper-pagination-fraction')) {
+            swiper.pagination.el.classList.remove('swiper-pagination-fraction');
+            swiper.pagination.el.classList.add('swiper-pagination-bullets');
+          } else {
+            swiper.pagination.el.classList.remove('swiper-pagination-bullets');
+            swiper.pagination.el.classList.add('swiper-pagination-fraction');
+          }
+        }
+        swiper.pagination.render();
+        swiper.pagination.update();
       },
     },
   });

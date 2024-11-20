@@ -3,5 +3,10 @@
 mixin navbar(links)
   button.navbar-toggler(aria-label='Toggle Main Menu', aria-controls='main-nav', aria-expanded='false')
     span.navbar-toggler__burger
+      <svg width="42" height="31" viewBox="0 0 42 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="6.96265" width="22" height="3" rx="1.5" fill="#1E1E1E" />
+        <rect x="10" y="13.9626" width="22" height="3" rx="1.5" fill="#1E1E1E" />
+        <rect x="10" y="20.9626" width="22" height="3" rx="1.5" fill="#1E1E1E" />
+      </svg>
 
   +nav(links, true)#main-nav.navbar.navbar--rtl(aria-label='Main Menu')&attributes(attributes)

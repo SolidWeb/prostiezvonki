@@ -9,18 +9,39 @@ mixin nav(links, navbar)
         //- Navbar only related blocks (e.g., for mobile menu)
         //- .mobile-navbar-logo, .mobile-navbar-auth, ...
 
-mixin navLinks(links, level = 1)
+mixin navLinks(links, level = 1, col)
   each link in links
-    li.nav__item
-      a.nav__link(
-        href=link.href,
-        class=link.cssClass,
-        class={ 'is-active': link.href === pageUrl + '.html' },
-        class={ 'nav__sublist-toggler': link.submenu },
-        class=link.submenu ? `nav__sublist-toggler-level-${level}` : ''
-      ) !{ link.text }
-        if (link.icon)
-          +icon(link.icon)
-      if (link.submenu)
-        ul.nav__sublist(aria-expanded='false', class=`nav__sublevel-${level}`)
-          +navLinks(link.submenu, level + 1)
+    if (col)
+      if (link.col === col)
+        li.nav__item
+          +navLink(link, level)
+    else
+      li.nav__item
+        +navLink(link, level)
+
+mixin navLink(link, level)
+  a.nav__link(
+    href=link.href,
+    class=link.cssClass,
+    class={ 'nav__sublist-toggler': link.submenu },
+    class=link.submenu ? `nav__sublist-toggler-level-${level}` : ''
+  ) !{ link.text }
+    if (link.icon)
+      +icon(link.icon)
+    if (link.label)
+      span.nav__label !{ link.label }
+  if (link.submenu)
+    ul.nav__sublist(aria-expanded='false', class=`nav__sublevel-${level} ${link.subClass}`)
+      li.nav__item.nav__item--return #[button.nav__mobile-return !{ link.text }]
+      if (link.subClass === 'sublist-2-col')
+        ul.nav-col-1
+          +navLinks(link.submenu, level + 1, col = 1)
+        ul.nav-col-2
+          +navLinks(link.submenu, level + 1, col = 2)
+      if (link.subClass === 'sublist-3-col')
+        ul.nav-col-1
+          +navLinks(link.submenu, level + 1, col = 1)
+        ul.nav-col-2
+          +navLinks(link.submenu, level + 1, col = 2)
+        ul.nav-col-3
+          +navLinks(link.submenu, level + 1, col = 2)

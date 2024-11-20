@@ -8,6 +8,7 @@
 // Components
 @use 'components/breadcrumb';
 @use 'components/button';
+@use 'components/common-blocks';
 @use 'components/dialog';
 @use 'components/form';
 @use 'components/icon';
@@ -21,6 +22,7 @@
 
 // Layout-related sections
 @use 'layout/header';
+@use 'layout/hero';
 @use 'layout/grail';
 @use 'layout/content';
 @use 'layout/footer';

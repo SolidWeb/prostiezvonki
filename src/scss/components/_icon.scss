@@ -5,5 +5,15 @@
 .icon {
   display: inline-block;
   flex-shrink: 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+
+  &--13 {
+    font-size: 1.3rem;
+  }
+  &--20 {
+    font-size: 2rem;
+  }
+  &--30 {
+    font-size: 3rem;
+  }
 }

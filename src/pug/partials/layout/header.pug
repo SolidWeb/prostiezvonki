@@ -1,18 +1,104 @@
-a.header__logo(href='index.html')
-  +imageSVG('logo.svg', 'Site logo')
-//- prettier-ignore
-+navbar([ 
-  { text: 'Forms & Dialogs', href: 'starter-forms-dialogs.html' }, 
-  { text: 'Sliders & Galleries', href: 'starter-sliders-galleries.html' }, 
-  { text: 'Common layouts', href: '#!', icon: 'chevron', submenu: [
-      { text: 'Банки', href: '#!' },
-      { text: 'Страховые компании', href: '#!' },
-      { text: 'Колл-центры', href: '#!' },
-      { text: 'IT', href: '#!' },
-    ]},
-])
+// Search
+.search-form
+  label.search-form__label
+    input.search-form__input(type='text', placeholder='Найдите свой вариант интеграции')
+  button.search-form__button(aria-label='Search') #[+icon('search')]
+
+// Contacts
 address.header__contacts
   .header__icons
-    a(href='#!', title='Наш Telegram') #[+icon('telegram')]
-    a(href='#!', title='Наш WhatsApp') #[+icon('whatsapp', false)]
-  a.header__phone(href='#!') +7 (495) 555 35 35
+    a(href='#!', title='Наш Telegram') #[+icon('telegram-circle').icon--30]
+    a(href='#!', title='Наша почта') #[+icon('mail-circle').icon--30]
+  a.header__phone.link.link--black(href='tel:+74997033590') + 7 (499) 703 35 90
+
+// Auth buttons
+.header__auth
+  a.button.button--outlined.button--sm(href='#!') Регистрация
+  a.button.button--sm(href='#!') Вход
+
+// Logo
+a.logo(href='index.html')
+  +imageSVG('logo.svg', 'Site logo')
+
+// Navbar
+//- prettier-ignore
++navbar([ 
+  { 
+    text: 'Возможности', 
+    href: '#!',
+    icon: 'arrow-down',
+    subClass: 'sublist-2-col',
+    submenu: [
+      { text: 'Колл для интернет-магазинов', href: 'services.html', col: 1 },
+      { text: 'Колл-центр для автосервисов', href: 'services.html', col: 2 },
+      { text: 'Колл-центр для медицинских центров', href: 'services.html', col: 1 },
+      { text: 'Колл-центр для образовательных учреждений', href: 'services.html', col: 2  },
+      { text: 'Колл-центр для строительных компаний', href: 'services.html', col: 1 },
+      { text: 'Колл-центр для юридических компаний', href: 'services.html', col: 2  },
+      { text: 'Колл-центр для сервисных центров', href: 'services.html', col: 1 },
+      { text: 'Колл-центр для транспортных компаний', href: 'services.html', label: 'Скидка 10%', col: 2  },
+    ] 
+  },
+  { text: 'Цены', href: '#!' },
+  { 
+    text: 'Поддержка', 
+    href: '#!',
+    icon: 'arrow-down',
+    subClass: 'sublist-3-col',
+    submenu: [
+      { text: 'Колл для интернет-магазинов', href: 'industry.html', col: 1 },
+      { text: 'Колл для интернет-магазинов', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для автосервисов', href: 'industry.html', col: 3 },
+      { text: 'Колл-центр для медицинских центров', href: 'industry.html', col: 1 },
+      { text: 'Колл-центр для медицинских центров', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для образовательных учреждений', href: 'industry.html', col: 3 },
+      { text: 'Колл-центр для строительных компаний', href: 'industry.html', col: 1 },
+      { text: 'Колл-центр для строительных компаний', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для юридических компаний', href: 'industry.html', col: 3 },
+      { text: 'Колл-центр для сервисных центров', href: 'industry.html', col: 1 },
+      { text: 'Колл-центр для сервисных центров', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для транспортных компаний', href: 'industry.html', label: 'Скидка 10%', col: 3 },
+    ] 
+  },
+  { 
+    text: 'Разработчикам', 
+    href: '#!',
+    icon: 'arrow-down',
+    subClass: 'sublist-3-col',
+    submenu: [
+      { text: 'Колл для интернет-магазинов', href: 'industry.html', col: 1 },
+      { text: 'Колл для интернет-магазинов', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для автосервисов', href: 'industry.html', col: 3 },
+      { text: 'Колл-центр для медицинских центров', href: 'industry.html', col: 1 },
+      { text: 'Колл-центр для медицинских центров', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для образовательных учреждений', href: 'industry.html', col: 3 },
+      { text: 'Колл-центр для строительных компаний', href: 'industry.html', col: 1 },
+      { text: 'Колл-центр для строительных компаний', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для юридических компаний', href: 'industry.html', col: 3 },
+      { text: 'Колл-центр для сервисных центров', href: 'industry.html', col: 1 },
+      { text: 'Колл-центр для сервисных центров', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для транспортных компаний', href: 'industry.html', label: 'Скидка 10%', col: 3 },
+    ] 
+  },
+  { 
+    text: 'Компания', 
+    href: '#!',
+    icon: 'arrow-down',
+    subClass: 'sublist-3-col',
+    submenu: [
+      { text: 'Колл для интернет-магазинов', href: 'industry.html', col: 1 },
+      { text: 'Колл для интернет-магазинов', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для автосервисов', href: 'industry.html', col: 3 },
+      { text: 'Колл-центр для медицинских центров', href: 'industry.html', col: 1 },
+      { text: 'Колл-центр для медицинских центров', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для образовательных учреждений', href: 'industry.html', col: 3 },
+      { text: 'Колл-центр для строительных компаний', href: 'industry.html', col: 1 },
+      { text: 'Колл-центр для строительных компаний', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для юридических компаний', href: 'industry.html', col: 3 },
+      { text: 'Колл-центр для сервисных центров', href: 'industry.html', col: 1 },
+      { text: 'Колл-центр для сервисных центров', href: 'industry.html', col: 2 },
+      { text: 'Колл-центр для транспортных компаний', href: 'industry.html', label: 'Скидка 10%', col: 3 },
+    ] 
+  },
+  { text: 'Контакты', href: '#!' },
+])

@@ -19,8 +19,11 @@ html(lang='ru')
     script(defer, src=require('../js/main.js'))
   body.no-js.no-transition.webp(class=pageUrl === 'index' ? 'homepage' : pageUrl + '-page', class=bodyClass)
     header.header
+      block header-notification
       .container
         include @partials/layout/header.pug
+    if (pageUrl === 'index')
+      include @partials/layout/hero.pug
     .page-wrapper.container
       main.main
         block content

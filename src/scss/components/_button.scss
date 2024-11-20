@@ -3,33 +3,104 @@
 @use '../abstracts' as *;
 
 .button {
-  --bg-color: var(--color-primary);
-  --bg-color-rgb: var(--color-primary-rgb);
+  --padding: 1.6rem 2rem;
+  --border-radius: 1.5rem;
+  --bg-gradient: linear-gradient(180deg, #379eef 0%, #1b75bb 100%);
+  --bg-gradient-hover: linear-gradient(180deg, #4fb2ff 0%, #208cdf 100%);
   --color: var(--color-white);
 
+  position: relative;
+  z-index: 0;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  gap: 1rem;
+  min-width: 29.6rem;
+  min-height: 6.5rem;
+  padding: var(--padding);
   border: none;
-  border-radius: 1rem;
-  font-size: 2.4rem;
+  border-radius: var(--border-radius);
+  font-size: 2.6rem;
+  line-height: 3.3rem;
+  font-weight: 400;
   text-decoration: none;
   text-align: center;
-  background-color: var(--bg-color);
+  background-color: transparent;
   color: var(--color);
+  box-shadow: 0 20px 30px 0 rgba(27, 117, 187, 0.3);
   transition-property: transform, opacity, var(--transition-props-color);
   transition-timing-function: var(--transition-func-cubic);
   transition-duration: var(--transition-duration-medium);
   cursor: pointer;
   &:hover,
   &:focus-visible {
-    background-color: rgba(var(--bg-color-rgb), 0.8);
     color: var(--color);
+    &::after {
+      opacity: 1;
+    }
   }
   &:active {
-    background-color: rgba(var(--bg-color-rgb), 0.7);
     color: var(--color);
+    opacity: 0.8;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: var(--border-radius);
+    background: var(--bg-gradient);
+    transition: opacity var(--transition-medium-cubic);
+  }
+  &::after {
+    background: var(--bg-gradient-hover);
+    opacity: 0;
+  }
+
+  .icon {
+    font-size: 2.4rem;
+  }
+
+  &--sm {
+    --padding: 1rem 3rem 1.2rem;
+    --border-radius: 1rem;
+
+    min-width: initial;
+    min-height: 4.2rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 500;
+    box-shadow: none;
+  }
+  &[disabled] {
+    --bg-gradient: linear-gradient(180deg, #ccc 0%, #bababa 100%);
+    --color: rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+    pointer-events: none;
+  }
+}
+
+.button--outlined {
+  --padding: 1.2rem 1.6rem;
+  --color: var(--color-grey-dark);
+
+  border: 2px solid var(--color-blue);
+  background-color: var(--color-white);
+  box-shadow: none;
+  transition: border-color var(--transition-medium-cubic);
+  &:hover,
+  &:focus-visible {
+    border-color: var(--color-blue-hover);
+  }
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  &.button--sm {
+    --padding: 0.8rem 2.8rem 1rem;
   }
 }
 
