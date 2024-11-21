@@ -5,8 +5,12 @@
 
 .page-wrapper {
   flex: 1 0 auto;
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   padding-bottom: 2.5rem;
+
+  &.container {
+    max-width: 133rem;
+  }
 }
 
 .container {
@@ -19,6 +23,15 @@
   @include bp(md) {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
+  }
+}
+
+.section {
+  & > .h1 {
+    margin-bottom: 2rem;
+    @include bp(md) {
+      margin-bottom: 4rem;
+    }
   }
 }
 

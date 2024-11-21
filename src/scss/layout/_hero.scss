@@ -2,10 +2,11 @@
 @use '../abstracts' as *;
 
 .hero {
-  --padding-top: 19.3rem;
+  --top-offset: 19.3rem;
 
   position: relative;
-  padding: var(--padding-top) 0 6.6rem;
+  padding-bottom: 6.6rem;
+  margin-top: var(--top-offset);
   @include bp(md) {
     padding-bottom: 24.5rem;
   }
@@ -32,6 +33,8 @@
     margin-bottom: 1.5rem;
     @include bp(md) {
       margin-bottom: 3rem;
+      font-size: 6rem;
+      line-height: 1;
     }
   }
 
@@ -40,14 +43,16 @@
     content: '';
     position: absolute;
     inset: 0;
+    top: calc(var(--top-offset) * -1);
     z-index: -1;
+    height: calc(100% + var(--top-offset));
   }
   &::before {
     @include bg-picture('layout/hero-bg.png', 786);
-    background-position: top calc(var(--padding-top) - 5rem) center;
+    background-position: top calc(var(--top-offset) - 5rem) center;
     background-repeat: no-repeat;
     @include bp-min(600px) {
-      background-position: top calc(var(--padding-top) - 10rem) center;
+      background-position: top calc(var(--top-offset) - 10rem) center;
     }
     @include bp(md) {
       @include bg-picture('layout/hero-bg-md.png', 1380);
@@ -84,18 +89,27 @@
   }
 }
 
+/* Hero slider */
+
+.hero-slider-buffer {
+  min-height: 65.6rem;
+  margin-top: -3.6rem;
+  @include bp(md) {
+    min-height: 47.6rem;
+    margin-top: -14.5rem;
+  }
+}
+
 .hero-slider {
   --border-radius: 1.5rem;
 
   width: calc(100% - 4rem);
   max-width: 48rem;
   border-radius: 1.5rem;
-  margin-top: -3.6rem;
   background-color: var(--color-white);
   box-shadow: 0 30px 50px 0 rgba(27, 117, 187, 0.3);
   @include bp(md) {
     max-width: 86rem;
-    margin-top: -14.5rem;
   }
 
   .swiper-slide {

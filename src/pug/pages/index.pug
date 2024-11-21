@@ -11,34 +11,38 @@ block scripts
   script(defer, src='vendor/swiper/swiper-bundle.min.js')
 
 block content
-  h1.h1 Главная страница
-  section.graphic-snippets-section
-    .graphic-snippets-section__item
-      h2.h2 Responsive picture set
-      .picture
-        +picture('starter/klim.jpg', 'Klim')
-    .graphic-snippets-section__item
-      h2.h2 SVG responsive picture set
-      .picture-svg
-        +pictureSVG('pictures/starter-logo.svg', 'Responsive svg', ['-lg', '-md', ''], ['960', '431', ''])
-    .graphic-snippets-section__item
-      h2.h2 CSS background picture set
-      .css-background-picture
-    .graphic-snippets-section__item
-      h2.h2 Plain image
-      .plain-img
-        +image('starter/ficus.png', 'Ficus')
-    .graphic-snippets-section__item
-      h2.h2 Inline SVG
-      .inline-svg-wrapper
-        +imageSVG('inline/starter-zara.svg', 'Zara')
-  hr.hr
+  section.possibilities-section.section
+    h2.h1 Возможности сервиса
+    include @partials/blocks/possibilities.pug
 
-block header-notification
-  .header-notifications
-    .header-notification
-      .header-notification__text До конца 2024 года скидка на первый месяц&nbsp;обслуживания 50%.
-      a.link.link--white(href='#!') Подробнее #[+icon('arrow-right').icon--13]
+//-   h1.h1 Главная страница
+//-   section.graphic-snippets-section
+//-     .graphic-snippets-section__item
+//-       h2.h2 Responsive picture set
+//-       .picture
+//-         +picture('starter/klim.jpg', 'Klim')
+//-     .graphic-snippets-section__item
+//-       h2.h2 SVG responsive picture set
+//-       .picture-svg
+//-         +pictureSVG('pictures/starter-logo.svg', 'Responsive svg', ['-lg', '-md', ''], ['960', '431', ''])
+//-     .graphic-snippets-section__item
+//-       h2.h2 CSS background picture set
+//-       .css-background-picture
+//-     .graphic-snippets-section__item
+//-       h2.h2 Plain image
+//-       .plain-img
+//-         +image('starter/ficus.png', 'Ficus')
+//-     .graphic-snippets-section__item
+//-       h2.h2 Inline SVG
+//-       .inline-svg-wrapper
+//-         +imageSVG('inline/starter-zara.svg', 'Zara')
+//-   hr.hr
+
+//- block header-notification
+//-   .header-notifications
+//-     .header-notification
+//-       .header-notification__text До конца 2024 года скидка на первый месяц&nbsp;обслуживания 50%.
+//-       a.link.link--white(href='#!') Подробнее #[+icon('arrow-right').icon--13]
 
 block embedded-scripts
   script.
@@ -54,5 +58,5 @@ block embedded-scripts
 
     function setHeaderHeight() {
       header.style.setProperty('--height', header.offsetHeight + 'px');
-      hero.style.setProperty('--padding-top', header.offsetHeight + 'px');
+      hero.style.setProperty('--top-offset', header.offsetHeight + 'px');
     }

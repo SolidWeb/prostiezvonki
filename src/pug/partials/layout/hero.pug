@@ -9,28 +9,29 @@ section.hero
       a.button(href='#!') Попробовать
       .hero__caption Свяжите АТС и CRM быстро.&nbsp;#[br]Попробуйте бесплатно.
 
-+swiper({compactControls: true}).hero-slider
-  .swiper-slide
-    .hero-slider__content(data-swiper-parallax='-300', data-swiper-parallax-duration='600')
-      h2.h2 Попробуйте интеграцию бесплатно
-      p.hero-slider__text Простые Звонки в октябре дарят месяц бесплатного обслуживания при подключении к&nbsp;сервису до конца сентября 2024
-      a.hero-slider__button.button.button--sm.button--outlined(href='#!') Подробнее
-    .hero-slider__image #[+picture('/slides/hero-slide-1.jpg', 'Изображение')]
-  .swiper-slide
-    .hero-slider__content(data-swiper-parallax='-300', data-swiper-parallax-duration='600')
-      h2.h2 Попробуйте интеграцию бесплатно
-      p.hero-slider__text Простые Звонки в октябре дарят месяц бесплатного обслуживания при подключении к&nbsp;сервису до конца сентября 2024
-      a.hero-slider__button.button.button--sm.button--outlined(href='#!') Подробнее
-    .hero-slider__image #[+picture('/slides/hero-slide-1.jpg', 'Изображение')(loading='lazy')]
-  .swiper-slide
-    .hero-slider__content(data-swiper-parallax='-300', data-swiper-parallax-duration='600')
-      h2.h2 Попробуйте интеграцию бесплатно
-      p.hero-slider__text Простые Звонки в октябре дарят месяц бесплатного обслуживания при подключении к&nbsp;сервису до конца сентября 2024
-      a.hero-slider__button.button.button--sm.button--outlined(href='#!') Подробнее
-    .hero-slider__image #[+picture('/slides/hero-slide-1.jpg', 'Изображение')(loading='lazy')]
-  .swiper-slide
-    .hero-slider__content(data-swiper-parallax='-300', data-swiper-parallax-duration='600')
-      h2.h2 Попробуйте интеграцию бесплатно
-      p.hero-slider__text Простые Звонки в октябре дарят месяц бесплатного обслуживания при подключении к&nbsp;сервису до конца сентября 2024
-      a.hero-slider__button.button.button--sm.button--outlined(href='#!') Подробнее
-    .hero-slider__image #[+picture('/slides/hero-slide-1.jpg', 'Изображение')(loading='lazy')]
+.hero-slider-buffer
+  +swiper({compactControls: true}).hero-slider
+    .swiper-slide
+      .hero-slider__content(data-swiper-parallax='-300', data-swiper-parallax-duration='600')
+        h2.h2 Попробуйте интеграцию бесплатно
+        p.hero-slider__text Простые Звонки в октябре дарят месяц бесплатного обслуживания при подключении к&nbsp;сервису до конца сентября 2024
+        a.hero-slider__button.button.button--sm.button--outlined(href='#!') Подробнее
+      .hero-slider__image #[+picture('/slides/hero-slide-1.jpg', 'Изображение')]
+    .swiper-slide
+      .hero-slider__content(data-swiper-parallax='-300', data-swiper-parallax-duration='600')
+        h2.h2 Попробуйте интеграцию бесплатно
+        p.hero-slider__text Простые Звонки в октябре дарят месяц бесплатного обслуживания при подключении к&nbsp;сервису до конца сентября 2024
+        a.hero-slider__button.button.button--sm.button--outlined(href='#!') Подробнее
+      .hero-slider__image #[+picture('/slides/hero-slide-1.jpg', 'Изображение')(loading='lazy')]
+    .swiper-slide
+      .hero-slider__content(data-swiper-parallax='-300', data-swiper-parallax-duration='600')
+        h2.h2 Попробуйте интеграцию бесплатно
+        p.hero-slider__text Простые Звонки в октябре дарят месяц бесплатного обслуживания при подключении к&nbsp;сервису до конца сентября 2024
+        a.hero-slider__button.button.button--sm.button--outlined(href='#!') Подробнее
+      .hero-slider__image #[+picture('/slides/hero-slide-1.jpg', 'Изображение')(loading='lazy')]
+    .swiper-slide
+      .hero-slider__content(data-swiper-parallax='-300', data-swiper-parallax-duration='600')
+        h2.h2 Попробуйте интеграцию бесплатно
+        p.hero-slider__text Простые Звонки в октябре дарят месяц бесплатного обслуживания при подключении к&nbsp;сервису до конца сентября 2024
+        a.hero-slider__button.button.button--sm.button--outlined(href='#!') Подробнее
+      .hero-slider__image #[+picture('/slides/hero-slide-1.jpg', 'Изображение')(loading='lazy')]
