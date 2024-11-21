@@ -197,53 +197,10 @@ checkDialogSupport();
 initDialog();
 
 /**
-  Swiper settings
-=============== **/
-
-const heroSwiper =
-  typeof Swiper !== 'undefined' &&
-  new Swiper('.hero-slider', {
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true,
-    },
-    parallax: true,
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    allowTouchMove: true,
-    grabCursor: true,
-    speed: 600,
-    breakpoints: {
-      960: {
-        spaceBetween: 20,
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'fraction',
-        },
-      },
-    },
-    on: {
-      // Change pagination type when breakpoint changes
-      breakpoint: function (swiper) {
-        if (swiper.pagination.el) {
-          if (swiper.pagination.el.classList.contains('swiper-pagination-fraction')) {
-            swiper.pagination.el.classList.remove('swiper-pagination-fraction');
-            swiper.pagination.el.classList.add('swiper-pagination-bullets');
-          } else {
-            swiper.pagination.el.classList.remove('swiper-pagination-bullets');
-            swiper.pagination.el.classList.add('swiper-pagination-fraction');
-          }
-        }
-        swiper.pagination.render();
-        swiper.pagination.update();
-      },
-    },
-  });
+  Vendor libs settings
+==================== **/
+import { initSwiperSettings } from './libs/swiper-settings';
+initSwiperSettings();
 
 /**
   JustValidate settings

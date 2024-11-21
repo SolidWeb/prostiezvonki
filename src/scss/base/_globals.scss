@@ -62,9 +62,6 @@ body {
   @include bp-max($container-min-width) {
     overflow-x: auto;
   }
-  @include bp-min(393px) {
-    height: auto;
-  }
   @include bp-min(1920px) {
     height: auto;
   }

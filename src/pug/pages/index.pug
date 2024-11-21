@@ -11,9 +11,13 @@ block scripts
   script(defer, src='vendor/swiper/swiper-bundle.min.js')
 
 block content
+  // Possibilities section
   section.possibilities-section.section
     h2.h1 Возможности сервиса
-    include @partials/blocks/possibilities.pug
+    +possCards({lazy: true})
+
+  // Integration section
+  include @partials/blocks/integration.pug
 
 //-   h1.h1 Главная страница
 //-   section.graphic-snippets-section
@@ -38,11 +42,11 @@ block content
 //-         +imageSVG('inline/starter-zara.svg', 'Zara')
 //-   hr.hr
 
-//- block header-notification
-//-   .header-notifications
-//-     .header-notification
-//-       .header-notification__text До конца 2024 года скидка на первый месяц&nbsp;обслуживания 50%.
-//-       a.link.link--white(href='#!') Подробнее #[+icon('arrow-right').icon--13]
+block header-notification
+  .header-notifications
+    .header-notification
+      .header-notification__text До конца 2024 года скидка на первый месяц&nbsp;обслуживания 50%.
+      a.link.link--white(href='#!') Подробнее #[+icon('arrow-right').icon--13]
 
 block embedded-scripts
   script.
