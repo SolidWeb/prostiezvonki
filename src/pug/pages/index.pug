@@ -19,6 +19,21 @@ block content
   // Integration section
   include @partials/blocks/integration.pug
 
+  // Lead section
+  section.lead-section.section
+    hgroup.hgroup
+      h2.h1 Не увидел свою CRM?
+      p.h3-md Скажи нам, мы сделаем. Оставь контакт и&nbsp;давай обсудим.
+    form.lead
+      label.lead__label
+        input.lead__input(type='email', placeholder='Почта', required)
+      button.lead__button.button.button--lg Оставить заявку
+
+  // Testimonials section
+  include @partials/blocks/testimonials.pug
+
+  //- .h1.test Попробуй все возможности демо
+
 //-   h1.h1 Главная страница
 //-   section.graphic-snippets-section
 //-     .graphic-snippets-section__item

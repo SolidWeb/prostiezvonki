@@ -38,17 +38,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.1rem;
+  gap: 0.5rem;
   border-radius: 2rem;
   margin: 0 auto;
-  background-color: var(--color-white);
   user-select: none;
   @include bp(md) {
     inset: auto 0 2.8rem;
   }
   .swiper-button-next,
   .swiper-button-prev {
-    display: flex;
+    display: none;
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
@@ -59,35 +58,28 @@
       font-size: 1.5rem;
     }
   }
-
   .swiper-button-prev {
     left: 0;
   }
-
   .swiper-pagination {
     position: initial;
     flex-shrink: 0;
   }
-
-  &:has(.swiper-pagination-bullets) {
-    .swiper-button-prev,
-    .swiper-button-next {
-      display: none;
-    }
-  }
   &:has(.swiper-pagination-fraction) {
     width: fit-content;
+    background-color: var(--color-white);
     @include bp(md) {
       transform: translateX(1.5rem);
     }
     .swiper-pagination {
-      min-width: 3.5rem;
+      min-width: 4.6rem;
       width: fit-content;
       color: var(--color-blue);
     }
     .swiper-button-prev,
     .swiper-button-next {
       position: static;
+      display: flex;
     }
   }
 }
@@ -100,6 +92,12 @@
     --swiper-pagination-color: rgba(172, 172, 136, 0.25);
     background: rgba(27, 117, 187, 0.6);
   }
+}
+
+.swiper-pagination-current,
+.swiper-pagination-total {
+  display: inline-block;
+  min-width: 1.4rem;
 }
 
 .swiper--reverse {
