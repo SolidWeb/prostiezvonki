@@ -2,56 +2,85 @@
 
 @use '../abstracts/' as *;
 
-.graphic-snippets-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-
-  &__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.picture {
-  width: 12.4rem;
-  height: 8.3rem;
-  margin: auto;
+.news-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  max-width: 119rem;
   @include bp(md) {
-    width: 24.8rem;
-    height: 16rem;
-  }
-}
-
-.picture-svg {
-  padding: 2rem 1rem;
-  border-radius: 3rem;
-  margin: auto;
-  background-color: brown;
-}
-
-.css-background-picture {
-  width: 13.5rem;
-  height: 18.5rem;
-  margin: auto;
-  @include bg-picture('starter/ficus.png', 270);
-}
-
-.inline-svg-wrapper {
-  margin: auto;
-  fill: black;
-  transition: fill var(--transition-medium-cubic);
-  .inline-svg path:nth-of-type(1) {
-    fill: green;
-    transition: fill var(--transition-medium-cubic);
-  }
-
-  &:hover {
-    fill: slateblue;
-    .inline-svg path:nth-of-type(1) {
-      fill: goldenrod;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+    .h1 {
+      margin-top: 2.6rem;
+      margin-left: 3rem;
     }
   }
+}
+
+.news-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  @include bp(md) {
+    max-width: 75rem;
+    margin-top: 1rem;
+  }
+}
+
+.news-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--color-grey-light);
+  @include bp(md) {
+    border-color: var(--color-grey-lighter);
+  }
+}
+
+.news-card__title {
+  margin-bottom: 0.5rem;
+  font-size: 2.4rem;
+  line-height: 3rem;
+  font-weight: 400;
+
+  a {
+    --color: var(--color-blue);
+    --color-hover: var(--color-blue-hover);
+    --color-active: var(--color-blue);
+    text-decoration: none;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+  &:has(a:hover, a:focus-visible):not(:has(a:active)) {
+    & ~ .news-card__date {
+      border-color: var(--color-sand-light);
+      background-color: var(--color-sand-light);
+    }
+  }
+}
+
+.date {
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--color-grey);
+  border-radius: 4rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: var(--color-grey);
+  @include bp(md) {
+    border-color: var(--color-grey-lighter);
+  }
+}
+
+.news-card__date {
+  order: -1;
+  margin-bottom: 1rem;
+  transition:
+    border-color var(--transition-medium-cubic),
+    background-color var(--transition-medium-cubic);
 }

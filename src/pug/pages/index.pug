@@ -12,7 +12,7 @@ block scripts
 
 block content
   // Possibilities section
-  section.possibilities-section.section
+  section.possibilities-section
     h2.h1 Возможности сервиса
     +possCards({lazy: true})
 
@@ -20,7 +20,7 @@ block content
   include @partials/blocks/integration.pug
 
   // Lead section
-  section.lead-section.section
+  section.lead-section
     hgroup.hgroup
       h2.h1 Не увидел свою CRM?
       p.h3-md Скажи нам, мы сделаем. Оставь контакт и&nbsp;давай обсудим.
@@ -31,6 +31,27 @@ block content
 
   // Testimonials section
   include @partials/blocks/testimonials.pug
+
+  // News section
+  section.news-section
+    h2.h1 Новости
+    .news-cards
+      article.news-card
+        h3.news-card__title #[a(href='#!') Релиз новой версии API]
+        p.news-card__text В карточке каждого клиента, с которым общались ваши сотрудники, есть хронология всех звонков.
+        time.date.news-card__date(datetime='2024-09-01') 01 сентября 2024
+      article.news-card
+        h3.news-card__title #[a(href='#!') Релиз функции: Исходящий по клику]
+        p.news-card__text Звоните клиентам прямо из CRM. Нажмите на номер клиента в карточке, и Простые Звонки сами его наберут.
+        time.date.news-card__date(datetime='2024-07-24') 24 июля 2024
+      article.news-card
+        h3.news-card__title #[a(href='#!') Добавлены 38 новых пар интеграций]
+        p.news-card__text Ссылки на записи разговоров сохраняются в карточке клиента.
+        time.date.news-card__date(datetime='2024-07-15') 15 июля 2024
+      article.news-card
+        h3.news-card__title #[a(href='#!') Релиз функции: Всплывающая карточка]
+        p.news-card__text Клиент набрал ваш номер. У менеджера звонит телефон. Карточка клиента уже на экране.
+        time.date.news-card__date(datetime='2024-06-17') 17 июня 2024
 
   //- .h1.test Попробуй все возможности демо
 

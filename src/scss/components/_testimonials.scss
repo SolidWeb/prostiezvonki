@@ -3,8 +3,10 @@
 @use '../abstracts' as *;
 
 .testimonials-buffer {
+  padding-bottom: 10rem;
   @include bp(md) {
-    min-height: 47.3rem;
+    min-height: 72.3rem;
+    padding-bottom: 2rem;
   }
 }
 
