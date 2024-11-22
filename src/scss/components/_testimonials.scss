@@ -122,35 +122,3 @@
     }
   }
 }
-
-.test {
-  position: relative;
-  width: fit-content;
-  border: 1px solid var(--color-blue);
-  border-radius: 1rem;
-  margin-top: 20rem;
-  outline: 1px solid var(--color-blue);
-  outline-offset: 1rem;
-  &::before {
-    content: '';
-    position: absolute;
-    top: -2rem;
-    left: -2rem;
-    width: calc(100% + 4rem);
-    height: calc(100% + 4rem);
-    border: 1px solid var(--color-blue);
-    border-radius: 3rem;
-    outline: 1px solid var(--color-blue);
-    outline-offset: 1rem;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4rem;
-    left: -4rem;
-    width: calc(100% + 8rem);
-    height: calc(100% + 8rem);
-    border: 1px solid var(--color-blue);
-    border-radius: 5rem;
-  }
-}

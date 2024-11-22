@@ -2,6 +2,8 @@
 
 @use '../abstracts/' as *;
 
+/* News section */
+
 .news-section {
   display: flex;
   flex-direction: column;
@@ -83,4 +85,120 @@
   transition:
     border-color var(--transition-medium-cubic),
     background-color var(--transition-medium-cubic);
+}
+
+.news-cards__all {
+  margin-top: -0.1rem;
+}
+
+/* Try section */
+
+.try {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .h1 {
+    margin-bottom: 1.5rem;
+    @include bp(md) {
+      margin-bottom: 1rem;
+    }
+  }
+  .h3 {
+    width: 29.1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    @include bp(md) {
+      width: initial;
+    }
+  }
+}
+
+.news-section + .try {
+  margin-top: 13.4rem;
+  @include bp(md) {
+    margin-top: 12.9rem;
+  }
+}
+
+.try__button {
+  width: 100%;
+  max-width: 45rem;
+}
+
+.ripple-text {
+  position: relative;
+  width: fit-content;
+  padding: 0.4rem 0 0.5rem;
+  border: 1px solid #a5cff0;
+  border-radius: 5rem;
+  outline-offset: 1rem;
+  @include bp(md) {
+    padding: 0.4rem 1.9rem 0.5rem;
+    border: 1px solid var(--color-blue-light);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1.2rem;
+    left: -1.7rem;
+    z-index: -1;
+    width: calc(100% + 3.4rem);
+    height: calc(100% + 2.5rem);
+    border: 1px solid rgba(165, 207, 240, 0.4);
+    border-radius: 5rem;
+    @include bp(md) {
+      top: -1.6rem;
+      left: -2.2rem;
+      width: calc(100% + 4.4rem);
+      height: calc(100% + 3.2rem);
+      border-color: rgba(165, 207, 240, 0.6);
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2.4rem;
+    left: -3.2rem;
+    z-index: -1;
+    width: calc(100% + 6.4rem);
+    height: calc(100% + 4.8rem);
+    border: 1px solid rgba(165, 207, 240, 0.2);
+    border-radius: 6.1rem;
+    @include bp(md) {
+      top: -3.1rem;
+      left: -4.3rem;
+      width: calc(100% + 8.5rem);
+      height: calc(100% + 6.1rem);
+      border-color: rgba(165, 207, 240, 0.4);
+    }
+  }
+  &__outer-radius {
+    position: absolute;
+    top: -3.8rem;
+    left: -4.6rem;
+    z-index: -1;
+    width: calc(100% + 9.2rem);
+    height: calc(100% + 7.6rem);
+    border: 1px solid rgba(165, 207, 240, 0.1);
+    border-radius: 7.5rem;
+    @include bp(md) {
+      top: -4.3rem;
+      left: -6.2rem;
+      width: calc(100% + 12.2rem);
+      height: calc(100% + 8.5rem);
+      border-color: rgba(165, 207, 240, 0.2);
+      &::before {
+        content: '';
+        position: absolute;
+        top: -1.6rem;
+        left: -1.7rem;
+        z-index: -1;
+        width: calc(100% + 3.7rem);
+        height: calc(100% + 3.2rem);
+        border: 1px solid rgba(165, 207, 240, 0.1);
+        border-radius: 7.7rem;
+      }
+    }
+  }
 }
