@@ -8,6 +8,10 @@
   min-width: rem($container-min-width);
   padding: 0 1rem;
   margin-top: 8rem;
+
+  .container {
+    min-width: initial;
+  }
 }
 
 .sup-footer {

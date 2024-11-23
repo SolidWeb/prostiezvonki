@@ -151,16 +151,16 @@
   flex-wrap: wrap;
   gap: 1rem;
   padding: 0 1rem;
-  @include bp-max(393.98px) {
-    margin-right: 0.5rem;
-  }
-  @include bp-min(500px) {
+  @include bp-min(393px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    padding-right: 1.5rem;
+  }
+  @include bp-min(500px) {
+    padding-right: 1rem;
   }
   @include bp-min(800px) {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
   @include bp(md) {
@@ -174,17 +174,15 @@
 }
 
 .integration-item {
-  --width: 11.6rem;
-
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: 0.5rem;
   min-width: 10rem;
   width: 100%;
-  max-width: var(--width);
+  max-width: 11.6rem;
   @include bp-min(393px) {
-    min-width: var(--width);
+    min-width: initial;
     max-width: 20rem;
   }
 
