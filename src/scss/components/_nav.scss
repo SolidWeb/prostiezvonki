@@ -11,14 +11,37 @@
 }
 
 .nav__item {
-  position: relative;
   flex-shrink: 0;
   margin-bottom: 0;
+  @include bp(md) {
+    position: relative;
+  }
+
+  &--return {
+    padding: 2rem 0 0.9rem;
+    border-bottom: 1px solid var(--color-grey-lighter);
+    background-color: transparent;
+    @include bp(md) {
+      display: none;
+    }
+  }
+}
+
+.nav__mobile-return {
+  gap: 0.5rem;
+  width: 100%;
+  font-size: 2.4rem;
+  line-height: 3rem;
+  font-weight: 400;
+  .icon {
+    font-size: 1.4rem;
+  }
 }
 
 .nav__link {
   display: inline-flex;
   align-items: center;
+  line-height: 2rem;
   font-weight: 500;
   text-decoration: none;
 
@@ -35,25 +58,35 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   max-height: 0;
   margin-bottom: 0;
-  transition: max-height 0.2s linear;
-  @include bp-navbar {
-    & > .nav__item:first-child {
-      padding-top: 2rem;
-    }
+  transition:
+    max-height 0.2s linear,
+    opacity 0.2s linear;
+  @include bp(sm) {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    gap: 1rem;
+    width: 100%;
+    height: auto;
+    padding: 3rem 2rem;
+    background-color: var(--color-white);
+    transform: translateX(100%);
+    transition: transform var(--transition-medium-cubic);
   }
   @include bp(md) {
     position: absolute;
+    top: 3.6rem;
     left: 50%;
     z-index: 10;
     visibility: hidden;
     width: max-content;
     max-width: 30rem;
     height: initial;
-    padding: 2rem 4rem;
-    border-radius: 2rem;
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
     margin-top: 1rem;
     background-color: var(--color-white);
     box-shadow: var(--shadow-menu);
@@ -74,10 +107,16 @@
 
 .nav__sublist .nav__link {
   display: block;
+  font-weight: 400;
   text-decoration-color: transparent;
 }
 
 .nav__sublist.is-visible {
+  @include bp(sm) {
+    overflow-y: auto;
+    max-height: calc(100dvh - var(--height)) !important;
+    transform: translateX(0);
+  }
   @include bp(md) {
     visibility: visible;
     max-height: initial;
@@ -85,9 +124,34 @@
   }
 }
 
+.nav__list > .nav__item:first-child .nav__sublist {
+  @include bp(md) {
+    left: -1rem;
+    transform: translateX(0%);
+    &.is-visible {
+      animation: first-sublist-appear 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+  }
+}
+
 @keyframes sublist-appear {
   0% {
     opacity: 0;
     transform: translateY(-1.6rem) translateX(-50%);
+  }
+}
+@keyframes first-sublist-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.6rem);
+  }
+}
+
+.nav__sublist ul[class^='nav-col'] {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  @include bp(sm) {
+    gap: 1rem;
   }
 }

@@ -48,6 +48,12 @@
   padding: 0 1rem;
   margin-bottom: calc(var(--height) * -1);
   transition: background-color var(--transition-medium-cubic);
+  @include bp(sm) {
+    &:has(.navbar.is-visible) {
+      z-index: 1000;
+      background-color: var(--color-white);
+    }
+  }
   @include bp(md) {
     padding: 0;
   }
@@ -257,11 +263,6 @@
     }
     .nav__list {
       justify-content: space-between;
-    }
-    .nav__link {
-      --color: var(--color-grey-dark);
-      --color-hover: var(--color-blue-hover);
-      --color-active: var(--color-blue);
     }
   }
 }

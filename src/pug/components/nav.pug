@@ -32,16 +32,18 @@ mixin navLink(link, level)
       span.nav__label !{ link.label }
   if (link.submenu)
     ul.nav__sublist(aria-expanded='false', class=`nav__sublevel-${level} ${link.subClass}`)
-      li.nav__item.nav__item--return #[button.nav__mobile-return !{ link.text }]
+      li.nav__item.nav__item--return #[button.nav__mobile-return.link #[+icon('arrow-left')] !{ link.text }]
       if (link.subClass === 'sublist-2-col')
         ul.nav-col-1
           +navLinks(link.submenu, level + 1, col = 1)
         ul.nav-col-2
           +navLinks(link.submenu, level + 1, col = 2)
-      if (link.subClass === 'sublist-3-col')
+      else if (link.subClass === 'sublist-3-col')
         ul.nav-col-1
           +navLinks(link.submenu, level + 1, col = 1)
         ul.nav-col-2
           +navLinks(link.submenu, level + 1, col = 2)
         ul.nav-col-3
           +navLinks(link.submenu, level + 1, col = 2)
+      else
+        +navLinks(link.submenu, level + 1)

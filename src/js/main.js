@@ -1,7 +1,7 @@
 /**
   Global variables
 ================ **/
-const mqSmall = window.matchMedia('(max-width: 999px)');
+const mqSmall = window.matchMedia('(max-width: 959.98px)');
 
 /**
   Check if JavaScript is enabled
@@ -56,24 +56,9 @@ emptyLinks.forEach((link) => {
 });
 
 /**
-  Smooth scroll to top
-==================== **/
-
-const scrollTopButton = document.querySelector('.scroll-top-button');
-
-const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
-
-scrollTopButton && scrollTopButton.addEventListener('click', scrollToTop);
-
-/**
   Toggle mobile navbar
 ==================== **/
-
+const header = document.querySelector('.header');
 const navbar = document.querySelector('.navbar');
 const navbarToggler = document.querySelector('.navbar-toggler');
 const navbarOverlay = document.querySelector('.navbar-overlay');
@@ -81,12 +66,27 @@ const navbarOverlay = document.querySelector('.navbar-overlay');
 const toggleNavbar = () => {
   navbar.classList.toggle('is-visible');
   navbarToggler.setAttribute('aria-expanded', navbar.classList.contains('is-visible'));
-  document.body.classList.toggle('is-fixed', navbar.classList.contains('is-visible'));
-  document.body.classList.toggle(
-    'has-scroll',
-    document.body.scrollHeight > window.innerHeight && navbar.classList.contains('is-visible'),
-  );
+  if (document.body.classList.contains('is-fixed')) {
+    toggleBodyClasses();
+    window.scrollTo({
+      left: 0,
+      top: parseInt(document.body.style.top) * -1,
+      behavior: 'instant',
+    });
+    document.body.style.top = null;
+  } else {
+    document.body.style.top = `-${window.scrollY}px`;
+    toggleBodyClasses();
+  }
   navbarOverlay.classList.toggle('is-visible');
+
+  function toggleBodyClasses() {
+    document.body.classList.toggle('is-fixed', navbar.classList.contains('is-visible'));
+    document.body.classList.toggle(
+      'has-scroll',
+      document.body.scrollHeight > window.innerHeight && navbar.classList.contains('is-visible'),
+    );
+  }
 
   // Get all anchor links in the navbar menu
   const navbarLinks = navbar.querySelectorAll('.nav__link[href*="#"]:not([href="#!"]');
@@ -95,15 +95,25 @@ const toggleNavbar = () => {
       toggleNavbar();
     });
   });
+
+  // Sticky header view
+  if (mqSmall.matches) {
+    navbarOverlay.style.top = header.offsetHeight + 'px';
+  }
 };
 
 navbarToggler.addEventListener('click', toggleNavbar);
 navbarOverlay.addEventListener('click', toggleNavbar);
+mqSmall.addEventListener('change', () => {
+  navbar.classList.remove('is-visible');
+  navbarOverlay.classList.remove('is-visible');
+  document.body.classList.remove('is-fixed', 'has-scroll');
+  document.body.style.top = null;
+});
 
 /**
   Toggle nav submenu
 ================== **/
-
 const submenuTogglers = document.querySelectorAll('.nav__sublist-toggler');
 
 const toggleSubmenu = (e) => {
@@ -137,6 +147,17 @@ window.addEventListener('click', (e) => {
       submenu.setAttribute('aria-expanded', 'false');
       submenu.style.maxHeight = null;
     }
+  });
+});
+
+const mobileNavReturnButtons = document.querySelectorAll('.nav__mobile-return');
+mobileNavReturnButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const submenu = button.closest('.nav__sublist');
+    const toggler = submenu.previousElementSibling;
+    toggler.classList.remove('is-active');
+    submenu.classList.remove('is-visible');
+    submenu.setAttribute('aria-expanded', 'false');
   });
 });
 
