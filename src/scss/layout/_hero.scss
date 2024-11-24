@@ -12,7 +12,7 @@
   }
 
   .container {
-    padding-top: 11rem;
+    padding-top: 10rem;
     @include bp(sm) {
       max-width: 48rem;
     }
@@ -49,7 +49,7 @@
   }
   &::before {
     @include bg-picture('layout/hero-bg.png', 786);
-    background-position: top calc(var(--top-offset) - 5rem) center;
+    background-position: top calc(var(--top-offset) - 6rem) center;
     background-repeat: no-repeat;
     @include bp-min(600px) {
       background-position: top calc(var(--top-offset) - 10rem) center;

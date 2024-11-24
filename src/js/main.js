@@ -141,6 +141,12 @@ window.addEventListener('click', (e) => {
 });
 
 /**
+  Sticky header 
+============= **/
+import { initStickyHeader } from './components/sticky-header';
+initStickyHeader();
+
+/**
   Form elements UX
 ================ **/
 

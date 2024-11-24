@@ -6,10 +6,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  margin-top: 1rem;
+  padding-top: 1rem;
+  background-color: var(--color-white);
 }
 
 .header-notification {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -42,8 +44,10 @@
   --height: 19.3rem;
 
   min-width: rem($container-min-width);
+  width: 100%;
   padding: 0 1rem;
   margin-bottom: calc(var(--height) * -1);
+  transition: background-color var(--transition-medium-cubic);
   @include bp(md) {
     padding: 0;
   }
@@ -55,11 +59,11 @@
     grid-template-rows: 4.9rem 6rem;
     align-items: center;
     min-width: 34rem;
-    padding: 1rem 0 0;
+    padding: 1rem 0;
     @include bp-min(600px) {
       grid-template-columns: 1fr 28rem;
       grid-template-rows: 7.2rem 7.2rem;
-      padding-top: 1rem;
+      padding-bottom: 0;
     }
     @include bp(md) {
       grid-template-columns: 15.8rem 1fr 36.4rem;
@@ -68,7 +72,7 @@
       background-color: var(--color-white);
     }
 
-    &::after {
+    &::before {
       content: '';
       position: absolute;
       top: 5.9rem;
@@ -88,6 +92,39 @@
       @include bp-min(1360px) {
         left: 0;
         width: 100%;
+      }
+    }
+    &::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      width: 100%;
+      background-color: var(--color-white);
+      transition:
+        width 0.2s linear,
+        transform 0.2s linear;
+      @include bp(lg) {
+        content: '';
+      }
+    }
+  }
+}
+
+.header.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  @include bp(sm) {
+    background-color: var(--color-white);
+  }
+  .container {
+    @include bp(sm) {
+      background-color: var(--color-white);
+    }
+    &::after {
+      @include bp(md) {
+        width: 100vw;
+        transform: translateX(calc(((100vw - 130rem) / 2) * -1));
       }
     }
   }
