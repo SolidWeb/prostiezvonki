@@ -1,0 +1,76 @@
+/*! Integration pages */
+
+@use '../abstracts/' as *;
+
+.int-cards {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 3rem;
+  background-color: var(--color-grey-lighter);
+  @include bp(md) {
+    align-items: center;
+    min-height: 21rem;
+    padding: 3rem 4rem;
+    border-radius: 2rem;
+  }
+}
+
+.int-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 14rem;
+  @include bp(md) {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.int-card__img {
+  border-radius: 2rem;
+  img {
+    aspect-ratio: 1;
+    width: 14rem;
+    border-radius: 2rem;
+  }
+}
+
+.int-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.int-card__label {
+  padding: 0.2rem 0.9rem 0.3rem;
+  border: 1px solid var(--color-grey);
+  border-radius: 4rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: var(--color-grey);
+}
+
+.int-card__title {
+  color: var(--color-blue);
+}
+
+.int-card__text {
+  line-height: normal;
+}
+
+.int-cards + .possibilities-section {
+  margin-top: 8rem;
+}
+
+.possibilities-section + .lead-section {
+  margin-top: 15rem;
+  margin-bottom: 1rem;
+  @include bp(md) {
+    margin-top: 12.1rem;
+    margin-bottom: 5rem;
+  }
+}

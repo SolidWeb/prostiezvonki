@@ -1,0 +1,39 @@
+extends ../main.pug
+
+block globals
+  - var pageUrl = 'int-newcrm';
+  - var pageTitle = 'Интеграция NEWCRM';
+
+block content
+  //- prettier-ignore
+  +breadcrumb([
+    { name: 'Главная', link: 'index.html' },
+    { name: 'Возможности', link: 'opportunities.html' },
+    { name: 'Интеграция', current: true }
+  ])
+
+  h1.h1 Интеграция NEWCRM
+
+  // Integration cards
+  .int-cards
+    article.int-card
+      .int-card__img #[+picture('cards/int-card-1.jpg', 'CRM', [''])]
+      .int-card__content
+        span.int-card__label В разработке
+        h2.h2.int-card__title NEWCRM
+        p.int-card__text удобная web программа для анализа продаж, доступная в режиме online
+
+  // Possibilities section
+  section.possibilities-section.section
+    h2.h1 Возможности интеграции
+    +possCards({lazy: true})
+
+  // Lead section
+  section.lead-section
+    hgroup.hgroup
+      h2.h1 Нужна интеграция с&nbsp;CRM
+      p.h3-md Скажи нам, мы сделаем. Через 2 недели у тебя будет интеграция.
+    form.lead
+      label.lead__label
+        input.lead__input(type='email', placeholder='Почта', required)
+      button.lead__button.button.button--lg Оставить заявку
