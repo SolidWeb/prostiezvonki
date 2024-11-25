@@ -2,7 +2,7 @@ extends ../main.pug
 
 block globals
   - var pageUrl = 'index';
-  - var pageTitle = 'Главная страница';
+  - var pageTitle = 'Простые звонки';
 
 block styles
   link(href='vendor/swiper/swiper-bundle.min.css', rel='stylesheet')
@@ -88,20 +88,3 @@ block header-notification
     .header-notification
       .header-notification__text До конца 2024 года скидка на первый месяц&nbsp;обслуживания 50%.
       a.link.link--white(href='#!') Подробнее #[+icon('arrow-right').icon--13]
-
-block embedded-scripts
-  script.
-    const header = document.querySelector('.header');
-    const hero = document.querySelector('.hero');
-
-    if (header && hero) {
-      setHeaderHeight();
-      window.addEventListener('resize', () => {
-        setHeaderHeight();
-      });
-    }
-
-    function setHeaderHeight() {
-      header.style.setProperty('--height', header.offsetHeight + 'px');
-      hero.style.setProperty('--top-offset', header.offsetHeight + 'px');
-    }

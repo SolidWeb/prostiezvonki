@@ -1,0 +1,57 @@
+extends ../main.pug
+
+block globals
+  - var pageUrl = 'contacts';
+  - var pageTitle = 'Контакты';
+
+block content
+  //- prettier-ignore
+  +breadcrumb([
+    { name: 'Главная', link: 'index.html' },
+    { name: 'Контакты', current: true }
+  ])
+
+  h1.h1 Контакты и&nbsp;реквизиты
+
+  section.news-section.news-section--contacts
+    h2.h2 Адрес
+    .news-cards
+      address.news-card.news-card--gap
+        p Екатеринбург, 620014, ул. Радищева д.6а, бизнес-центр "Суворов", 2 подъезд, 9 этаж, офис 2905
+        a.link(href='#!') Показать на карте #[+icon('arrow-link')]
+
+  section.news-section.news-section--contacts
+    h2.h2 Продажи #[br]и&nbsp;партнерство
+    .news-cards
+      address.news-card.news-card--gap-sm
+        .news-card__item
+          span.f-large + 7 (499) 703 35 90 доб.1
+          p Работаем по будням с 8:00 до 18:00 МСК
+        p info@prostiezvonki.ru - продажи, партнерские программы
+        p buh@vedisoft.ru - получение закрывающих документов
+
+  section.news-section.news-section--contacts.news-section--no-borders
+    h2.h2 Банковские реквизиты
+    .news-cards
+      address.news-card.news-card--gap
+        p.f-medium ООО "Ведисофт"
+        p Почтовый адрес: #[br]Екатеринбург, 620014, ул. Радищева д.6а, офис 2905
+        .news-card__item.news-card__item--gap-lg
+          p ОГРН 1069671028987
+          p ОКПО 94357688
+          p ИНН 6671187742
+          p КПП 667101001
+          p Р/С 40702810628000006084 в ФБ филиала "Центральный" банка ВТБ (ПАО) г.Москва,
+          p БИК 044525411
+          p К/С 0101810145250000411
+        a.link(href='#!') Лицензионный договор-оферта #[+icon('arrow-link')]
+      address.news-card.news-card--gap
+        p.f-medium ИП Сюрдо Николай Александрович
+        p Почтовый адрес: #[br]Екатеринбург, 620014, ул. Радищева д.6а, офис 2905
+        .news-card__item.news-card__item--gap-lg
+          p ИНН 665805771017
+          p ОГРНИП 314667109800022
+          p Р/С 40802810463040000214 в ОАО «УБРиР» г. Екатеринбург
+          p БИК 046577795
+          p К/С 30101810900000000795
+        a.link(href='#!') Лицензионный договор-оферта #[+icon('arrow-link')]

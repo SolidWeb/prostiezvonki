@@ -18,6 +18,10 @@
       margin-left: 3rem;
     }
   }
+
+  & + .news-section {
+    margin-top: 4rem;
+  }
 }
 
 .news-cards {
@@ -39,6 +43,21 @@
   border-bottom: 1px solid var(--color-grey-light);
   @include bp(md) {
     border-color: var(--color-grey-lighter);
+  }
+
+  &--gap {
+    gap: 2rem;
+    &-sm {
+      gap: 1.5rem;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    &--gap-lg {
+      gap: 1rem;
+    }
   }
 }
 
@@ -90,6 +109,38 @@
 .news-cards__all {
   width: fit-content;
   margin-top: -0.1rem;
+  line-height: 2.2rem;
+}
+
+/* Contacts section */
+
+.news-section--contacts {
+  gap: 2rem;
+  max-width: initial;
+  .h2 {
+    @include bp(md) {
+      margin-top: 0.3rem;
+    }
+  }
+  .news-cards {
+    width: 100%;
+    max-width: 86rem;
+    @include bp(md) {
+      margin-top: 0;
+    }
+  }
+  .news-card {
+    padding: 1rem 0 3rem;
+  }
+}
+.news-section--no-borders {
+  .news-cards {
+    gap: 4rem;
+  }
+  .news-card {
+    padding: 1rem 0 0;
+    border: none;
+  }
 }
 
 /* Try section */

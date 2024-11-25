@@ -183,3 +183,12 @@ $font-names: map.keys($fonts);
   line-height: 1.5;
   font-weight: 300;
 }
+.f-medium {
+  line-height: 2rem;
+  font-weight: 500;
+}
+.f-large {
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  font-weight: 400;
+}

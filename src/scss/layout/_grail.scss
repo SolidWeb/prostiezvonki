@@ -4,13 +4,29 @@
 @use 'sass:map';
 
 .page-wrapper {
+  --header-height: 0;
+
   flex: 1 0 auto;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  @include bp(md) {
+    padding-top: 2rem;
+  }
 
   &.container {
     max-width: 133rem;
   }
+  h1 {
+    margin-bottom: 4rem;
+  }
+}
+
+header.sticky + .page-wrapper.container {
+  margin-top: var(--header-height);
+}
+
+.homepage .page-wrapper {
+  padding-bottom: 2rem;
 }
 
 .container {

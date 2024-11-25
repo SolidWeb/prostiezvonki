@@ -94,6 +94,9 @@
 .hero-slider-buffer {
   min-height: 65.6rem;
   margin-top: -3.6rem;
+  @include bp(sm) {
+    margin-bottom: -1rem;
+  }
   @include bp(md) {
     min-height: 47.6rem;
     margin-top: -14.5rem;

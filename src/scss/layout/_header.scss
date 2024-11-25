@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  padding-top: 1rem;
   background-color: var(--color-white);
 }
 
@@ -42,11 +41,11 @@
 
 .header {
   --height: 19.3rem;
+  --header-divider-color: var(--color-blue-lighter);
 
   min-width: rem($container-min-width);
   width: 100%;
   padding: 0 1rem;
-  margin-bottom: calc(var(--height) * -1);
   transition: background-color var(--transition-medium-cubic);
   @include bp(sm) {
     &:has(.navbar.is-visible) {
@@ -56,6 +55,7 @@
   }
   @include bp(md) {
     padding: 0;
+    border-top: 1rem solid var(--color-white);
   }
 
   .container {
@@ -85,12 +85,13 @@
       left: 0;
       width: 100%;
       height: 0.1rem;
-      background-color: var(--color-blue-light);
+      background-color: var(--header-divider-color);
       pointer-events: none;
       @include bp-min(600px) {
         top: 8.2rem;
       }
       @include bp(md) {
+        --header-divider-color: var(--color-blue-light);
         top: 9.6rem;
         left: 1rem;
         width: calc(100% - 2rem);
@@ -114,6 +115,11 @@
       }
     }
   }
+}
+
+.homepage .header {
+  --header-divider-color: rgba(60, 146, 212, 0.4);
+  margin-bottom: calc(var(--height) * -1);
 }
 
 .header.sticky {

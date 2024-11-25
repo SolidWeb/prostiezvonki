@@ -83,7 +83,7 @@
     z-index: 10;
     visibility: hidden;
     width: max-content;
-    max-width: 30rem;
+    max-width: 34rem;
     height: initial;
     padding: 2.5rem 2rem;
     border-radius: 1rem;
@@ -136,13 +136,11 @@
 
 @keyframes sublist-appear {
   0% {
-    opacity: 0;
     transform: translateY(-1.6rem) translateX(-50%);
   }
 }
 @keyframes first-sublist-appear {
   0% {
-    opacity: 0;
     transform: translateY(-1.6rem);
   }
 }

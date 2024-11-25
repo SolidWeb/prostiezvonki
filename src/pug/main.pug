@@ -32,3 +32,18 @@ html(lang='ru')
     .navbar-overlay.overlay
     block dialogs
     block embedded-scripts
+    script.
+      const header = document.querySelector('.header');
+      const hero = document.querySelector('.hero');
+      const pageWrapper = document.querySelector('.page-wrapper');
+
+      setHeaderHeight();
+      window.addEventListener('resize', () => {
+        setHeaderHeight();
+      });
+
+      function setHeaderHeight() {
+        header.style.setProperty('--height', header.offsetHeight + 'px');
+        hero && hero.style.setProperty('--top-offset', header.offsetHeight + 'px');
+        pageWrapper.style.setProperty('--header-height', header.offsetHeight + 'px');
+      }
