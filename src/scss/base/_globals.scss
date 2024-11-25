@@ -179,6 +179,7 @@ a {
   --color-active: var(--content-link-color-active);
 
   text-decoration-color: transparent;
+  text-underline-offset: 0.3rem;
   color: var(--color);
   transition-property: var(--transition-props-color);
   transition-timing-function: var(--transition-func-cubic);

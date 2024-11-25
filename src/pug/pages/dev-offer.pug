@@ -18,6 +18,44 @@ block content
     { name: 'Предложение для разработчиков', current: true }
   ])
 
-  h1.h1 Предложение для разработчиков
+  h1.h1 Предложение для #[br.sm]разработчиков
 
-  section.requests
+  section.requests-section
+    .requests-section__header
+      h2.h2 Клиенты спрашивают про&nbsp;интеграцию?
+      p.requests-section__text Дайте угадаем: клиенты спрашивают про интеграцию с&nbsp;телефонией. Почему? Видимо, им это нужно, им нужны возможности, #[br.lg]которые даёт интеграция:
+    +possCards({lazy: true})
+
+  section.variants-section
+    h2.h1 Что можно сделать?
+    .variants
+      article.variant
+        h3.h3 Разрабатывать самостоятельно — #[br.lg]долго, дорого и неизвестно, что&nbsp;выйдет. 
+        p.variant__text
+          span 100 000 ₽ — cделать интеграцию своими силами с одной облачной АТС.
+          span 50 000 ₽ — поддерживать интеграцию с 1 облачной АТС своими силами в течение года
+          span 5 облачных АТС — 750 000 ₽ минимум.
+      article.variant.variant--pros
+        .advantage-label
+          +icon('star-ribbon').icon--20
+          .f-small Крупнейший интегратор России
+        h3.h3 Поручить разработку нам&nbsp;— #[br.md]cделать с нами быстрее и дешевле.
+        p.variant__text
+          span Разработаем на заказ или дадим инструментарий: #[a(href='#!') HTTP API], #[a(href='#!') библиотека Javascript], #[a(href='#!') компонент ActiveX], #[a(href='#!') расширения для Google Chrome].
+          span Получите 40+ интеграций по цене одной.
+
+  // Integration section
+  include @partials/blocks/integration.pug
+
+  // Lead section
+  section.lead-section.lead-section--dev
+    hgroup.hgroup
+      h2.h1 Нужна интеграция с&nbsp;CRM
+      p.h3 Скажи нам, мы сделаем. Через 2 недели у тебя будет интеграция.
+    form.lead
+      label.lead__label
+        input.lead__input(type='email', placeholder='Почта', required)
+      button.lead__button.button.button--lg Оставить заявку
+
+  // Testimonials section
+  include @partials/blocks/testimonials.pug
