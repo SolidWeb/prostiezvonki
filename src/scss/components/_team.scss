@@ -1,0 +1,80 @@
+/*! Team section */
+
+@use '../abstracts' as *;
+
+.team-section {
+  gap: 1.8rem;
+  @include bp(md) {
+    gap: 2rem;
+  }
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  row-gap: 4rem;
+  @include bp(sm) {
+    padding: 0 0.1rem;
+  }
+  @include bp-min(600px) {
+    column-gap: 2rem;
+  }
+  @include bp(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.team-card__img {
+  img {
+    aspect-ratio: 180 / 200;
+    border-radius: 1rem;
+    @include bp(lg) {
+      aspect-ratio: 260 / 200;
+    }
+  }
+
+  &--link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    aspect-ratio: 180 / 200;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: var(--color-grey-lighter);
+    @include bp(lg) {
+      aspect-ratio: 260 / 200;
+    }
+    .icon {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      @include bp(lg) {
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.team-card__name {
+  font-size: 1.6rem;
+  line-height: normal;
+  font-weight: 500;
+}
+
+.team-card__post {
+  font-size: 1.4rem;
+  line-height: normal;
+  color: var(--color-grey);
+}

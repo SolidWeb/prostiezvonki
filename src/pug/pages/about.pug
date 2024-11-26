@@ -1,0 +1,50 @@
+extends ../main.pug
+
+block globals
+  - var pageUrl = 'about';
+  - var pageTitle = 'О компании';
+
+block content
+  h1.h1 Мы — компания «Ведисофт»
+
+  // Content block
+  .content-block
+    .advantage-label
+      +icon('star-ribbon').icon--20
+      .f-small Крупнейший интегратор России
+    p С 2003 года «Ведисофт» занимается разработкой программного обеспечения для клиентов из России, Израиля, США и Канады. Наша&nbsp;специализация - разработка ПО для производителей телеком оборудования и систем информационной безопасности.
+    p С 2008 мы разрабатываем CRM-системы на&nbsp;базе платформы SugarCRM. #[br.sm]Мы помогаем небольшим компаниям в&nbsp;автоматизации работы отделов продаж. В&nbsp;отличие от других CRM-интеграторов, мы не&nbsp;настраиваем коробочные CRM системы, а&nbsp;занимаемся созданием CRM решений «под задачи клиента»: упрощаем пользовательский интерфейс, разрабатываем новые модули, связываем CRM с любыми другими системами.
+    p В 2012 мы объединили свои наработки в&nbsp;области интеграции CRM и телефонии в&nbsp;один продукт - «Простые звонки». Кроме SugarCRM мы добавили в&nbsp;него поддержку Excel и 1С. По статистике 90% российских компаний используют эти программы для ведения своей клиентской базы.
+
+  // Team section
+  section.team-section.col-section
+    .col-section__header
+      h2.h2 Познакомьтесь с нашей командой
+    .team
+      .team-card
+        .team-card__img #[+picture('cards/team-1.jpg', 'Member')]
+        .team-card__info
+          .team-card__name Николай Сюрдо
+          .team-card__post Руководитель проекта
+      .team-card
+        .team-card__img #[+picture('cards/team-2.jpg', 'Member')]
+        .team-card__info
+          .team-card__name Иван Прохоров
+          .team-card__post Технический руководитель
+      .team-card
+        .team-card__img #[+picture('cards/team-3.jpg', 'Member')]
+        .team-card__info
+          .team-card__name Никита Первухин
+          .team-card__post Разработчик
+      .team-card
+        .team-card__img #[+picture('cards/team-4.jpg', 'Member')]
+        .team-card__info
+          .team-card__name Григорий Симонов
+          .team-card__post Разработчик
+      .team-card
+        .team-card__img #[+picture('cards/team-5.jpg', 'Member')]
+        .team-card__info
+          .team-card__name Дмитрий Стефеев
+          .team-card__post Разработчик
+      .team-card
+        a.team-card__img.team-card__img--link(href='#!') Стать частью #[br.sm]команды #[+icon('arrow-link')]

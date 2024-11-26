@@ -70,3 +70,20 @@
     text-align: left;
   }
 }
+
+.content-block {
+  max-width: 118rem;
+  padding-bottom: 4rem;
+  .advantage-label {
+    margin-bottom: 2rem;
+    @include bp(md) {
+      margin-top: 0.1rem;
+    }
+  }
+  p {
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

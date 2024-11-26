@@ -51,6 +51,20 @@ header.sticky + .page-wrapper.container {
   }
 }
 
+.col-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 4rem;
+  @include bp(md) {
+    flex-direction: row;
+  }
+
+  &__header {
+    max-width: 42rem;
+  }
+}
+
 // Viewport width container
 .vw-container {
   position: relative;
