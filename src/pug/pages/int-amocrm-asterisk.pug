@@ -1,0 +1,63 @@
+extends ../main.pug
+
+block globals
+  - var pageUrl = 'int-amocrm-asterisk';
+  - var pageTitle = 'Интеграция AMO CRM и Asterisk 1.8';
+
+block styles
+  link(href='vendor/swiper/swiper-bundle.min.css', rel='stylesheet')
+
+block scripts
+  script(defer, src='vendor/swiper/swiper-bundle.min.js')
+
+block content
+  //- prettier-ignore
+  +breadcrumb([
+    { name: 'Главная', link: 'index.html' },
+    { name: 'Возможности', link: 'opportunities.html' },
+    { name: 'Интеграция', current: true }
+  ])
+
+  h1.h1 Интеграция AMO CRM и&nbsp;Asterisk&nbsp;1.8
+
+  // Integration cards
+  .int-cards
+    article.int-card
+      .int-card__img #[+picture('cards/int-card-1.jpg', 'CRM', [''])]
+      .int-card__content
+        h2.h2.int-card__title AMO CRM
+        p.int-card__text удобная web программа для анализа продаж, доступная в режиме online
+        a.link.int-card__link(href='#!') Другие интеграции с этой CRM #[+icon('arrow-link')]
+    article.int-card
+      .int-card__img #[+picture('cards/int-card-2.jpg', 'CRM', [''])]
+      .int-card__content
+        h2.h2.int-card__title Asterisk 1.8
+        p.int-card__text удобная web программа для анализа продаж, доступная в режиме online
+        a.link.int-card__link(href='#!') Другие интеграции с этой АТС #[+icon('arrow-link')]
+
+  // Functions section
+  section.functions-section.section
+    h2.h1 Доступные функции
+    include @partials/blocks/functions.pug
+
+  // Info block
+  .info-block
+    .info-block__wrapper
+      h2.h2 Как настроить интеграцию AMO CRM и Asterisk&nbsp;1.8
+      .docs
+        a.link.link--doc(href='#!') Руководство по установке и&nbsp;настройке АТС коннектора Asterisk 1.8 #[+icon('arrow-link')]
+        a.link.link--doc(href='#!') Руководство по установке и&nbsp;настройке виджета AMO CRM #[+icon('arrow-link')]
+        a.link.link--doc(href='#!') Руководство пользователя виджета AMO CRM #[+icon('arrow-link')]
+    .info-note
+      p.info-note__text Перед настройкой запросите бесплатную демо-версию интеграции на 14 дней
+      button.button.button--sm.button--outlined Запросить
+
+  // Lead section
+  section.lead-section
+    hgroup.hgroup
+      h2.h1 Оставь заявку на подключение
+      p.h3 Скажи нам, мы сделаем. Оставь контакт и давай обсудим.
+    form.lead
+      label.lead__label
+        input.lead__input(type='email', placeholder='Почта', required)
+      button.lead__button.button.button--lg Оставить заявку
