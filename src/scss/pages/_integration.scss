@@ -355,6 +355,49 @@
   }
 }
 
+.info-block__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-block__logo {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 333 / 160;
+  width: 100%;
+  max-width: 36rem;
+  border-radius: 2rem;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  .logo {
+    width: 21.8rem;
+    height: 8.7rem;
+    margin-top: initial;
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.info-block--solid {
+  border: 1px solid var(--color-blue-lighter);
+  border-radius: 3rem;
+  background-color: var(--color-blue-lighter);
+
+  .info-block__wrapper {
+    gap: 1.5rem;
+    @include bp(md) {
+      gap: 1.4rem;
+    }
+  }
+  &:has(.info-block__logo) {
+    gap: 4rem;
+  }
+}
+
 .docs {
   display: flex;
   flex-direction: column;

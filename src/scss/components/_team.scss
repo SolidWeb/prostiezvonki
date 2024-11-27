@@ -78,3 +78,73 @@
   line-height: normal;
   color: var(--color-grey);
 }
+
+.team-section + .info-block {
+  margin-top: 4rem;
+}
+
+.info-block + .advantages-section {
+  margin-top: 4rem;
+}
+
+.advantages-section {
+  gap: 3rem;
+  @include bp(md) {
+    gap: 6.5rem;
+  }
+}
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.advantages__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.advantages-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  @include bp-min(600px) {
+    justify-content: center;
+  }
+}
+
+.advantages-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 27rem;
+  max-width: calc(50% - 1rem);
+  padding: 2rem 2rem 3rem 2rem;
+  border-radius: 2rem;
+  background-color: var(--color-blue-lighter);
+  @include bp-max(599.98px) {
+    max-width: initial;
+    min-height: 18.5rem;
+  }
+}
+
+.advantages-card__icon {
+  margin-bottom: 0.5rem;
+  color: var(--color-blue-light);
+  .icon {
+    font-size: 6.4rem;
+  }
+}
+
+.advantages-card__title {
+  line-height: normal;
+  font-weight: 500;
+}
+
+.advantages-card__text {
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  line-height: normal;
+}
