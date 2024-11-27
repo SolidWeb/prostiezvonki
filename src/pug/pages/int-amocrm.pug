@@ -1,0 +1,222 @@
+extends ../main.pug
+
+block globals
+  - var pageUrl = 'int-amocrm';
+  - var pageTitle = 'Интеграция AMO CRM';
+
+block styles
+  link(href='vendor/swiper/swiper-bundle.min.css', rel='stylesheet')
+
+block scripts
+  script(defer, src='vendor/swiper/swiper-bundle.min.js')
+
+block content
+  //- prettier-ignore
+  +breadcrumb([
+    { name: 'Главная', link: 'index.html' },
+    { name: 'Возможности', link: 'opportunities.html' },
+    { name: 'Интеграция', current: true }
+  ])
+
+  h1.h1 Интеграция AMO CRM
+
+  // Integration cards
+  .int-cards
+    article.int-card
+      .int-card__img #[+picture('cards/int-card-1.jpg', 'CRM', [''])]
+      .int-card__content
+        h2.h2.int-card__title AMO CRM
+        p.int-card__text удобная web программа для анализа продаж, доступная в режиме online
+    article.int-card.int-card--try
+      .int-card__content
+        p.int-card__text Попробуйте бесплатную демо-версию интеграции с AMO CRM на&nbsp;14 дней
+        a.button.button--sm.button--outlined Попробовать
+
+  // Functions section
+  section.functions-section.section
+    h2.h1 Доступные функции
+    include @partials/blocks/functions.pug
+
+  // Integration table section
+  section.int-table-section.section
+    h2.h1 Интеграция с&nbsp;телефонией
+    // Search
+    .search-form.search-form--flat
+      label.search-form__label
+        input.search-form__input(type='text', placeholder='Введите название вашей CRM')
+      button.search-form__button(aria-label='Search') #[+icon('search')]
+    // Integration table
+    .int-table-wrapper
+      table.int-table
+        thead
+          tr
+            th Телефония и АТС
+            th Всплывающая карточка
+            th Исходящий по клику
+            th Журнал
+            th Аудиозаписи
+            th Умный перевод
+            th Отчёты
+        tbody
+          tr
+            td Asterisk 1.1
+            td #[span.yes]
+            td #[span.no]
+            td #[span.no]
+            td #[span.yes]
+            td #[span.no]
+            td #[span.yes]
+          tr
+            td Asterisk 1.3
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.no]
+            td #[span.yes]
+          tr
+            td Asterisk 1.6
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.no]
+            td #[span.yes]
+          tr
+            td Asterisk 1.8
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.no]
+            td #[span.yes]
+          tr
+            td Asterisk 2.0
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td Free BPX
+            td #[span.no]
+            td #[span.no]
+            td #[span.yes]
+            td #[span.no]
+            td #[span.no]
+            td #[span.yes]
+          tr
+            td Panasonic KX
+            td #[span.no]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td MANGO Office
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td Билайн
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td Мегафон
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td МТС
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td Новофон
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td Телфин
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td Asterisk 2.0
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td Free BPX
+            td #[span.no]
+            td #[span.no]
+            td #[span.yes]
+            td #[span.no]
+            td #[span.no]
+            td #[span.yes]
+          tr
+            td Panasonic KX
+            td #[span.no]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+          tr
+            td MANGO Office
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+            td #[span.yes]
+    .int-table-pagination.pagination
+      button.pagination__prev(aria-label='Previous') #[+icon('arrow-left')]
+      .pagination__counter
+        span.pagination__current 1
+        span.pagination__divider /
+        span.pagination__total 4
+      button.pagination__next(aria-label='Next') #[+icon('arrow-right')]
+
+  // Lead section
+  section.lead-section
+    hgroup.hgroup
+      h2.h1 Не увидел свою АТС?
+      p.h3-md Скажи нам, мы сделаем. Оставь контакт и давай обсудим.
+    form.lead
+      label.lead__label
+        input.lead__input(type='email', placeholder='Почта', required)
+      button.lead__button.button.button--lg Оставить заявку
+
+  // Testimonials section
+  include @partials/blocks/testimonials.pug
+
+  // Try block
+  section.try
+    .h1 Бесплатно
+    p.h3.c-blue.ripple-text Попробуй все возможности&nbsp;демо #[span.ripple-text__outer-radius]
+    a.try__button.button.button--lg(href='#!') Попробовать #[+icon('arrow-link')] 

@@ -307,6 +307,11 @@
   &::placeholder {
     color: var(--color-grey-light);
   }
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
 }
 
 .search-form__button {
@@ -332,5 +337,27 @@
   }
   &:active {
     opacity: 0.8;
+  }
+}
+
+.search-form--flat {
+  max-width: initial;
+  transform: none;
+
+  .search-form__label {
+    border-width: 0 0 0.1rem 0;
+    border-color: var(--color-grey-light);
+    border-radius: 0;
+  }
+  .search-form__input {
+    padding-left: 0;
+    border-radius: 0;
+    font-size: 1.8rem;
+    &::placeholder {
+      color: var(--color-grey);
+    }
+  }
+  .search-form__button {
+    transform: translateY(calc(-50% - 0.2rem));
   }
 }
