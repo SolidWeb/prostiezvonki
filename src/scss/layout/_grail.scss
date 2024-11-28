@@ -49,6 +49,12 @@ header.sticky + .page-wrapper.container {
       margin-bottom: 4rem;
     }
   }
+  & > .h2 {
+    margin-bottom: 3rem;
+    @include bp(md) {
+      margin-bottom: 4rem;
+    }
+  }
 }
 
 .col-section {

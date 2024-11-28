@@ -224,6 +224,12 @@ checkDialogSupport();
 initDialog();
 
 /**
+  Dropdown
+======== **/
+import Dropdown from './components/dropdown';
+const dropdown = new Dropdown('.dropdown');
+
+/**
   Vendor libs settings
 ==================== **/
 import { initSwiperSettings } from './libs/swiper-settings';

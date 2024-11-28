@@ -442,6 +442,21 @@
   }
 }
 
+.info-block--bold {
+  padding: 2.9rem 1.9rem;
+  .info-block__content {
+    font-size: 1.8rem;
+    line-height: normal;
+    font-weight: 400;
+  }
+}
+
+.info-block__single-button.button--outlined.button--sm {
+  --padding: 0.8rem 1.8rem 1rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .docs {
   display: flex;
   flex-direction: column;
