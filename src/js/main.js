@@ -230,6 +230,12 @@ import Dropdown from './components/dropdown';
 const dropdown = new Dropdown('.dropdown');
 
 /**
+  Table of Contents
+================= **/
+import { initToc } from './components/toc';
+initToc();
+
+/**
   Vendor libs settings
 ==================== **/
 import { initSwiperSettings } from './libs/swiper-settings';

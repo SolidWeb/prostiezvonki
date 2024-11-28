@@ -4,6 +4,9 @@
 
 .info-block + .aside-wrapper {
   margin-top: 3rem;
+  @include bp(md) {
+    margin-top: 6.1rem;
+  }
 }
 
 .aside-wrapper {
@@ -12,7 +15,7 @@
   gap: 4rem;
   @include bp(md) {
     flex-direction: row;
-    gap: 1rem;
+    gap: 2rem;
   }
 }
 
@@ -37,10 +40,7 @@
 }
 
 .partners-section {
-  scroll-margin: 15rem;
-  @include bp-min(600px) {
-    scroll-margin: 18rem;
-  }
+  scroll-margin: calc(var(--header-height) + 2rem);
 }
 
 .partners {
@@ -65,6 +65,7 @@
   max-width: 29rem;
   img {
     aspect-ratio: 290 / 140;
+    border-radius: 1rem;
   }
 }
 

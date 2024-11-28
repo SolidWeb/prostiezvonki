@@ -454,7 +454,13 @@
 .info-block__single-button.button--outlined.button--sm {
   --padding: 0.8rem 1.8rem 1rem;
   width: fit-content;
+  height: fit-content;
   margin: 0 auto;
+
+  @include bp(md) {
+    flex-shrink: 0;
+    margin: auto 0;
+  }
 }
 
 .docs {

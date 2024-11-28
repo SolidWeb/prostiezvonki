@@ -51,9 +51,6 @@ header.sticky + .page-wrapper.container {
   }
   & > .h2 {
     margin-bottom: 3rem;
-    @include bp(md) {
-      margin-bottom: 4rem;
-    }
   }
 }
 

@@ -1,5 +1,7 @@
 /* Dropdown */
 
+@use '../abstracts' as *;
+
 .dropdown {
   position: relative;
   display: flex;
@@ -90,7 +92,7 @@
   --color: var(--color-grey-dark);
   --color-hover: var(--color-grey-dark);
   --color-active: var(--color-grey-dark);
-  padding: 0.8rem;
+  padding: 1rem 2rem;
   &:hover,
   &:focus-visible {
     text-decoration-color: transparent;
@@ -98,5 +100,54 @@
   }
   &:active {
     background-color: var(--color-blue-lighter);
+  }
+}
+
+.dropdown--sm.toc {
+  @include bp(md) {
+    position: sticky;
+    top: calc(var(--header-height) + 3rem);
+    .dropdown-toggler {
+      display: none;
+    }
+    .dropdown-container {
+      position: static;
+      visibility: visible;
+      display: flex;
+      max-height: initial;
+      padding: 0.6rem 0;
+      box-shadow: none;
+    }
+    .dropdown-list {
+      display: flex;
+      gap: 1.1rem;
+    }
+    .dropdown-item {
+      padding: 0 0 0 1.4rem;
+      font-size: 1.4rem;
+    }
+    .toc-item {
+      position: relative;
+      &:hover,
+      &:focus-visible {
+        background-color: transparent;
+        color: var(--color-blue);
+      }
+      &:active {
+        background-color: transparent;
+      }
+      &.is-observed {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0.2rem;
+          left: 0;
+          width: 0.4rem;
+          height: 1.8rem;
+          border-radius: 0.4rem;
+          background-color: var(--color-blue);
+        }
+      }
+    }
   }
 }
