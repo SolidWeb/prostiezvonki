@@ -4,8 +4,10 @@
 @use 'components/breadcrumb';
 @use 'components/validator';
 @use 'components/team';
+@use 'components/toc';
 
 // Page-specific styles
+@use 'pages/article';
 @use 'pages/dev';
 @use 'pages/integration';
 @use 'pages/partners';

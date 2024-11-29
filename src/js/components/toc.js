@@ -1,11 +1,11 @@
 /* Table of Contents */
 export function initToc() {
-  const tocMq = window.matchMedia('(min-width: 960px)');
-  const toc = document.querySelector('.toc');
-  const tocItems = toc.querySelectorAll('.toc-item');
-  const tocSections = [];
-
+  const toc = document.querySelector('.toc[data-observable]');
   if (!toc) return;
+  const tocSections = [];
+  const tocItems = toc.querySelectorAll('.toc-item');
+  const tocObserveMq = window.matchMedia('(min-width: 960px)');
+  const tocTuneThresholdMq = window.matchMedia('(min-width: 1200px)');
 
   tocItems.forEach((item) => {
     const section = document.querySelector(`[id="${item.getAttribute('href').slice(1)}"]`);
@@ -14,7 +14,7 @@ export function initToc() {
 
   const observer = new IntersectionObserver(
     (entries) => {
-      if (!tocMq.matches) return;
+      if (!tocObserveMq.matches) return;
 
       entries.forEach((entry) => {
         const tocItem = toc.querySelector(`.toc-item[href="#${entry.target.id}"]`);
@@ -26,8 +26,7 @@ export function initToc() {
       });
     },
     {
-      rootMargin: '200px 0px',
-      threshold: 0.4,
+      threshold: tocTuneThresholdMq.matches ? 0.4 : 0.3,
     },
   );
 

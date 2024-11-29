@@ -1,0 +1,197 @@
+/*! Article pages */
+
+@use '../abstracts/' as *;
+
+/* Education article */
+
+.edu-article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  line-height: normal;
+  counter-reset: section;
+
+  .alert {
+    margin-bottom: 3rem;
+    &--general {
+      margin-bottom: 2rem;
+    }
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+  p.bullet {
+    position: relative;
+    padding-left: 2.4rem;
+    margin-bottom: 3rem;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.8rem;
+      left: 0.9rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: var(--color-grey-dark);
+    }
+  }
+}
+
+.edu-article__section {
+  scroll-margin: calc(var(--header-height) + 2rem);
+  padding-bottom: 3rem;
+  counter-reset: sub-section;
+  + .edu-article__section {
+    padding-bottom: 6rem;
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.edu-article__sub-section {
+  position: relative;
+  padding-top: 3rem;
+  padding-left: 4rem;
+  @include bp(md) {
+    line-height: 2.2rem;
+  }
+
+  & > p {
+    &[id^='toc'] {
+      scroll-margin: calc(var(--header-height) + 2rem);
+    }
+    &:first-child {
+      &::before {
+        counter-increment: sub-section;
+        content: counter(section) '.' counter(sub-section);
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        font-variant-numeric: tabular-nums;
+        color: rgba(30, 30, 30, 0.4);
+      }
+    }
+  }
+
+  & > img:last-child,
+  & > picture:last-child img {
+    margin-bottom: 1rem;
+  }
+}
+
+.edu-article__title {
+  position: relative;
+  padding-left: 4rem;
+  &::before {
+    counter-increment: section;
+    content: counter(section) '.';
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include bp(sm) {
+      top: 0.3rem;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+}
+
+h2.edu-article__title {
+  margin-bottom: 2rem;
+}
+
+/* Alerts */
+
+.alert {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--color-red-lighter);
+  @include bp(md) {
+    flex-direction: row;
+    padding: 3rem;
+  }
+  &::before {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    width: 3.6rem;
+    height: 3.6rem;
+    background-image: url('@svg/icons/alert.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--general {
+    gap: 2.2rem;
+    padding-bottom: 2.2rem;
+    @include bp(md) {
+      gap: 2rem;
+      padding-bottom: 3.2rem;
+    }
+    .alert__content {
+      gap: 1.9rem;
+      @include bp(md) {
+        gap: 1.7rem;
+      }
+    }
+  }
+  &--row {
+    flex-direction: row;
+    padding: 2rem;
+    &::before {
+      align-self: center;
+    }
+  }
+}
+
+.alert__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  line-height: normal;
+  font-weight: 400;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+/* Twin cards */
+
+.twin-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  @include bp(md) {
+    flex-direction: row;
+  }
+}
+
+.twin-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 13rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--color-blue-lighter);
+  @include bp(md) {
+    min-height: 10rem;
+  }
+
+  b {
+    line-height: normal;
+    font-weight: 500;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  ol {
+    margin-bottom: 0;
+  }
+}

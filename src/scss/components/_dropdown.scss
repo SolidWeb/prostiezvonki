@@ -147,6 +147,13 @@
           border-radius: 0.4rem;
           background-color: var(--color-blue);
         }
+
+        // Keep only one observed item at the time
+        & ~ .is-observed {
+          &::before {
+            display: none;
+          }
+        }
       }
     }
   }

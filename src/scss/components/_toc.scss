@@ -1,0 +1,34 @@
+/* Table of contents */
+
+@use '../abstracts' as *;
+
+.toc:not(.dropdown) {
+  @include bp(md) {
+    position: sticky;
+    top: calc(var(--header-height) + 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.4rem;
+    line-height: normal;
+  }
+  @include bp(lg) {
+    margin-left: 2.4rem;
+  }
+}
+
+.toc-item:not(.dropdown-item) {
+  --color: var(--color-grey-dark);
+  --color-hover: var(--color-blue-hover);
+  position: relative;
+  display: inline-flex;
+  padding-left: 2.6rem;
+  text-decoration: none;
+  &::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 0.2rem;
+    left: 0;
+    font-size: 1.2rem;
+  }
+}
