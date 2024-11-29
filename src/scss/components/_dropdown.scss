@@ -93,15 +93,23 @@
   --color-hover: var(--color-grey-dark);
   --color-active: var(--color-grey-dark);
   padding: 1rem 2rem;
+  border: none;
+  text-align: left;
+  background-color: transparent;
+  color: var(--color-grey-dark);
   &:hover,
   &:focus-visible {
     text-decoration-color: transparent;
     background-color: var(--color-sand-lighter);
+    color: var(--color-grey-dark);
   }
   &:active {
     background-color: var(--color-blue-lighter);
+    color: var(--color-grey-dark);
   }
 }
+
+/* Table of contents dropdown */
 
 .dropdown--sm.toc {
   @include bp(md) {
@@ -155,6 +163,27 @@
           }
         }
       }
+    }
+  }
+}
+
+/* Chips dropdown */
+
+.dropdown--sm.chips {
+  @include bp(sm) {
+    .dropdown-toggler {
+      padding: 1rem 0 0.8rem;
+    }
+    .dropdown-toggler.popular-chip,
+    .dropdown-item.popular-chip {
+      padding-left: 2.2rem;
+      background-image: url('@svg/icons/prize.svg');
+      background-position: top 1.1rem left;
+      background-repeat: no-repeat;
+    }
+    .dropdown-item.popular-chip {
+      padding-left: 4rem;
+      background-position: top 1.1rem left 1.6rem;
     }
   }
 }

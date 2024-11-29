@@ -98,6 +98,11 @@ h1,
 .h1 {
   font-size: 4.6rem;
   line-height: 4.8rem;
+  @include bp(sm) {
+    .big {
+      font-size: 10rem;
+    }
+  }
 }
 
 h2,

@@ -1,6 +1,32 @@
-/*! Integration pages */
+/*! Opportunities & Integration pages */
 
 @use '../abstracts/' as *;
+
+/* Compatibility section */
+
+.poss-cards + .compatibility-section {
+  margin-top: 16rem;
+}
+
+.compatibility-section {
+  .h1 {
+    margin-bottom: 3.6rem;
+  }
+  .search-form {
+    display: flex;
+    .search-form__button {
+      right: 0;
+    }
+  }
+  .chips {
+    margin-top: 1.5rem;
+  }
+  & + .try {
+    margin-top: 10rem;
+  }
+}
+
+/* Integration cards */
 
 .int-cards {
   display: flex;

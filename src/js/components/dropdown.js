@@ -25,6 +25,8 @@ export default class Dropdown {
     this.dropdown = selector;
     this.button = selector.querySelector(this.options.button);
     this.container = selector.querySelector(this.options.container);
+    this.selectBehavior = this.dropdown.classList.contains('dropdown--select');
+    this.items = this.container.querySelectorAll('.dropdown-item');
     this.containerClone = null;
 
     this.events();
@@ -45,6 +47,18 @@ export default class Dropdown {
     });
 
     window.addEventListener('resize', () => this.closeDropdown());
+
+    this.selectBehavior &&
+      this.items.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          const itemText = e.target.textContent;
+          const buttonText = this.button.querySelector('.dropdown-toggler__text');
+          buttonText.textContent = itemText;
+          item.classList.contains('popular-chip')
+            ? this.button.classList.add('popular-chip')
+            : this.button.classList.remove('popular-chip');
+        });
+      });
   }
 
   handleDropdown() {

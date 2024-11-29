@@ -1,0 +1,33 @@
+extends ../main.pug
+
+block globals
+  - var pageUrl = 'opportunities';
+  - var pageTitle = 'Возможности сервиса';
+
+block content
+  //- prettier-ignore
+  +breadcrumb([
+    { name: 'Главная', link: 'index.html' },
+    { name: 'Возможности', current: true }
+  ])
+
+  h1.h1 Возможности сервиса
+
+  // Possibilities cards
+  +possCards({lazy: true, title: 'h2'})
+
+  // Compatibility section
+  section.compatibility-section
+    h2.h1 #[span.big 54] совместимых CRM системы
+    // Search
+    .search-form.search-form--flat
+      label.search-form__label
+        input.search-form__input(type='text', placeholder='Введите название CRM системы')
+      button.search-form__button(aria-label='Search') #[+icon('search')]
+    include @partials/blocks/compatibility.pug
+
+  // Try block
+  section.try
+    .h1 Бесплатно
+    p.h3.c-blue.ripple-text Попробуй все возможности&nbsp;демо #[span.ripple-text__outer-radius]
+    a.try__button.button.button--lg(href='#!') Попробовать #[+icon('arrow-link')] 
