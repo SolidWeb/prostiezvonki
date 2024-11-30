@@ -103,7 +103,8 @@
     background-color: var(--color-sand-lighter);
     color: var(--color-grey-dark);
   }
-  &:active {
+  &:active,
+  &.is-active {
     background-color: var(--color-blue-lighter);
     color: var(--color-grey-dark);
   }
@@ -173,17 +174,57 @@
   @include bp(sm) {
     .dropdown-toggler {
       padding: 1rem 0 0.8rem;
-    }
-    .dropdown-toggler.popular-chip,
-    .dropdown-item.popular-chip {
-      padding-left: 2.2rem;
-      background-image: url('@svg/icons/prize.svg');
-      background-position: top 1.1rem left;
-      background-repeat: no-repeat;
-    }
-    .dropdown-item.popular-chip {
-      padding-left: 4rem;
-      background-position: top 1.1rem left 1.6rem;
+      &.popular-chip {
+        padding-left: 2.2rem;
+        background-position: top 1.1rem left;
+      }
     }
   }
+  @include bp(md) {
+    .dropdown-toggler {
+      display: none;
+    }
+    .dropdown-container {
+      position: static;
+      visibility: visible;
+      max-height: initial;
+      padding: 0;
+      box-shadow: none;
+      transform: none;
+    }
+    .dropdown-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .chip {
+      width: fit-content;
+      padding: 0.5rem 1.5rem 0.6rem;
+      border-radius: 2rem;
+      background-color: var(--color-blue-lighter);
+      color: var(--color-grey-dark);
+      transition: background-color var(--transition-medium-cubic);
+      &:hover,
+      &:focus-visible,
+      &.is-active {
+        background-color: var(--color-blue-light);
+      }
+      &.popular-chip {
+        padding-left: 2.5rem;
+        background-position: top 0.5rem left 0.5rem;
+      }
+    }
+  }
+}
+
+.dropdown-toggler.popular-chip,
+.dropdown-item.popular-chip {
+  background-image: url('@svg/icons/prize.svg');
+  background-repeat: no-repeat;
+}
+
+.dropdown-item.popular-chip {
+  padding-left: 4rem;
+  background-position: top 1rem left 1.6rem;
 }

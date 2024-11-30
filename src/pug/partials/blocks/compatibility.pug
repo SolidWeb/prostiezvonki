@@ -3,7 +3,7 @@
   button.dropdown-toggler.popular-chip #[span.dropdown-toggler__text Популярные] #[+icon('arrow-down')]
   .dropdown-container
     .dropdown-list
-      button.dropdown-item.chip.popular-chip Популярные
+      button.dropdown-item.chip.popular-chip.is-active Популярные
       button.dropdown-item.chip 1C
       button.dropdown-item.chip CRM системы
       button.dropdown-item.chip Автобизнес
@@ -18,3 +18,53 @@
       button.dropdown-item.chip Склад
       button.dropdown-item.chip Техническая поддержка
       button.dropdown-item.chip Туризм
+
+// Compatibility cards
+.comp-cards
+  article.comp-card
+    .comp-card__img #[+picture('cards/comp-card-1.jpg', 'Compatible system', [''])]
+    .comp-card__header
+      h3.comp-card__title #[a(href='#!') AMO CRM]
+    p.comp-card__desc удобная web программа для анализа продаж, доступная в&nbsp;режиме&nbsp;online
+  article.comp-card
+    .comp-card__img #[+picture('cards/comp-card-2.jpg', 'Compatible system', [''])]
+    .comp-card__header
+      h3.comp-card__title #[a(href='#!') Мегаплан]
+    p.comp-card__desc CRM система для небольших компаний и отделов продаж
+  article.comp-card
+    .comp-card__img #[+picture('cards/comp-card-3.jpg', 'Compatible system', [''])]
+    .comp-card__header
+      h3.comp-card__title #[a(href='#!') Битрикс24]
+    p.comp-card__desc CRM система для небольших компаний и отделов продаж
+  article.comp-card
+    .comp-card__img #[+picture('cards/comp-card-4.jpg', 'Compatible system', [''])]
+    .comp-card__header
+      h3.comp-card__title #[a(href='#!') 1C CRM]
+    p.comp-card__desc CRM система для небольших компаний и отделов продаж
+  article.comp-card
+    .comp-card__img #[+picture('cards/comp-card-5.jpg', 'Compatible system', [''])]
+    .comp-card__header
+      h3.comp-card__title #[a(href='#!') Retail CRM]
+    p.comp-card__desc эффективный интернет-сервис, осуществляющий удобный учет в службе доставки, кафе
+  article.comp-card.comp-card--disabled
+    .comp-card__img #[+picture('cards/comp-card-6.jpg', 'Compatible system', [''])]
+    .comp-card__header
+      h3.comp-card__title #[a(href='#!') Сбис]
+      span.comp-card__label В разработке
+    p.comp-card__desc CRM система для небольших компаний и отделов продаж
+  article.comp-card
+    .comp-card__img #[+picture('cards/comp-card-3.jpg', 'Compatible system', [''])]
+    .comp-card__header
+      h3.comp-card__title #[a(href='#!') Битрикс24]
+    p.comp-card__desc CRM система для небольших компаний и отделов продаж
+  article.comp-card
+    .comp-card__img #[+picture('cards/comp-card-1.jpg', 'Compatible system', [''])]
+    .comp-card__header
+      h3.comp-card__title #[a(href='#!') AMO CRM]
+    p.comp-card__desc CRM система для небольших компаний и отделов продаж
+  article.comp-card
+    .comp-card__img #[+picture('cards/comp-card-7.jpg', 'Compatible system', [''])]
+    .comp-card__header
+      h3.comp-card__title #[a(href='#!') Гигаплан]
+      span.comp-card__label Новая
+    p.comp-card__desc CRM система для небольших компаний и отделов продаж

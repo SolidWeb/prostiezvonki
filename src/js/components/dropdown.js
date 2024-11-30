@@ -54,6 +54,8 @@ export default class Dropdown {
           const itemText = e.target.textContent;
           const buttonText = this.button.querySelector('.dropdown-toggler__text');
           buttonText.textContent = itemText;
+          this.items.forEach((item) => item.classList.remove('is-active'));
+          item.classList.add('is-active');
           item.classList.contains('popular-chip')
             ? this.button.classList.add('popular-chip')
             : this.button.classList.remove('popular-chip');

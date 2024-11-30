@@ -6,6 +6,9 @@
 
 .poss-cards + .compatibility-section {
   margin-top: 16rem;
+  @include bp(md) {
+    margin-top: 10rem;
+  }
 }
 
 .compatibility-section {
@@ -15,15 +18,117 @@
   .search-form {
     display: flex;
     .search-form__button {
-      right: 0;
+      @include bp(sm) {
+        right: 0;
+      }
     }
   }
   .chips {
     margin-top: 1.5rem;
   }
   & + .try {
-    margin-top: 10rem;
+    margin-top: 6.5rem;
+    @include bp(md) {
+      margin-top: 12rem;
+    }
   }
+  .comp-cards {
+    margin-top: 5.5rem;
+    @include bp(md) {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.comp-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  @include bp-min(800px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include bp-min(1100px) {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 4rem;
+  }
+}
+
+.comp-card {
+  --label-border-color: #6fc0ff;
+  --label-bg-color: #6fc0ff;
+  --label-color: var(--color-white);
+
+  position: relative;
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+
+  &--disabled {
+    --label-border-color: rgba(0, 0, 0, 0.25);
+    --label-bg-color: transparent;
+    --label-color: var(--color-grey);
+    color: var(--color-grey);
+    pointer-events: none;
+    .comp-card__title a {
+      --color: var(--color-grey);
+    }
+  }
+}
+
+.comp-card__img {
+  grid-row: 1 / 3;
+  width: 14rem;
+  height: 14rem;
+  border: 1px solid rgba(217, 217, 217, 0.5);
+  border-radius: 1rem;
+  img {
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 1rem;
+  }
+}
+
+.comp-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 1rem;
+}
+
+.comp-card__title {
+  font-size: 2.4rem;
+  line-height: normal;
+  font-weight: 400;
+  a {
+    --color: var(--color-blue);
+    --color-hover: var(--color-blue-hover);
+    --color-active: var(--color-grey-dark);
+    text-decoration: none;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+}
+
+.comp-card__desc {
+  max-width: 23.6rem;
+  line-height: normal;
+}
+
+.comp-card__label {
+  padding: 0.2rem 0.9rem 0.3rem;
+  border: 1px solid var(--label-border-color);
+  border-radius: 4rem;
+  font-size: 1.2rem;
+  line-height: normal;
+  background-color: var(--label-bg-color);
+  color: var(--label-color);
 }
 
 /* Integration cards */
