@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 // Components
+@use 'components/accordion';
 @use 'components/breadcrumb';
 @use 'components/validator';
 @use 'components/team';
@@ -8,6 +9,7 @@
 
 // Page-specific styles
 @use 'pages/article';
+@use 'pages/support';
 @use 'pages/dev';
 @use 'pages/integration';
 @use 'pages/partners';

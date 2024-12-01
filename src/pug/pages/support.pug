@@ -1,0 +1,69 @@
+extends ../main.pug
+
+block globals
+  - var pageUrl = 'support';
+  - var pageTitle = 'Техническая поддержка';
+
+block styles
+  link(href='vendor/custom-select/custom-select.min.css', rel='stylesheet')
+
+block scripts
+  script(defer, src='vendor/custom-select/custom-select.min.js') 
+
+block content
+  //- prettier-ignore
+  +breadcrumb([
+    { name: 'Главная', link: 'index.html' },
+    { name: 'Поддержка', current: true }
+  ])
+
+  h1.h1 Техническая поддержка
+
+  // Support form
+  section.form-section
+    .form-section__header.form-section__header--sm
+      h2.form-section__title Ответим на вопросы, #[br]разберёмся с&nbsp;неполадками
+      .form-section__content
+        p Обращения обрабатываются по будням 08:00 — 18:00 МСК
+    .form-section__form
+      include @partials/forms/support-form.pug
+    .form-section__footer.form-section__footer--sm
+      p #[span.fw-500 Для того, чтобы получить ответ на своё обращение быстрее:]
+      p Укажите проблему, с которой вы столкнулись. Например: #[br]#[i.fw-500 "В 1C не всплывают карточки для входящих звонков"] или #[br]#[i.fw-500 "В amoCRM щелкаю по номеру телефона, но ничего не происходит"]. 
+      p Подробно опишите, что вы делаете, что ожидаете получить и что происходит на самом деле.
+
+  // Guide cards
+  .guide-cards
+    a.guide-card(href='#!') #[+icon('windows')] #[span.guide-card__text Инструкция для разработчиков CRM, для создания интеграции с&nbsp;"Простыми&nbsp;звонками"] #[+icon('arrow-link')] 
+    a.guide-card(href='#!') #[+icon('phone')] #[span.guide-card__text Инструкция для разработчиков АТС, для создания интеграции АТС или&nbsp;платформы с "Простыми звонками"] #[+icon('arrow-link')]
+
+  // FAQ
+  section.faq-block
+    h2.h1 Ответы на частые вопросы
+    section.faq-section
+      h3.faq-section__title Интеграция с облачными, офисными АТС и&nbsp;Android смартфонами
+      +accordion(false, false)
+        +accordion-item('Как работает интеграция с АТС Panasonic (LG-Ericsson, Агат, Avaya)?', {support: true})
+        +accordion-item('Как учитываются пользователи приложения?', {support: true})
+        +accordion-item('Как работает интеграция с АТС Asterisk (FreePBX, Elastix)?', {support: true})
+        +accordion-item('Как работает интеграция с Android телефонами?', {support: true})
+        +accordion-item('Как работает интеграция с облачными АТС Телфин, Манго?', {support: true})
+        +accordion-item('Как работает интеграция с облачными/офисными IP АТС при использовании нашего&nbsp;Windows&#8209;софтфона?', {support: true}) 
+
+    section.faq-section
+      h3.faq-section__title Интеграция с CRM
+      +accordion(false, false)
+        +accordion-item('Как работает интеграция с 1С?', {support: true})
+        +accordion-item('Как работает интеграция облачной CRM системы и локальной АТС?', {support: true})
+        +accordion-item('Записывается ли журнал звонков в CRM систему, если у пользователя был выключен компьютер или закрыта CRM система?', {support: true})
+
+    section.faq-section
+      h3.faq-section__title Разрешение проблем в работе АТС-коннекторов
+      +accordion(false, false)
+        +accordion-item('Что делать, если АТС-коннектор Panasonic, LG-Ericsson, Avaya не работает?', {support: true})
+        +accordion-item('Что делать, если АТС-коннектор Asterisk не работает?', {support: true})
+
+    section.faq-section
+      h3.faq-section__title Лицензирование
+      +accordion(false, false)
+        +accordion-item('Как учитываются пользователи приложения?', {support: true})

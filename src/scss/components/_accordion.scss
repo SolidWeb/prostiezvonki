@@ -1,0 +1,89 @@
+/*! Accordion component */
+
+@use '../abstracts/' as *;
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.accordion-button {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  padding: 1.5rem 1rem 1.5rem 0;
+  border: none;
+  font-size: 1.8rem;
+  line-height: normal;
+  font-weight: 400;
+  text-align: left;
+  background-color: transparent;
+  cursor: pointer;
+  @include bp(md) {
+    padding: 2rem 1rem 2rem 0;
+    font-size: 2.4rem;
+  }
+  &:hover,
+  &:focus-visible {
+    .icon {
+      color: var(--color-grey-dark);
+    }
+  }
+
+  .icon {
+    margin-left: auto;
+    font-size: 3rem;
+    color: var(--color-grey);
+    transition:
+      color var(--transition-medium-cubic),
+      transform var(--transition-medium-cubic);
+  }
+}
+
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s ease-out;
+}
+
+.accordion-button[aria-expanded='true'] {
+  .icon {
+    transform: rotate(45deg);
+  }
+  & + .accordion-panel {
+    grid-template-rows: 1fr;
+  }
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-width: 126rem;
+  &::before {
+    content: '';
+    display: block;
+    height: 0.1rem;
+  }
+  &::after {
+    content: '';
+    display: block;
+    height: 1.4rem;
+  }
+  p {
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.accordion--mobile {
+  @include bp(md) {
+    .accordion-button {
+      cursor: default;
+      pointer-events: none;
+    }
+    .accordion-panel {
+      grid-template-rows: 1fr;
+    }
+  }
+}

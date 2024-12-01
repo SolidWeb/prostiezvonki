@@ -90,10 +90,13 @@
 
 .input-textarea {
   display: block;
-  min-height: 12rem;
-  max-height: 24rem;
-  padding: 1rem 2rem;
+  min-height: 7.8rem;
+  max-height: 12rem;
+  padding: 0.9rem 0;
   resize: vertical;
+  @include bp(md) {
+    min-height: 8.4rem;
+  }
 }
 
 .file-field {

@@ -1,0 +1,44 @@
+//- prettier-ignore
++form([
+  { 
+    type: 'text',
+    idName: 'company',
+    wrapper: true,
+    placeholder: 'Название компании', 
+    required: true
+  }, 
+  { 
+    type: 'text',
+    idName: 'client',
+    wrapper: true,
+    placeholder: 'ID клиента', 
+    required: true
+  }, 
+  { 
+    type: 'email', 
+    idName: 'email',
+    wrapper: true,
+    placeholder: 'Email', 
+    required: true 
+  }, 
+  {
+    type: 'custom',
+    template: 'support-topic'
+  },
+  { 
+    type: 'textarea',
+    idName: 'textarea',
+    wrapper: true,
+    placeholder: 'Вопрос',
+    required: true
+  },   
+  {
+    type: 'submit',
+    submitText: 'Отправить'
+  },
+  {
+    type: 'custom',
+    fieldClass: 'form-agreement',
+    template: 'support-form-agreement'
+  },
+], 'support')

@@ -1,0 +1,31 @@
+/*! Support page */
+
+@use '../abstracts/' as *;
+
+.guide-cards + .faq-block {
+  margin-top: 8rem;
+}
+
+.faq-block .h1 {
+  @include bp(sm) {
+    font-weight: 400;
+  }
+}
+
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 4rem 0;
+}
+
+.faq-section__title {
+  font-size: 1.6rem;
+  line-height: normal;
+  font-weight: 300;
+  color: var(--color-grey);
+  @include bp(md) {
+    line-height: 2.2rem;
+    color: var(--color-grey-light);
+  }
+}

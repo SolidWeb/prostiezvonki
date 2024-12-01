@@ -187,6 +187,9 @@ $font-names: map.keys($fonts);
   line-height: 2rem;
   font-weight: 500;
 }
+.fw-500 {
+  font-weight: 500;
+}
 .f-large {
   font-size: 1.8rem;
   line-height: 2.3rem;
