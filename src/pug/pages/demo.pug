@@ -1,0 +1,45 @@
+extends ../main.pug
+
+block globals
+  - var pageUrl = 'demo';
+  - var pageTitle = 'Посмотрите и попробуйте в действии';
+
+block styles
+  link(href='vendor/custom-select/custom-select.min.css', rel='stylesheet')
+
+block scripts
+  script(defer, src='vendor/custom-select/custom-select.min.js') 
+
+block content
+  //- prettier-ignore
+  +breadcrumb([
+    { name: 'Главная', link: 'index.html' },
+    { name: 'Поддержка', link: '#!' },
+    { name: 'Демо', current: true }
+  ])
+
+  h1.h1 Посмотрите и&nbsp;попробуйте в&nbsp;действии
+
+  // Video cards
+  section.video-cards-section
+    h2.video-cards-section__title Демонстрация работы сервиса
+    .video-cards
+      .video-card
+        .video-card__video
+        .video-card__caption Интеграция офисной АТС и 1С 8.2
+      .video-card
+        .video-card__video
+        .video-card__caption Интеграция Android и движка Simpla для интернет-магазина
+
+  // Demo form
+  section.form-section
+    .form-section__header
+      h2.form-section__title Закажите бесплатную пробную&nbsp;версию
+      .form-section__content
+        p Попробуйте "Простые звонки" бесплатно в течение 14 дней.
+        p Для этого заполните форму и оставьте заявку. Обработаем вашу заявку в&nbsp;течение 1 рабочего дня. Вы получите все необходимые установочные файлы для вашей базы клиентов (учетной, ERP, CRM системы), а также инструкции и руководства по электронной почте.
+    .form-section__form
+      include @partials/forms/demo-form.pug
+    .form-section__footer
+      p Поля помеченные * — обязательны к заполнению.
+      p Пожалуйста, указывайте название своей компании. Мы оставляем за собой право не обрабатывать заявки от анонимов и физических лиц.

@@ -4,18 +4,21 @@
 
 .form {
   --border-width: 0.1rem;
-  --border-radius: 1rem;
-  --border-color: var(--color-grey-1);
-  --border-color-hover: var(--color-grey-3);
-  --border-color-focus: var(--color-accent);
-  --input-height: 4.6rem;
-  --input-padding: 0 2rem;
-  --placeholder-color: var(--color-grey-3);
+  --border-radius: 0;
+  --border-color: var(--color-grey-light);
+  --border-color-hover: var(--color-grey-dark);
+  --border-color-focus: var(--color-grey-dark);
+  --input-height: 2.2rem;
+  --input-padding: 1rem 0 0.5rem;
+  --placeholder-color: var(--color-grey);
   --bg-color: var(--color-white);
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
+  @include bp(md) {
+    --input-padding: 1rem 0 0.8rem;
+  }
 }
 
 .form__fieldset {
@@ -57,10 +60,15 @@
   width: 100%;
   min-height: var(--input-height);
   padding: var(--input-padding);
-  border: var(--border-width) solid var(--border-color);
+  border: none;
+  border-bottom: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   background-color: var(--bg-color);
   transition: border-color var(--transition-medium-cubic);
+  @include bp(md) {
+    font-size: 1.8rem;
+    line-height: normal;
+  }
   &:hover {
     border-color: var(--border-color-hover);
   }
@@ -288,6 +296,25 @@
   &.is-active {
     background-image: url('@svg/icons/eye-show.svg');
   }
+}
+
+.submit-field {
+  max-width: 45rem;
+  margin-top: 1rem;
+}
+
+.form__submit {
+  @include bp(md) {
+    min-height: 7.9rem;
+    font-weight: 600;
+  }
+}
+
+.form-agreement {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  line-height: normal;
+  color: var(--color-grey);
 }
 
 /* Sign in form */

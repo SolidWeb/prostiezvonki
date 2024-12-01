@@ -1,0 +1,58 @@
+//- prettier-ignore
++form([
+  { 
+    type: 'text',
+    idName: 'name',
+    wrapper: true,
+    placeholder: 'Имя*', 
+    required: true
+  }, 
+  { 
+    type: 'text',
+    idName: 'company',
+    wrapper: true,
+    placeholder: 'Название компании*', 
+    required: true
+  }, 
+  { 
+    type: 'tel', 
+    idName: 'tel',
+    wrapper: true,
+    placeholder: 'Контактный номер телефона*',
+    required: true
+  },
+  { 
+    type: 'email', 
+    idName: 'email',
+    wrapper: true,
+    placeholder: 'Электронная почта*', 
+    required: true 
+  }, 
+  {
+    type: 'custom',
+    template: 'api-select'
+  },
+  {
+    type: 'custom',
+    template: 'db-select'
+  },
+  {
+    type: 'custom',
+    template: 'qty-select'
+  },
+  { 
+    type: 'text',
+    idName: 'comment',
+    wrapper: true,
+    placeholder: 'Комментарий'
+  },   
+  {
+    type: 'submit',
+    submitText: 'Подключить'
+  },
+  {
+    type: 'custom',
+    fieldClass: 'form-agreement',
+    template: 'form-agreement'
+  },
+], 'demo')
