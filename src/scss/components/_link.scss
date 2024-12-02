@@ -50,6 +50,11 @@
     --color-hover: var(--color-blue-hover);
     --color-active: var(--color-blue);
   }
+  &--panel {
+    --color: var(--color-grey-dark);
+    --color-hover: var(--color-grey);
+    --color-active: var(--color-blue);
+  }
   &--footer {
     --color: var(--color-grey-dark);
     --color-hover: var(--color-grey-dark);

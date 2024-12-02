@@ -42,7 +42,7 @@ block content
     h2.h1 Ответы на частые вопросы
     section.faq-section
       h3.faq-section__title Интеграция с облачными, офисными АТС и&nbsp;Android смартфонами
-      +accordion(false, false)
+      +accordion
         +accordion-item('Как работает интеграция с АТС Panasonic (LG-Ericsson, Агат, Avaya)?', {support: true})
         +accordion-item('Как учитываются пользователи приложения?', {support: true})
         +accordion-item('Как работает интеграция с АТС Asterisk (FreePBX, Elastix)?', {support: true})
@@ -52,18 +52,163 @@ block content
 
     section.faq-section
       h3.faq-section__title Интеграция с CRM
-      +accordion(false, false)
+      +accordion
         +accordion-item('Как работает интеграция с 1С?', {support: true})
-        +accordion-item('Как работает интеграция облачной CRM системы и локальной АТС?', {support: true})
-        +accordion-item('Записывается ли журнал звонков в CRM систему, если у пользователя был выключен компьютер или закрыта CRM система?', {support: true})
+        +accordion-item('Как работает интеграция облачной CRM системы и локальной АТС?', {support: true}) 
+        +accordion-item('Записывается ли журнал звонков в CRM систему, если у пользователя был&nbsp;выключен компьютер или закрыта CRM система?', {support: true})
 
     section.faq-section
       h3.faq-section__title Разрешение проблем в работе АТС-коннекторов
-      +accordion(false, false)
+      +accordion
         +accordion-item('Что делать, если АТС-коннектор Panasonic, LG-Ericsson, Avaya не работает?', {support: true})
         +accordion-item('Что делать, если АТС-коннектор Asterisk не работает?', {support: true})
 
     section.faq-section
       h3.faq-section__title Лицензирование
-      +accordion(false, false)
+      +accordion
         +accordion-item('Как учитываются пользователи приложения?', {support: true})
+
+  // Links columns
+  section.links-columns-section.section
+    h2.h1 Руководства по&nbsp;установке и&nbsp;настройке
+    h3.h2 Личный кабинет для пользователей Android смартфонов, Softphone.Pro и&nbsp;облачных&nbsp;АТС
+    .links-columns
+      a.link.link--panel(href='#!') Быстрый старт в личном кабинете "Простых звонков"
+      a.link.link--panel(href='#!') Роли пользователей
+      a.link.link--panel(href='#!') Список отчетов
+      a.link.link--panel(href='#!') Работа с отчетами
+      a.link.link--panel(href='#!') Настройка интеграции с Яндекс.Диском
+      a.link.link--panel(href='#!') Как добавить Оператора?
+      a.link.link--panel(href='#!') Как добавить Руководителя?
+      a.link.link--panel(href='#!') Группы операторов
+      a.link.link--panel(href='#!') Как добавить Группу операторов?
+      a.link.link--panel(href='#!') Как выгрузить историю звонков в Excel?
+
+  // Panels grid
+  section.panels-grid-section.section
+    h2.h2 Системы телефонии
+    .panels-grid
+      .links-panel.links-panel--2-rows
+        h3.links-panel__title Облачные АТС: настройка АТС&#8209;коннектора
+        .links-panel__links
+          a.link.link--panel(href='#!') MANGO OFFICE
+          a.link.link--panel(href='#!') Мегафон
+          a.link.link--panel(href='#!') МТС
+          a.link.link--panel(href='#!') МТС Автосекретарь 2.0
+          a.link.link--panel(href='#!') МТС Exolve
+          a.link.link--panel(href='#!') Ростелеком
+          a.link.link--panel(href='#!') Дом.ру
+          a.link.link--panel(href='#!') Новофон/Zadarma
+          a.link.link--panel(href='#!') Uiscom
+          a.link.link--panel(href='#!') МТТ
+          a.link.link--panel(href='#!') onlinePBX
+          a.link.link--panel(href='#!') Телфин
+          a.link.link--panel(href='#!') Плюсофон
+
+      .links-panel.links-panel--2-rows
+        h3.links-panel__title Офисные АТС: установка и&nbsp;настройка АТС-коннектора
+        .links-panel__links
+          a.link.link--panel(href='#!') Модуль статистики
+          a.link.link--panel(href='#!') Panasonic
+          a.link.link--panel(href='#!') LG-Ericsson
+          a.link.link--panel(href='#!') Avaya
+          a.link.link--panel(href='#!') Asterisk
+          a.link.link--panel(href='#!') Asterisk + FreePBX
+          a.link.link--panel(href='#!') Агат UX
+          a.link.link--panel(href='#!') Настройка параметров безопасности для работы веб-CRM с АТС-коннекторами, находящимися внутри локальной сети
+
+      .links-panel
+        h3.links-panel__title Android телефоны
+        .links-panel__links
+          a.link.link--panel(href='#!') Android - настройка приложения «Простые звонки»
+          a.link.link--panel(href='#!') Android приложение работа в фоновом режиме
+          a.link.link--panel(href='#!') Смена пользователя в приложении для Android
+          a.link.link--panel(href='#!') Как получить код активации для Android приложения
+
+      .links-panel
+        h3.links-panel__title Софтфон для компьютеров с&nbsp;Windows
+        .links-panel__links
+          a.link.link--panel(href='#!') Softphone.Pro - установка и настройка
+          a.link.link--panel(href='#!') Смена пользователя в Softphone.Pro
+          a.link.link--panel(href='#!') Как получить код активации для Softphone.Pro
+
+  // Panels grid
+  section.panels-grid-section.section
+    h2.h2 CRM системы и базы клиентов
+    .panels-grid.panels-grid--flex
+      .links-panel.links-panel
+        h3.links-panel__title Отраслевые программы
+        +accordion.links-panel__accordion
+          +accordion-item('U-ON Travel', {links: true})
+          +accordion-item('Orderino', {links: true})
+          +accordion-item('RetailCRM', {links: true})
+          +accordion-item('FrontPad', {links: true})
+          +accordion-item('Ramex', {links: true})
+          +accordion-item('Мои Туристы', {links: true})
+          +accordion-item('МоиДокументы-туризм', {links: true})
+          +accordion-item('Beauty Expert', {links: true})
+          +accordion-item('Real Estate CRM', {links: true})
+          +accordion-item('Universe', {links: true})
+          +accordion-item('Инфопредприятие', {links: true})
+          +accordion-item('BasePlan', {links: true})
+          +accordion-item('YClients', {links: true})
+          +accordion-item('Партнер магазин', {links: true})
+          +accordion-item('ELMA365', {links: true})
+          +accordion-item('ClubIS', {links: true})
+          +accordion-item('Мой Класс', {links: true})
+          +accordion-item('Data Heroes', {links: true})
+          +accordion-item('Tallanto', {links: true})
+          +accordion-item('Арника', {links: true})
+          +accordion-item('МИС Renovatio', {links: true})
+          +accordion-item('Домопланер', {links: true})
+          +accordion-item('Nemo.Travel', {links: true})
+
+      .panels-grid__wrapper
+        .links-panel.links-panel
+          h3.links-panel__title CRM системы
+          +accordion.links-panel__accordion
+            +accordion-item('amoCRM', {links: true})
+            +accordion-item('Мой склад', {links: true})
+            +accordion-item('Битрикс24 облачная версия', {links: true})
+            +accordion-item('Битрикс24 коробочная версия', {links: true})
+            +accordion-item('Мегаплан', {links: true})
+            +accordion-item('Бизнес.ру (Класс365)', {links: true})
+            +accordion-item('Клиентикс', {links: true})
+            +accordion-item('Pyrus', {links: true})
+            +accordion-item('SugarCRM', {links: true})
+            +accordion-item('ПланФикс', {links: true})
+            +accordion-item('Другие CRM системы', {links: true})
+
+        .links-panel.links-panel
+          h3.links-panel__title Офисные программы
+          +accordion.links-panel__accordion
+            +accordion-item('Microsoft Office Excel', {links: true}) 
+            +accordion-item('Microsoft Office Outlook', {links: true}) 
+            +accordion-item('Microsoft Office Access', {links: true}) 
+            +accordion-item('Google Контакты', {links: true}) 
+            +accordion-item('Google Таблицы', {links: true}) 
+
+      .panels-grid__wrapper
+        .links-panel.links-panel
+          h3.links-panel__title Программы 1С
+          +accordion.links-panel__accordion
+            +accordion-item('1С 7.7', {links: true}) 
+            +accordion-item('1С 8.1', {links: true}) 
+            +accordion-item('1С 8.2', {links: true}) 
+            +accordion-item('1С 8.3', {links: true}) 
+            +accordion-item('Terrasoft', {links: true}) 
+            +accordion-item('Далион.Авто', {links: true}) 
+            +accordion-item('АСМ CRM', {links: true}) 
+
+        .links-panel.links-panel
+          h3.links-panel__title Help-desk системы
+          +accordion.links-panel__accordion
+            +accordion-item('Okdesk', {links: true}) 
+            +accordion-item('ITSM365', {links: true}) 
+            +accordion-item('HelpDeskEddy', {links: true}) 
+            +accordion-item('Юздеск', {links: true}) 
+
+        .links-panel.links-panel
+          h3.links-panel__title Интернет магазины
+          +accordion.links-panel__accordion
+            +accordion-item('Simpla настройка', {links: true}) 
