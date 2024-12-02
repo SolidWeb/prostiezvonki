@@ -1,0 +1,59 @@
+extends ../main.pug
+
+block globals
+  - var pageUrl = 'prices';
+  - var pageTitle = 'Цены';
+
+block styles
+  link(href='vendor/custom-select/custom-select.min.css', rel='stylesheet')
+
+block scripts
+  script(defer, src='vendor/custom-select/custom-select.min.js') 
+
+block content
+  //- prettier-ignore
+  +breadcrumb([
+    { name: 'Главная', link: 'index.html' },
+    { name: 'Цены', current: true }
+  ])
+
+  h1.h1 Цены
+
+  // Info block
+  .info-block.info-block--solid.info-block--prices
+    .info-block__content
+      p Постройте тариф в личном кабинете для ваших АТС, CRM, нужного количества пользователей и&nbsp;дополнительных услуг
+    a.button.button--lg(href='#!') Личный кабинет #[+icon('arrow-link')]
+
+  // Possibilities cards
+  .poss-cards.poss-cards--plain
+    article.poss-card
+      h2.poss-card__title.h2.c-blue Многообразие #[br]вариантов
+      p.poss-card__text Выберите нужное количество пользователей и срок: 1, 6 или 12 месяцев. Чем дольше — тем дешевле!
+    article.poss-card
+      h2.poss-card__title.h2.c-blue Больше #[br]возможностей
+      p.poss-card__text Мощные отчёты, резервное копирование, хранение истории звонков и записей, бесплатная лицензия на Softphone.Pro — к&nbsp;вашим услугам.
+    article.poss-card
+      h2.poss-card__title.h2.c-blue Гарантия #[br]возврата денег
+      p.poss-card__text Не понравилось или не подходит? Вернём деньги в течение 30 дней с момента покупки.
+
+  // Prices anchor links
+  .anchor-toc
+    a.anchor-toc-link(href='#!') Облачные CRM, HelpDesk, отраслевые и офисные программы
+    a.anchor-toc-link(href='#!') Программы 1С, коробочные CRM
+    a.anchor-toc-link(href='#!') Корпоративные CRM
+    a.anchor-toc-link(href='#!') Инструменты для разработчиков
+    a.anchor-toc-link(href='#!') Дополнительные услуги
+
+  // Demo form
+  section.form-section
+    .form-section__header
+      h2.form-section__title Закажите бесплатную пробную&nbsp;версию
+      .form-section__content
+        p Попробуйте "Простые звонки" бесплатно в течение 14 дней.
+        p Для этого заполните форму и оставьте заявку. Обработаем вашу заявку в&nbsp;течение 1 рабочего дня. Вы получите все необходимые установочные файлы для вашей базы клиентов (учетной, ERP, CRM системы), а также инструкции и руководства по электронной почте.
+    .form-section__form
+      include @partials/forms/demo-form.pug
+    .form-section__footer
+      p Поля помеченные * — обязательны к заполнению.
+      p Пожалуйста, указывайте название своей компании. Мы оставляем за собой право не обрабатывать заявки от анонимов и физических лиц.
