@@ -307,6 +307,7 @@
 }
 
 .form__submit {
+  min-width: initial;
   @include bp(md) {
     min-height: 7.9rem;
     font-weight: 600;

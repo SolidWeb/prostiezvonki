@@ -278,6 +278,30 @@ import { initToc } from './components/toc';
 initToc();
 
 /**
+  Price tables mobile switcher
+============================ **/
+const priceSections = document.querySelectorAll('.price-section');
+priceSections.forEach((section) => {
+  const dropdown = section.querySelector('.dropdown--price');
+  if (!dropdown) return;
+
+  const dropdownButtons = dropdown.querySelectorAll('.dropdown-item');
+  const priceColumns = section.querySelectorAll('.price-table [data-price-column]');
+  dropdownButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const columnIndex = button.dataset.priceColumn;
+      priceColumns.forEach((column) => {
+        if (column.dataset.priceColumn === columnIndex) {
+          column.classList.add('is-visible');
+        } else {
+          column.classList.remove('is-visible');
+        }
+      });
+    });
+  });
+});
+
+/**
   Vendor libs settings
 ==================== **/
 import { initSwiperSettings } from './libs/swiper-settings';

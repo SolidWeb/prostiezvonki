@@ -39,14 +39,623 @@ block content
 
   // Prices anchor links
   .anchor-toc
-    a.anchor-toc-link(href='#!') Облачные CRM, HelpDesk, отраслевые и офисные программы
-    a.anchor-toc-link(href='#!') Программы 1С, коробочные CRM
-    a.anchor-toc-link(href='#!') Корпоративные CRM
-    a.anchor-toc-link(href='#!') Инструменты для разработчиков
-    a.anchor-toc-link(href='#!') Дополнительные услуги
+    a.anchor-toc-link(href='#price-section-1') Облачные CRM, HelpDesk, отраслевые и офисные программы
+    a.anchor-toc-link(href='#price-section-2') Программы 1С, коробочные CRM
+    a.anchor-toc-link(href='#price-section-3') Корпоративные CRM
+    a.anchor-toc-link(href='#price-section-4') Инструменты для разработчиков
+    a.anchor-toc-link(href='#price-section-5') Дополнительные услуги
+
+  // Price table section
+  section#price-section-1.price-section.form-section
+    .form-section__header
+      h2.form-section__title Облачные CRM, HelpDesk системы, отраслевые и офисные программы
+      .form-section__content
+        a.button.button--sm(href='#demo-form') Оставить заявку
+    .form-section__form
+      .price-table__controls
+        .price-table-caption Стоимость за пакет из 5 пользователей #[+icon('question')]
+        .dropdown.dropdown--price.dropdown--select
+          button.dropdown-toggler #[span.dropdown-toggler__text Стоимость на 5 пользователей за 1 месяц] #[+icon('arrow-down')]
+          .dropdown-container
+            .dropdown-list
+              button.dropdown-item.is-active(data-price-column='1') Стоимость на 5 пользователей за 1 месяц
+              button.dropdown-item(data-price-column='2') Стоимость на 5 пользователей за 6 месяцев
+              button.dropdown-item(data-price-column='3') Стоимость на 5 пользователей за 12 месяцев
+
+      // Price table
+      +accordion.price-table
+        .price-table__heading-row
+          .price-table__heading(data-price-column='0') Системы телефонии и АТС
+          .price-table__heading.is-visible(data-price-column='1') #[span цена за&nbsp;] 1 месяц
+          .price-table__heading(data-price-column='2') #[span цена за&nbsp;] 6 месяцев
+          .price-table__heading(data-price-column='3') #[span цена за&nbsp;] 12 месяцев
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Смартфоны на Android
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Softphone.Pro
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Билайн, MANGO, МТС, ... #[a.link.link--outlined(href='#!') Весь список]
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Asterisk #[a.link.link--outlined(href='#!') Список версий]
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Panasonic, LG, Агат #[a.link.link--outlined(href='#!') Список моделей]
+          .price-table__item-cell.is-visible(data-price-column='1') 1 240 ₽
+          .price-table__item-cell(data-price-column='2') 4 320 ₽
+          .price-table__item-cell(data-price-column='3') 6 000 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Avaya #[a.link.link--outlined(href='#!') Список моделей]
+          .price-table__item-cell.is-visible(data-price-column='1') 1 490 ₽
+          .price-table__item-cell(data-price-column='2') 5 100 ₽
+          .price-table__item-cell(data-price-column='3') 7 080₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__heading-row
+          .price-table__heading(data-price-column='0') Дополнительные возможности
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Аналитика
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Увеличение срока хранения истории&nbsp;звонков
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Интеграция с Яндекс.Диском
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+
+    .form-section__footer
+      .form-section__footer-item
+        p #[span.fw-500 Облачные CRM]
+        p SugarCRM (Старт, Профи, Премиум), amoCRM, МойСклад, Мегаплан, Битрикс24, Бизнес.Ру (Класс365), Клиентикс, Pyrus, retailCRM, ПланФикс.
+      .form-section__footer-item
+        p #[span.fw-500 Отраслевыми программами]
+        p Frontpad, U-ON Travel, Мой Класс, Клиника Онлайн, UNIVERSE, YСlients;
+        +accordion
+          +accordion-item('Полный список')
+            p SugarCRM (Старт, Профи, Премиум), amoCRM, МойСклад, Мегаплан, Битрикс24, Бизнес.Ру (Класс365), Клиентикс, Pyrus, retailCRM, ПланФикс.
+      .form-section__footer-item
+        p #[span.fw-500 HelpDesk системами]
+        p Okdesk, ITSM365, Usedesk, HelpDeskEddy;
+      .form-section__footer-item
+        p #[span.fw-500 Офисными приложениями]
+        p Google Контакты, Google Таблицы, Microsoft Access 2010/2013/2016, Microsoft Excel 2010/2013/2016, Microsoft Outlook 2010/2013/2016.
+
+  // Price table section
+  section#price-section-2.price-section.form-section
+    .form-section__header
+      h2.form-section__title Программы 1С, коробочные CRM
+      .form-section__content
+        a.button.button--sm(href='#demo-form') Оставить заявку
+    .form-section__form
+      .price-table__controls
+        .price-table-caption Стоимость за пакет из 5 пользователей #[+icon('question')]
+        .dropdown.dropdown--price.dropdown--select
+          button.dropdown-toggler #[span.dropdown-toggler__text Стоимость на 5 пользователей за 1 месяц] #[+icon('arrow-down')]
+          .dropdown-container
+            .dropdown-list
+              button.dropdown-item.is-active(data-price-column='1') Стоимость на 5 пользователей за 1 месяц
+              button.dropdown-item(data-price-column='2') Стоимость на 5 пользователей за 6 месяцев
+              button.dropdown-item(data-price-column='3') Стоимость на 5 пользователей за 12 месяцев
+
+      // Price table
+      +accordion.price-table
+        .price-table__heading-row
+          .price-table__heading(data-price-column='0') Системы телефонии и АТС
+          .price-table__heading.is-visible(data-price-column='1') #[span цена за&nbsp;] 1 месяц
+          .price-table__heading(data-price-column='2') #[span цена за&nbsp;] 6 месяцев
+          .price-table__heading(data-price-column='3') #[span цена за&nbsp;] 12 месяцев
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Смартфоны на Android
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Softphone.Pro
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Билайн, MANGO, МТС, ... #[a.link.link--outlined(href='#!') Весь список]
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Asterisk #[a.link.link--outlined(href='#!') Список версий]
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Panasonic, LG, Агат #[a.link.link--outlined(href='#!') Список моделей]
+          .price-table__item-cell.is-visible(data-price-column='1') 1 240 ₽
+          .price-table__item-cell(data-price-column='2') 4 320 ₽
+          .price-table__item-cell(data-price-column='3') 6 000 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Avaya #[a.link.link--outlined(href='#!') Список моделей]
+          .price-table__item-cell.is-visible(data-price-column='1') 1 490 ₽
+          .price-table__item-cell(data-price-column='2') 5 100 ₽
+          .price-table__item-cell(data-price-column='3') 7 080₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__heading-row
+          .price-table__heading(data-price-column='0') Дополнительные возможности
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Аналитика
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Увеличение срока хранения истории&nbsp;звонков
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Интеграция с Яндекс.Диском
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+
+    .form-section__footer
+      .form-section__footer-item
+        p Программами 1С на базе платформ 1С 7.7, 1С 8.1, 1С 8.2, 1С 8.3
+        +accordion
+          +accordion-item('Полный список')
+            p SugarCRM (Старт, Профи, Премиум), amoCRM, МойСклад, Мегаплан, Битрикс24, Бизнес.Ру (Класс365), Клиентикс, Pyrus, retailCRM, ПланФикс.
+      p Коробочными CRM: коробочный Битрикс24, A&A Клуб, ClubIS
+
+  // Price table section
+  section#price-section-3.price-section.form-section
+    .form-section__header
+      h2.form-section__title Корпоративные CRM
+      .form-section__content
+        a.button.button--sm(href='#demo-form') Оставить заявку
+    .form-section__form
+      .price-table__controls
+        .price-table-caption Стоимость за пакет из 5 пользователей #[+icon('question')]
+        .dropdown.dropdown--price.dropdown--select
+          button.dropdown-toggler #[span.dropdown-toggler__text Стоимость на 5 пользователей за 1 месяц] #[+icon('arrow-down')]
+          .dropdown-container
+            .dropdown-list
+              button.dropdown-item.is-active(data-price-column='1') Стоимость на 5 пользователей за 1 месяц
+              button.dropdown-item(data-price-column='2') Стоимость на 5 пользователей за 6 месяцев
+              button.dropdown-item(data-price-column='3') Стоимость на 5 пользователей за 12 месяцев
+
+      // Price table
+      +accordion.price-table
+        .price-table__heading-row
+          .price-table__heading(data-price-column='0') Системы телефонии и АТС
+          .price-table__heading.is-visible(data-price-column='1') #[span цена за&nbsp;] 1 месяц
+          .price-table__heading(data-price-column='2') #[span цена за&nbsp;] 6 месяцев
+          .price-table__heading(data-price-column='3') #[span цена за&nbsp;] 12 месяцев
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Смартфоны на Android
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Softphone.Pro
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Билайн, MANGO, МТС, ... #[a.link.link--outlined(href='#!') Весь список]
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Asterisk #[a.link.link--outlined(href='#!') Список версий]
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Panasonic, LG, Агат #[a.link.link--outlined(href='#!') Список моделей]
+          .price-table__item-cell.is-visible(data-price-column='1') 1 240 ₽
+          .price-table__item-cell(data-price-column='2') 4 320 ₽
+          .price-table__item-cell(data-price-column='3') 6 000 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Avaya #[a.link.link--outlined(href='#!') Список моделей]
+          .price-table__item-cell.is-visible(data-price-column='1') 1 490 ₽
+          .price-table__item-cell(data-price-column='2') 5 100 ₽
+          .price-table__item-cell(data-price-column='3') 7 080₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__heading-row
+          .price-table__heading(data-price-column='0') Дополнительные возможности
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Аналитика
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Увеличение срока хранения истории&nbsp;звонков
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Интеграция с Яндекс.Диском
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+
+    .form-section__footer
+      p Microsoft Dynamics 365, OmegaPlus, ELMA365
+
+  // Price table section
+  section#price-section-4.price-section.form-section
+    .form-section__header
+      h2.form-section__title Инструменты для разработчиков
+      .form-section__content
+        a.button.button--sm(href='#demo-form') Оставить заявку
+    .form-section__form
+      .price-table__controls
+        .price-table-caption Стоимость за пакет из 5 пользователей #[+icon('question')]
+        .dropdown.dropdown--price.dropdown--select
+          button.dropdown-toggler #[span.dropdown-toggler__text Стоимость на 5 пользователей за 1 месяц] #[+icon('arrow-down')]
+          .dropdown-container
+            .dropdown-list
+              button.dropdown-item.is-active(data-price-column='1') Стоимость на 5 пользователей за 1 месяц
+              button.dropdown-item(data-price-column='2') Стоимость на 5 пользователей за 6 месяцев
+              button.dropdown-item(data-price-column='3') Стоимость на 5 пользователей за 12 месяцев
+
+      // Price table
+      +accordion.price-table
+        .price-table__heading-row
+          .price-table__heading(data-price-column='0') Системы телефонии и АТС
+          .price-table__heading.is-visible(data-price-column='1') #[span цена за&nbsp;] 1 месяц
+          .price-table__heading(data-price-column='2') #[span цена за&nbsp;] 6 месяцев
+          .price-table__heading(data-price-column='3') #[span цена за&nbsp;] 12 месяцев
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Смартфоны на Android
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Softphone.Pro
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Билайн, MANGO, МТС, ... #[a.link.link--outlined(href='#!') Весь список]
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Asterisk #[a.link.link--outlined(href='#!') Список версий]
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Panasonic, LG, Агат #[a.link.link--outlined(href='#!') Список моделей]
+          .price-table__item-cell.is-visible(data-price-column='1') 1 240 ₽
+          .price-table__item-cell(data-price-column='2') 4 320 ₽
+          .price-table__item-cell(data-price-column='3') 6 000 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Avaya #[a.link.link--outlined(href='#!') Список моделей]
+          .price-table__item-cell.is-visible(data-price-column='1') 1 490 ₽
+          .price-table__item-cell(data-price-column='2') 5 100 ₽
+          .price-table__item-cell(data-price-column='3') 7 080₽
+          button.accordion-button(aria-expanded='false') #[span.button-text условия] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__heading-row
+          .price-table__heading(data-price-column='0') Дополнительные возможности
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Аналитика
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Увеличение срока хранения истории&nbsp;звонков
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+        .price-table__item-row.accordion-item
+          .price-table__item-cell(data-price-column='0') Интеграция с Яндекс.Диском
+          .price-table__item-cell.is-visible(data-price-column='1') 790 ₽
+          .price-table__item-cell(data-price-column='2') 2 760 ₽
+          .price-table__item-cell(data-price-column='3') 3 840 ₽
+          button.accordion-button(aria-expanded='false') #[span.button-text подробнее] #[+icon('arrow-down-circle')]
+          .price-table__content.accordion-panel
+            .accordion-content.content
+              ul
+                li Интеграция работает с любыми телефонами, подключенными к АТС Asterisk: софтфоны, SIP телефоны, аналоговые телефоны через VoIP шлюзы.
+                li Вы устанавливаете АТС-коннектор на своём оборудовании.
+                li Аудио-записи разговоров хранятся на вашей АТС Asterisk. Если на АТС отключена запись разговоров, ссылки на записи работать не будут.
+
+  // Price table section
+  section#price-section-5.price-section.form-section.price-section--info
+    .form-section__header
+      h2.form-section__title Дополнительные услуги
+      .form-section__content
+        p Предоставляем необходимые руководства по установке, настройке и использованию «Простых звонков». #[br]Вы можете настроить систему своими силами.
+        p Если вы хотите запустить «Простые звонки» максимально быстро&nbsp;—&nbsp;предлагаем воспользоваться услугами по установке и&nbsp;настройке модулей системы на вашем оборудовании.
+        a.button.button--sm(href='#!') Запросить рассчёт стоимости
+    .form-section__form
+      // Price table
+      +accordion.price-table
+        .price-table__heading-row
+        .price-table__heading-row
+          .price-table__heading Услуга
+        .price-table__item-row.accordion-item
+          .price-table__item-cell Установка и настройка софтфона на одном рабочем месте
+        .price-table__item-row.accordion-item
+          .price-table__item-cell Установка и настройка АТС-коннектора Asterisk (FreePBX, Elastix)
+        .price-table__item-row.accordion-item
+          .price-table__item-cell Установка и настройка АТС-коннектора Panasonic, LG-Ericsson
+        .price-table__item-row.accordion-item
+          .price-table__item-cell Установка и настройка АТС-коннектора Avaya IP Office
+        .price-table__item-row.accordion-item
+          .price-table__item-cell Установка и настройка модуля для amoCRM, Битрикс24, Мегаплан и остальных СRM систем со встроенным модулем «Простые звонки»
+        .price-table__item-row.accordion-item
+          .price-table__item-cell Установка и настройка модуля для 1С 7.7, 8.x, Битрикс24 (коробка), 1С-Битрикс Корпортал, Universe, SugarCRM
+
+    .form-section__footer.form-section__footer--plain
+      p Услуги по установке и настройке оказываются удаленно через специальную программу для защищенного доступа к вашему компьютеру через Интернет.
+      p Работы по установке и настройке производятся по 100% предоплате.
+      p После получения оплаты за услуги по установке и настройке технический специалист согласовывает дату и время выполнения работ. Если в согласованное время технический специалист не может приступить к выполнению работ (нет связи с клиентом, нет удаленного доступа к системе, не хватает прав и т.д.), то услуга считается не оказанной и&nbsp;предоплата возвращается в полном объеме
+
+  // Price table section
+  section.price-section.form-section.price-section--info
+    .form-section__header
+      h2.form-section__title Приобретение лицензий при изменении модели/версии АТС или типа/версии офисной программы
+    .form-section__form
+      .price-section__info-block
+        p Предоставляем необходимые руководства по установке, настройке и использованию «Простых звонков». Вы можете настроить систему своими силами.
+        p Если вы хотите запустить «Простые звонки» максимально быстро — предлагаем воспользоваться услугами по установке и настройке модулей системы на вашем оборудовании.
 
   // Demo form
-  section.form-section
+  section#demo-form.form-section
     .form-section__header
       h2.form-section__title Закажите бесплатную пробную&nbsp;версию
       .form-section__content
