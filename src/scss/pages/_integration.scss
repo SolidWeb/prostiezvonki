@@ -553,6 +553,9 @@
   border-radius: 2rem;
   margin: 0 auto;
   background-color: var(--color-white);
+  span.logo {
+    pointer-events: none;
+  }
   .logo {
     width: 21.8rem;
     height: 8.7rem;
@@ -663,18 +666,20 @@
 
 .int-table-wrapper {
   @include bp(sm) {
-    overflow: hidden;
+    overflow: clip;
   }
 }
 
 .int-table {
   width: 100%;
   line-height: normal;
-
   th {
+    position: sticky;
+    top: 6.9rem;
     padding: 1rem 0.5rem;
     font-size: 1.4rem;
     font-weight: 500;
+    background-color: var(--color-white);
     // Show only one column
     @include bp-max(599.98px) {
       width: calc(100vw - 2rem - 16rem);

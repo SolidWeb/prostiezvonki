@@ -35,42 +35,10 @@
     display: block;
     width: 4.2rem;
     height: 3rem;
-    // --burger-color: red;
-
-    // display: block;
-    // width: 2.4rem;
-    // height: 0.3rem;
-    // background-color: var(--burger-color);
-    // &::after,
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   left: 0.2rem;
-    //   width: 2.4rem;
-    //   height: 0.3rem;
-    //   background-color: var(--burger-color);
-    //   transition: transform var(--transition-long-cubic);
-    // }
-    // &::before {
-    //   transform: translateY(-0.7rem);
-    // }
-    // &::after {
-    //   transform: translateY(0.7rem);
-    // }
   }
 
   .navbar-toggler[aria-expanded='true'] .navbar-toggler__burger {
-    // background-color: transparent;
-    // &::after,
-    // &::before {
-    //   border-radius: 0;
-    // }
-    // &::before {
-    //   transform: rotate(45deg);
-    // }
-    // &::after {
-    //   transform: rotate(-45deg);
-    // }
+    // ..
   }
 
   .navbar {
@@ -86,6 +54,11 @@
     &:has(.nav__sublist.is-visible) {
       height: 100%;
     }
+  }
+
+  .navbar-overlay {
+    --top-offset: 20.6rem;
+    top: var(--top-offset);
   }
 
   //? From right to left

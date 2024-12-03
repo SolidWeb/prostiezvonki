@@ -98,7 +98,7 @@ const toggleNavbar = () => {
 
   // Sticky header view
   if (mqSmall.matches) {
-    navbarOverlay.style.top = header.offsetHeight + 'px';
+    navbarOverlay.style.setProperty('--top-offset', header.offsetHeight + 'px');
   }
 };
 
@@ -276,6 +276,18 @@ const dropdown = new Dropdown('.dropdown');
 ================= **/
 import { initToc } from './components/toc';
 initToc();
+
+/**
+  Integration tables sticky header
+================================ **/
+const intTable = document.querySelector('.int-table');
+
+intTable &&
+  window.addEventListener('scroll', () => {
+    const stickyTop = 69;
+    const currentTop = intTable.getBoundingClientRect().top;
+    currentTop <= stickyTop ? intTable.classList.add('is-sticky') : intTable.classList.remove('is-sticky');
+  });
 
 /**
   Price tables mobile switcher

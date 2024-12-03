@@ -7,6 +7,9 @@
   flex-direction: column;
   gap: 0.4rem;
   background-color: var(--color-white);
+  @include bp(sm) {
+    padding-top: 1rem;
+  }
 }
 
 .header-notification {
@@ -122,21 +125,39 @@
 }
 
 .header.sticky {
+  --sticky-height: calc(6.9rem - var(--height));
   position: fixed;
-  top: 0;
+  top: var(--sticky-height);
   z-index: 1000;
   @include bp(sm) {
     background-color: var(--color-white);
   }
+  @include bp-min(600px) {
+    --sticky-height: calc(7.1rem - var(--height));
+  }
   .container {
-    @include bp(sm) {
-      background-color: var(--color-white);
-    }
+    background-color: var(--color-white);
     &::after {
       @include bp(md) {
         width: 100vw;
         transform: translateX(calc(((100vw - 130rem) / 2) * -1));
       }
+    }
+  }
+  .navbar {
+    @include bp-navbar {
+      top: 6.9rem;
+      height: calc(100dvh - 6.9rem);
+      @include bp-min(600px) {
+        top: 7.1rem;
+        height: calc(100dvh - 7.1rem);
+      }
+    }
+  }
+  & ~ .navbar-overlay {
+    --top-offset: 6.9rem !important;
+    @include bp-min(600px) {
+      --top-offset: 7.1rem !important;
     }
   }
 }
