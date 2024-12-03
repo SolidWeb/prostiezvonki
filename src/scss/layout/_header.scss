@@ -75,7 +75,6 @@
       grid-template-columns: 15.8rem 1fr 36.4rem;
       grid-template-rows: 7.6rem 7.2rem;
       padding-top: 2rem;
-      background-color: var(--color-white);
     }
 
     &::before {
@@ -168,16 +167,12 @@
     display: flex;
   }
   a {
+    --color: var(--color-blue);
+    --color-hover: var(--color-blue-hover);
+    --color-active: var(--color-blue);
     display: flex;
     align-items: center;
-    transition: opacity var(--transition-medium-cubic);
-    &:hover,
-    &:focus-visible {
-      opacity: 0.8;
-    }
-    &:active {
-      opacity: 1;
-    }
+    transition: color var(--transition-medium-cubic);
   }
 }
 
@@ -297,6 +292,11 @@
   border: 1px solid var(--color-blue-light);
   border-radius: 2.5rem;
   background-color: var(--color-white);
+  transition: border-color var(--transition-medium-cubic);
+  &:hover,
+  &:focus-within {
+    border-color: var(--color-blue-hover);
+  }
 }
 
 .search-form__input {
@@ -348,6 +348,9 @@
     border-width: 0 0 0.1rem 0;
     border-color: var(--color-grey-light);
     border-radius: 0;
+    &:focus-within {
+      border-color: var(--color-grey-dark);
+    }
   }
   .search-form__input {
     padding-left: 0;

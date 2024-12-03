@@ -7,11 +7,38 @@
 
   @include bp(lg) {
     .poss-cards {
+      position: relative;
       padding: 2.9rem 2.9rem 3rem;
-      border: 1px dashed var(--color-blue-light);
       border-radius: 3rem;
       border-top-right-radius: 0;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='%23add1edFF' stroke-width='2' stroke-dasharray='6 6' stroke-dashoffset='8' stroke-linecap='square'/%3e%3c/svg%3e");
       background-color: var(--color-white);
+      &::before {
+        content: '';
+        position: absolute;
+        top: -5.9rem;
+        left: 37.1rem;
+        z-index: 1;
+        width: 9rem;
+        height: 9rem;
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='%23add1edff' stroke-width='1.4' stroke-dasharray='6 6' stroke-dashoffset='38' stroke-linecap='square'/%3e%3c/svg%3e");
+        background-position: left -3rem top -3rem;
+        background-repeat: no-repeat;
+        background-color: var(--color-white);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -3rem;
+        width: 3rem;
+        height: 3rem;
+        background-color: var(--color-white);
+      }
+    }
+    .poss-card {
+      position: relative;
+      z-index: 1;
     }
     .poss-card__img img {
       min-height: 14.9rem;
@@ -24,17 +51,20 @@
   flex-direction: column;
   gap: 2rem;
   padding: 2.9rem 1.9rem;
-  border: 1px dashed var(--color-blue-light);
   border-radius: 3rem;
   margin-bottom: 2rem;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='%23add1edFF' stroke-width='2' stroke-dasharray='6 6' stroke-dashoffset='8' stroke-linecap='square'/%3e%3c/svg%3e");
   @include bp(lg) {
     flex-direction: row;
     padding: 0 0 0 3rem;
     border: none;
     margin-bottom: -0.3rem;
+    background-image: none;
   }
   .h2 {
     @include bp(lg) {
+      position: relative;
+      z-index: 2;
       flex-shrink: 0;
       width: 38rem;
       padding-top: 2.2rem;
@@ -51,31 +81,19 @@
   @include bp(lg) {
     position: relative;
     z-index: 1;
-    padding: 4.4rem 16rem 0.8rem 4.9rem;
-    border: 1px dashed var(--color-blue-light);
+    padding: 4.4rem 16rem 4.8rem 4.9rem;
     border-bottom: none;
-    border-radius: 3rem 3rem 0 0;
+    border-radius: 3rem 3rem 3rem 0;
+    margin-bottom: -4rem;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='%23add1edFF' stroke-width='2' stroke-dasharray='6 6' stroke-dashoffset='8' stroke-linecap='square'/%3e%3c/svg%3e");
     background-color: var(--color-white);
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 0.2rem;
-      left: -6rem;
-      z-index: 2;
-      width: 6rem;
-      height: 6rem;
-      border-right: 1px dashed var(--color-blue-light);
-      border-bottom: 1px dashed var(--color-blue-light);
-      border-bottom-right-radius: 50%;
-      background-color: var(--color-white);
-    }
     &::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: -3rem;
-      width: 3rem;
-      height: 3rem;
+      right: 0.1rem;
+      bottom: -2rem;
+      width: calc(100% - 0.1rem);
+      height: 6.4rem;
       background-color: var(--color-white);
     }
   }
