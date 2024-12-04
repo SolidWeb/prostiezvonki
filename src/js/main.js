@@ -298,6 +298,97 @@ function setStickyTableHead() {
 }
 
 /**
+  Integration tables mobile pagination
+==================================== **/
+const intTablePaginationMq = window.matchMedia('(max-width: 959.98px)');
+if (intTable && intTablePaginationMq.matches) {
+  const pagination = document.querySelector('.int-table-pagination');
+  const prevButton = pagination.querySelector('.pagination__prev');
+  const nextButton = pagination.querySelector('.pagination__next');
+  const current = pagination.querySelector('.pagination__current');
+  const total = pagination.querySelector('.pagination__total');
+  const xsMq = window.matchMedia('(max-width: 599.98px)');
+  const smMq = window.matchMedia('(max-width: 799.98px)');
+  const mdMq = window.matchMedia('(min-width: 800px)');
+  let factor = 0;
+  let factorStep;
+  let startX = 0;
+  let endX = 0;
+
+  pagination.classList.add('is-visible');
+
+  updateTableState();
+  updateFactor();
+
+  window.addEventListener('resize', () => {
+    updateTableState();
+    updateFactor();
+  });
+
+  nextButton.addEventListener('click', handleNext);
+  prevButton.addEventListener('click', handlePrev);
+
+  function handleNext() {
+    if (+current.textContent < +total.textContent) {
+      factor += factorStep;
+      current.textContent = +current.textContent + 1;
+      updateFactor();
+    }
+  }
+
+  function handlePrev() {
+    if (factor > 0) {
+      factor -= factorStep;
+      current.textContent = +current.textContent - 1;
+      updateFactor();
+    }
+  }
+
+  function updateTableState() {
+    factor = 0;
+    current.textContent = 1;
+    if (xsMq.matches) {
+      total.textContent = '6';
+      factorStep = 1;
+      return;
+    }
+    if (smMq.matches) {
+      total.textContent = '3';
+      factorStep = 2;
+      return;
+    }
+    if (mdMq.matches) {
+      total.textContent = '2';
+      factorStep = 3;
+      return;
+    }
+  }
+
+  function updateFactor() {
+    intTable.style.setProperty('--factor', factor);
+  }
+
+  // Swipe gesture handlers on intTable
+  intTable.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  intTable.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeThreshold = 30; // Minimum distance for swipe to be recognized
+    if (startX - endX > swipeThreshold) {
+      handleNext(); // Swipe left
+    } else if (endX - startX > swipeThreshold) {
+      handlePrev(); // Swipe right
+    }
+  }
+}
+
+/**
   Price tables mobile switcher
 ============================ **/
 const priceSections = document.querySelectorAll('.price-section');
