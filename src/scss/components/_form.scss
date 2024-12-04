@@ -88,6 +88,15 @@
   }
 }
 
+.input-tel {
+  &.is-masked {
+    color: var(--placeholder-color);
+  }
+  &.is-filled {
+    color: var(--color-grey-dark);
+  }
+}
+
 .input-textarea {
   display: block;
   min-height: 7.8rem;

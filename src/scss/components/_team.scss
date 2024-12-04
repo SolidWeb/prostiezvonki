@@ -49,6 +49,7 @@
     aspect-ratio: 180 / 200;
     padding: 0 1rem;
     border-radius: 1rem;
+    text-decoration: none;
     text-align: center;
     background-color: var(--color-grey-lighter);
     @include bp(lg) {

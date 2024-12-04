@@ -281,13 +281,21 @@ initToc();
   Integration tables sticky header
 ================================ **/
 const intTable = document.querySelector('.int-table');
-
 intTable &&
   window.addEventListener('scroll', () => {
-    const stickyTop = 69;
-    const currentTop = intTable.getBoundingClientRect().top;
-    currentTop <= stickyTop ? intTable.classList.add('is-sticky') : intTable.classList.remove('is-sticky');
+    setStickyTableHead();
   });
+
+intTable &&
+  window.addEventListener('load', () => {
+    setStickyTableHead();
+  });
+
+function setStickyTableHead() {
+  const stickyTop = 69;
+  const currentTop = intTable.getBoundingClientRect().top;
+  currentTop <= stickyTop ? intTable.classList.add('is-sticky') : intTable.classList.remove('is-sticky');
+}
 
 /**
   Price tables mobile switcher
@@ -318,7 +326,9 @@ priceSections.forEach((section) => {
 ==================== **/
 import { initSwiperSettings } from './libs/swiper-settings';
 import { initCustomSelectSettings } from './libs/custom-select-settings';
+import { initIMaskSettings } from './libs/imask-settings';
 import { initJustValidateSettings } from './libs/just-validate-settings';
 initSwiperSettings();
 initCustomSelectSettings();
+initIMaskSettings();
 initJustValidateSettings();

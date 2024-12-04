@@ -4,6 +4,7 @@ export function initStickyHeader() {
   let stickyHeaderOffset;
 
   updateHeaderHeight();
+  stickHeader();
   window.addEventListener('resize', updateHeaderHeight);
   window.addEventListener('scroll', stickHeader);
 

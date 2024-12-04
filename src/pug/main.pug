@@ -17,6 +17,7 @@ html(lang='ru')
       link(href=require('../scss/pages.scss'), rel='stylesheet')
     block scripts
     script(defer, src='vendor/just-validate.min.js')
+    script(defer, src='vendor/imask.min.js')
     script(defer, src=require('../js/main.js'))
   body.no-js.no-transition.webp(class=pageUrl === 'index' ? 'homepage' : pageUrl + '-page', class=bodyClass)
     header.header
