@@ -304,7 +304,7 @@ const intTablePaginationMq = window.matchMedia('(max-width: 959.98px)');
 const intPagination = document.querySelector('.int-table-pagination');
 intPagination && intPagination.classList.add('is-visible');
 
-if (intPagination && intTablePaginationMq.matches) {
+if (intPagination) {
   const prevButton = intPagination.querySelector('.pagination__prev');
   const nextButton = intPagination.querySelector('.pagination__next');
   const current = intPagination.querySelector('.pagination__current');
@@ -379,6 +379,7 @@ if (intPagination && intTablePaginationMq.matches) {
   });
 
   function handleSwipe() {
+    if (!intTablePaginationMq.matches) return;
     const swipeThreshold = 30; // Minimum distance for swipe to be recognized
     if (startX - endX > swipeThreshold) {
       handleNext(); // Swipe left
