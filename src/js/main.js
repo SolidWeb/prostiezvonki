@@ -301,12 +301,14 @@ function setStickyTableHead() {
   Integration tables mobile pagination
 ==================================== **/
 const intTablePaginationMq = window.matchMedia('(max-width: 959.98px)');
-if (intTable && intTablePaginationMq.matches) {
-  const pagination = document.querySelector('.int-table-pagination');
-  const prevButton = pagination.querySelector('.pagination__prev');
-  const nextButton = pagination.querySelector('.pagination__next');
-  const current = pagination.querySelector('.pagination__current');
-  const total = pagination.querySelector('.pagination__total');
+const intPagination = document.querySelector('.int-table-pagination');
+intPagination && intPagination.classList.add('is-visible');
+
+if (intPagination && intTablePaginationMq.matches) {
+  const prevButton = intPagination.querySelector('.pagination__prev');
+  const nextButton = intPagination.querySelector('.pagination__next');
+  const current = intPagination.querySelector('.pagination__current');
+  const total = intPagination.querySelector('.pagination__total');
   const xsMq = window.matchMedia('(max-width: 599.98px)');
   const smMq = window.matchMedia('(max-width: 799.98px)');
   const mdMq = window.matchMedia('(min-width: 800px)');
@@ -314,8 +316,6 @@ if (intTable && intTablePaginationMq.matches) {
   let factorStep;
   let startX = 0;
   let endX = 0;
-
-  pagination.classList.add('is-visible');
 
   updateTableState();
   updateFactor();

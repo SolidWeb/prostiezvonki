@@ -862,7 +862,9 @@
 }
 
 .int-table-container {
-  padding-bottom: 5.8rem;
+  @include bp(sm) {
+    padding-bottom: 5.8rem;
+  }
   &:has(.int-table-pagination.is-visible) {
     padding-bottom: 0;
   }
@@ -879,11 +881,13 @@
   z-index: 1;
   display: none;
   margin-top: 20rem;
+  @include bp(sm) {
+    &.is-visible {
+      display: flex;
+    }
+  }
   @include bp(md) {
     display: none;
-  }
-  &.is-visible {
-    display: flex;
   }
 }
 
