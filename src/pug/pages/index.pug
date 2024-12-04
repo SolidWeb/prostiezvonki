@@ -26,7 +26,7 @@ block content
       p.h3-md Скажи нам, мы сделаем. Оставь контакт и&nbsp;давай обсудим.
     form.lead
       label.lead__label
-        input.lead__input(type='email', placeholder='Почта', required)
+        input.lead__input(type='email', placeholder='Почта', value='example@mail.com', required)
       button.lead__button.button.button--lg Оставить заявку
 
   // Testimonials section
@@ -59,29 +59,6 @@ block content
     .h1 Бесплатно
     p.h3.c-blue.ripple-text Попробуй все возможности&nbsp;демо #[span.ripple-text__outer-radius]
     a.try__button.button.button--lg(href='#!') Попробовать #[+icon('arrow-link')] 
-
-//-   h1.h1 Главная страница
-//-   section.graphic-snippets-section
-//-     .graphic-snippets-section__item
-//-       h2.h2 Responsive picture set
-//-       .picture
-//-         +picture('starter/klim.jpg', 'Klim')
-//-     .graphic-snippets-section__item
-//-       h2.h2 SVG responsive picture set
-//-       .picture-svg
-//-         +pictureSVG('pictures/starter-logo.svg', 'Responsive svg', ['-lg', '-md', ''], ['960', '431', ''])
-//-     .graphic-snippets-section__item
-//-       h2.h2 CSS background picture set
-//-       .css-background-picture
-//-     .graphic-snippets-section__item
-//-       h2.h2 Plain image
-//-       .plain-img
-//-         +image('starter/ficus.png', 'Ficus')
-//-     .graphic-snippets-section__item
-//-       h2.h2 Inline SVG
-//-       .inline-svg-wrapper
-//-         +imageSVG('inline/starter-zara.svg', 'Zara')
-//-   hr.hr
 
 block header-notification
   .header-notifications

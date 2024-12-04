@@ -5,4 +5,4 @@ mixin dialog(name, modal = true)
   dialog.dialog-container(data-name=name, data-modal=modal)&attributes(attributes)
     .dialog
       block
-      button.dialog__close-button.close-button Закрыть
+      button.dialog__close-button #[+icon('close')]

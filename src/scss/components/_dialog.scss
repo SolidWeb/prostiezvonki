@@ -70,22 +70,48 @@
   z-index: 1000;
   min-width: 36rem;
   width: calc(100% - (var(--horizontal-margin) * 2));
-  max-width: 70rem;
+  max-width: 75.7rem;
   height: fit-content;
-  padding: 3rem 2rem;
-  border-radius: 1rem;
+  padding: 1rem;
+  border-radius: 2rem;
   // Important for the right scrollable position
   margin: auto;
   background-color: var(--color-white);
-  box-shadow: var(--shadow-dialog);
   cursor: initial;
   @include bp(sm) {
     --horizontal-margin: 1rem;
   }
 }
 
+.dialog-header {
+  margin-top: 8.4rem;
+  margin-bottom: 1rem;
+}
+
+.dialog-content {
+  min-height: 10.3rem;
+  font-size: 1.8rem;
+  line-height: normal;
+}
+
 .dialog__close-button {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background-color: transparent;
+  color: var(--color-grey);
+  transition: color var(--transition-short-cubic);
+  &:hover,
+  &:focus-visible {
+    color: var(--color-grey-dark);
+  }
+
+  .icon {
+    font-size: 4.4rem;
+  }
+}
+
+.dialog-container[data-name='success'] .dialog {
+  text-align: center;
 }

@@ -712,8 +712,8 @@
     &:hover,
     &:focus-within {
       td {
+        border-color: transparent;
         background-color: var(--color-sand-lighter);
-        border-bottom: none;
         &:first-child {
           border-radius: 0.5rem 0 0 0.5rem;
         }

@@ -16,6 +16,7 @@ html(lang='ru')
     if (pageUrl !== 'index')
       link(href=require('../scss/pages.scss'), rel='stylesheet')
     block scripts
+    script(defer, src='vendor/just-validate.min.js')
     script(defer, src=require('../js/main.js'))
   body.no-js.no-transition.webp(class=pageUrl === 'index' ? 'homepage' : pageUrl + '-page', class=bodyClass)
     header.header
@@ -31,6 +32,7 @@ html(lang='ru')
       include @partials/layout/footer.pug
     .navbar-overlay.overlay
     block dialogs
+    include @partials/dialogs/success-dialog.pug
     block embedded-scripts
     script.
       const header = document.querySelector('.header');

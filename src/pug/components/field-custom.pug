@@ -3,7 +3,7 @@
 mixin fieldCustom(props)
   if (props.template === 'api-select')
     .select-wrapper
-      select.select
+      select.select(required)
         option(value='') Телефония*
         option(value='1', data-link='#!', data-link-text='Как получить API реквизиты МТС Бизнес') МТС Бизнес (API)
         option(value='2', data-link='#!', data-link-text='Как получить API реквизиты Amo CRM') Amo CRM (API)
@@ -11,14 +11,14 @@ mixin fieldCustom(props)
       a.select-option-link.is-hidden.link.link--inline(href='#!') #[span.link-text &nbsp;] #[+icon('arrow-link')]
   if (props.template === 'db-select')
     .select-wrapper
-      select.select
+      select.select(required)
         option(value='') База клиентов*
         option(value='1') Microsoft Excel
         option(value='2') Microsoft Outlook
         option(value='3') Microsoft Access
   if (props.template === 'qty-select')
     .select-wrapper
-      select.select
+      select.select(required)
         option(value='') Кол-во пользователей*
         option(value='1') 1
         option(value='2') 2

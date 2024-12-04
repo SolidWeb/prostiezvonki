@@ -3,30 +3,29 @@
 @use '../abstracts' as *;
 
 .just-validate-error-label {
+  padding-top: 0.5rem;
   font-size: 1.2rem;
+  line-height: normal;
   text-align: right;
-  color: var(--color-red);
-  @include bp(md) {
-    font-size: 1.4rem;
-  }
+  color: var(--color-red-light);
 }
 
 .just-validate-error-field {
-  border-color: var(--color-red);
+  border-color: var(--color-red-light);
   &:hover,
   &:focus-visible {
-    border-color: var(--color-red);
+    border-color: var(--color-red-light);
   }
   &:active {
-    border-color: var(--color-red);
+    border-color: var(--color-red-light);
   }
 }
 
 .input-checkbox.just-validate-error-field {
   & + .form__label {
-    color: var(--color-red);
+    color: var(--color-red-light);
     &::before {
-      border-color: var(--color-red);
+      border-color: var(--color-red-light);
     }
   }
   & ~ .just-validate-error-label {
@@ -36,6 +35,25 @@
 
 .radio-fieldset--required:has(.input-radio.just-validate-error-field) {
   .radio-input-control {
-    border-color: var(--color-red);
+    border-color: var(--color-red-light);
+  }
+}
+
+.custom-select-container {
+  .just-validate-error-label {
+    position: absolute;
+    right: 0;
+    bottom: -2.1rem;
+  }
+  &:has(.just-validate-error-label) {
+    position: relative;
+    border-color: var(--color-red-light);
+    margin-bottom: 2.1rem;
+  }
+}
+
+.lead {
+  .just-validate-error-label {
+    text-align: center;
   }
 }

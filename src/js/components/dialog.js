@@ -1,76 +1,167 @@
 /* Pop-ups & modal dialogs */
 import { createOverlay } from '../utils/utils';
+let dialogOverlay;
 
 export function initDialog() {
   const dialogs = document.querySelectorAll('.dialog-container');
-  let dialogOverlay = document.querySelector('.dialog-overlay');
 
   dialogs.forEach((dialog) => {
-    const openButtons = document.querySelectorAll(`[data-dialog=${dialog.dataset.name}]`);
+    const dialogName = dialog.dataset.name;
+
+    // Initialize open buttons
+    addOpenButtonListeners(dialogName);
+
+    // Initialize close buttons
     const closeButtons = dialog.querySelectorAll('.dialog__close-button');
-
-    openButtons.forEach((openButton) => {
-      openButton.addEventListener('click', () => {
-        openDialog(openButton);
-      });
-    });
-
     closeButtons.forEach((closeButton) => {
-      closeButton.addEventListener('click', () => {
-        closeDialog();
-      });
+      closeButton.addEventListener('click', () => closeDialog(dialog));
     });
 
-    function openDialog(button) {
-      const dialogName = button.getAttribute('data-dialog');
-      const dialog = document.querySelector(`.dialog-container[data-name="${dialogName}"]`);
-
-      if (dialog) {
-        dialogOverlay || (dialogOverlay = createOverlay('dialog-overlay'));
-        if (dialog.hasAttribute('data-modal')) {
-          dialog.showModal();
-          dialogOverlay.classList.add('is-visible');
-        } else {
-          dialog.show();
-        }
-        // Remove initial focus from the first interactive element inside the dialog
-        dialog.focus();
-      }
-    }
-
-    function closeDialog() {
-      dialog.classList.add('close-dialog-animation');
-      dialogOverlay.classList.remove('is-visible');
-      // Reset listeners when Escape key is pressed before animation completion
-      dialog.addEventListener('animationcancel', cancelDialogAnimation);
-      dialog.addEventListener('animationend', completeDialogAnimation, { once: true });
-    }
-
-    function completeDialogAnimation() {
-      dialog.classList.remove('close-dialog-animation');
-      dialog.close();
-      dialog.removeEventListener('animationcancel', cancelDialogAnimation);
-    }
-
-    function cancelDialogAnimation() {
-      dialog.classList.remove('close-dialog-animation');
-      dialog.removeEventListener('animationend', completeDialogAnimation);
-    }
-
+    // Add Escape key and overlay listeners
     dialog.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        dialogOverlay.classList.remove('is-visible');
+        closeDialog(dialog);
       }
     });
 
-    // Overlay appears beneath transparent .dialog-container backdrop
     if (dialog.hasAttribute('data-modal')) {
       dialog.addEventListener('click', (e) => {
-        e.target === dialog && closeDialog();
+        if (e.target === dialog) closeDialog(dialog);
       });
     }
   });
 }
+
+export function addOpenButtonListeners(dialogName) {
+  const openButtons = document.querySelectorAll(`[data-dialog="${dialogName}"]`);
+
+  openButtons.forEach((openButton) => {
+    openButton.addEventListener('click', () => {
+      openDialog(dialogName);
+    });
+  });
+}
+
+export function openDialog(dialogName) {
+  const dialog = document.querySelector(`.dialog-container[data-name="${dialogName}"]`);
+
+  if (!dialog) {
+    console.warn(`Dialog with name "${dialogName}" not found.`);
+    return;
+  }
+
+  prepareDialog(dialog);
+  dialog.showModal();
+}
+
+export function closeDialog(dialog) {
+  if (!dialog) {
+    console.warn(`Dialog is not defined.`);
+    return;
+  }
+
+  dialog.classList.add('close-dialog-animation');
+  if (dialogOverlay) {
+    dialogOverlay.classList.remove('is-visible');
+  }
+
+  dialog.addEventListener('animationcancel', cancelDialogAnimation);
+  dialog.addEventListener('animationend', completeDialogAnimation, { once: true });
+
+  function completeDialogAnimation() {
+    dialog.classList.remove('close-dialog-animation');
+    dialog.close();
+    dialog.removeEventListener('animationcancel', cancelDialogAnimation);
+  }
+
+  function cancelDialogAnimation() {
+    dialog.classList.remove('close-dialog-animation');
+    dialog.removeEventListener('animationend', completeDialogAnimation);
+  }
+}
+
+function prepareDialog(dialog) {
+  if (!dialogOverlay) {
+    dialogOverlay = createOverlay('dialog-overlay');
+  }
+
+  if (dialog.hasAttribute('data-modal')) {
+    dialogOverlay.classList.add('is-visible');
+  }
+
+  dialog.focus();
+}
+
+// export function initDialog() {
+//   const dialogs = document.querySelectorAll('.dialog-container');
+//   let dialogOverlay = document.querySelector('.dialog-overlay');
+
+//   dialogs.forEach((dialog) => {
+//     const openButtons = document.querySelectorAll(`[data-dialog=${dialog.dataset.name}]`);
+//     const closeButtons = dialog.querySelectorAll('.dialog__close-button');
+
+//     openButtons.forEach((openButton) => {
+//       openButton.addEventListener('click', () => {
+//         openDialog(openButton);
+//       });
+//     });
+
+//     closeButtons.forEach((closeButton) => {
+//       closeButton.addEventListener('click', () => {
+//         closeDialog();
+//       });
+//     });
+
+//     function openDialog(button) {
+//       const dialogName = button.getAttribute('data-dialog');
+//       const dialog = document.querySelector(`.dialog-container[data-name="${dialogName}"]`);
+
+//       if (dialog) {
+//         dialogOverlay || (dialogOverlay = createOverlay('dialog-overlay'));
+//         if (dialog.hasAttribute('data-modal')) {
+//           dialog.showModal();
+//           dialogOverlay.classList.add('is-visible');
+//         } else {
+//           dialog.show();
+//         }
+//         // Remove initial focus from the first interactive element inside the dialog
+//         dialog.focus();
+//       }
+//     }
+
+//     function closeDialog() {
+//       dialog.classList.add('close-dialog-animation');
+//       dialogOverlay.classList.remove('is-visible');
+//       // Reset listeners when Escape key is pressed before animation completion
+//       dialog.addEventListener('animationcancel', cancelDialogAnimation);
+//       dialog.addEventListener('animationend', completeDialogAnimation, { once: true });
+//     }
+
+//     function completeDialogAnimation() {
+//       dialog.classList.remove('close-dialog-animation');
+//       dialog.close();
+//       dialog.removeEventListener('animationcancel', cancelDialogAnimation);
+//     }
+
+//     function cancelDialogAnimation() {
+//       dialog.classList.remove('close-dialog-animation');
+//       dialog.removeEventListener('animationend', completeDialogAnimation);
+//     }
+
+//     dialog.addEventListener('keydown', (e) => {
+//       if (e.key === 'Escape') {
+//         dialogOverlay.classList.remove('is-visible');
+//       }
+//     });
+
+//     // Overlay appears beneath transparent .dialog-container backdrop
+//     if (dialog.hasAttribute('data-modal')) {
+//       dialog.addEventListener('click', (e) => {
+//         e.target === dialog && closeDialog();
+//       });
+//     }
+//   });
+// }
 
 /* Check if the current browser supports dialogs */
 export function checkDialogSupport() {
