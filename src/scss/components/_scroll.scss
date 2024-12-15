@@ -5,15 +5,16 @@
 /* Webkit based browsers */
 
 .custom-scroll {
-  --track-width: 0.5rem;
+  --track-width: 0.2rem;
   --track-vertical-offset: 1rem;
-  --track-color: var(--color-grey-1);
-  --thumb-width: 0.5rem;
-  --thumb-color: var(--color-grey-2);
-  --thumb-hover-color: var(--color-grey-3);
+  --track-color: transparent;
+  --thumb-width: 0.2rem;
+  --thumb-color: var(--color-grey-light);
+  --thumb-hover-color: var(--color-blue-hover);
 
   &::-webkit-scrollbar {
     width: var(--track-width);
+    height: 0.6rem;
   }
   &::-webkit-scrollbar-track {
     border-radius: 1rem;

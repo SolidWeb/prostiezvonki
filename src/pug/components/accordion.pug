@@ -18,7 +18,7 @@ mixin accordion(multi = false, mobile = false)
 
 mixin accordion-item(button = '', props = {})
   .accordion-item&attributes(attributes)
-    button.accordion-button(aria-expanded=`${props.expanded ? props.expanded : 'false'}`) #[span.button-text !{ button }] #[+icon('plus')]
+    button.accordion-button(aria-expanded=`${props.expanded ? props.expanded : 'false'}`) #[span.button-text !{ button }] #[+icon(props.content ? 'arrow-down-circle' : 'plus')]
     .accordion-panel
       .accordion-content
         if (props.support)

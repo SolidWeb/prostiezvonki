@@ -330,7 +330,7 @@ abbr[title] {
 b,
 strong {
   // Add the correct font weight in Edge and Safari
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 code,
@@ -338,9 +338,20 @@ kbd,
 samp,
 pre {
   // Improve consistency of default fonts in all browsers
-  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  // font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
   // Correct the odd 'em' font sizing in all browsers
-  font-size: 1em;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+pre {
+  display: block;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  white-space: break-spaces;
+  word-break: break-word;
+  background-color: var(--color-grey-lighter);
 }
 
 small {
