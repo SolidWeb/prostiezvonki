@@ -1,4 +1,7 @@
-- const fonts = ['geologica-variable'];
+- const fonts = ['geologica-variable', 'geologica-thin', 'geologica-light', 'geologica-regular', 'geologica-medium', 'geologica-semibold', 'geologica-bold'];
 
-each font in fonts
-  link(href=`@fonts/${font}.woff2`, rel='preload', as='font', type='font/woff2', crossorigin='anonymous')
+each font, index in fonts
+  if index === 0
+    link(href=`@fonts/${font}.woff2`, rel='preload', as='font', type='font/woff2', crossorigin='anonymous')
+  else
+    link(href=`@fonts/${font}.woff2`, type='font/woff2', crossorigin='anonymous')

@@ -18,6 +18,7 @@ $fonts: (
   'Geologica Thin': (
     'family': 'Geologica',
     'filename': 'geologica-variable',
+    'fallback': 'geologica-thin',
     'style': normal,
     'weight': 100,
     'serif': sans-serif,
@@ -26,6 +27,7 @@ $fonts: (
   'Geologica Light': (
     'family': 'Geologica',
     'filename': 'geologica-variable',
+    'fallback': 'geologica-light',
     'style': normal,
     'weight': 300,
     'serif': sans-serif,
@@ -34,6 +36,7 @@ $fonts: (
   'Geologica Regular': (
     'family': 'Geologica',
     'filename': 'geologica-variable',
+    'fallback': 'geologica-regular',
     'style': normal,
     'weight': 400,
     'serif': sans-serif,
@@ -42,6 +45,7 @@ $fonts: (
   'Geologica Medium': (
     'family': 'Geologica',
     'filename': 'geologica-variable',
+    'fallback': 'geologica-medium',
     'style': normal,
     'weight': 500,
     'serif': sans-serif,
@@ -50,6 +54,7 @@ $fonts: (
   'Geologica SemiBold': (
     'family': 'Geologica',
     'filename': 'geologica-variable',
+    'fallback': 'geologica-semibold',
     'style': normal,
     'weight': 600,
     'serif': sans-serif,
@@ -58,6 +63,7 @@ $fonts: (
   'Geologica Bold': (
     'family': 'Geologica',
     'filename': 'geologica-variable',
+    'fallback': 'geologica-bold',
     'style': normal,
     'weight': 700,
     'serif': sans-serif,
@@ -77,13 +83,16 @@ $font-names: map.keys($fonts);
 @each $font, $props in $fonts {
   $i: list.index(($fonts), ($font $props));
   $filename: map.get($props, filename);
+  $fallback: map.get($props, fallback);
   @font-face {
     @if $separated-font-vars {
       font-family: list.nth($font-names, $i);
     } @else {
       font-family: map.get($props, family);
     }
-    src: url('@fonts/#{$filename}.woff2') format('woff2-variations');
+    src:
+      url('@fonts/#{$filename}.woff2') format('woff2-variations'),
+      url('@fonts/#{$fallback}.woff2') format('woff2');
     font-weight: map.get($props, weight);
     font-style: map.get($props, style);
     font-optical-sizing: auto;
