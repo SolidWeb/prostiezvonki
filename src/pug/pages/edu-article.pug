@@ -143,6 +143,8 @@ block content
           +accordion-item('Call - начало звонка', {expanded: true, content: true})
             p Отправьте запрос Call, чтобы симулировать начало звонка, либо перевод звонка другому сотруднику. При переводе сохраняются #[strong src_num] - номер звонящего, и #[strong call_id] - уникальный идентификатор звонка.
             pre curl "https://pbxapi.prostiezvonki.ru/XXX123456/?event=1&src_type=1&smart_transfer_is_required=0&call_id=32323&line=3333333&dst_num=101&src_num=89991234567"
+            p Нажмите кнопку «Сохранить»:
+            +image('content/content-plain-14.jpg', 'Content image')
             p Параметры запроса:
             table
               thead
@@ -171,6 +173,23 @@ block content
                 tr
                   td #[strong smart_transfer_is_required]
                   td Необязательный параметр. Задайте значение #[strong 1], и передайте пустой номер назначения (#[strong dst_num]), чтобы проверить функцию "Умный перевод". #[br]В примере: #[strong 0].
+
+            h3 Подзаголовок аккордеона
+            h4 Подзаголовок аккордеона
+            h5 Подзаголовок аккордеона
+
+            .alert
+              .alert__content
+                p Сделка создается только если номер телфона не занесен в CRM как Контакт или Компания.
+                p Если выбрана несуществующая воронка или несуществующий этап продажи – Сделка будет создана на первом этапе основной воронки.
+
+            p.image-grid
+              +image('content/image-grid-1.jpg', 'Content image')
+              +image('content/image-grid-2.jpg', 'Content image')
+              +image('content/image-grid-3.jpg', 'Content image')
+              +image('content/image-grid-4.jpg', 'Content image')
+              +image('content/image-grid-5.jpg', 'Content image')
+              +image('content/image-grid-6.jpg', 'Content image')
 
           +accordion-item('Answer - ответ на звонок', {content: true})
             p Отправьте запрос Call, чтобы симулировать начало звонка, либо перевод звонка другому сотруднику. При переводе сохраняются #[strong src_num] - номер звонящего, и #[strong call_id] - уникальный идентификатор звонка.

@@ -18,7 +18,9 @@
     }
   }
 
-  h3 {
+  h3,
+  h4,
+  h5 {
     margin-bottom: 1rem;
   }
 
@@ -29,6 +31,9 @@
   & > img,
   & > picture img,
   & > p > img,
+  .accordion-content > img,
+  .accordion-content > picture img,
+  .accordion-content > p > img,
   .edu-article__section > img,
   .edu-article__section > picture img,
   .edu-article__sub-section > img,
@@ -41,6 +46,18 @@
     box-shadow: var(--shadow-content);
     @include bp(md) {
       margin-top: 2rem;
+    }
+  }
+
+  .accordion-content > img,
+  .accordion-content > picture img,
+  .accordion-content > p > img {
+    max-width: calc(100%);
+    height: initial;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    @include bp(md) {
+      margin-top: 0;
     }
   }
 
@@ -203,6 +220,27 @@
       height: 0.5rem;
       border-radius: 50%;
       background-color: var(--color-grey-dark);
+    }
+  }
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 2rem;
+
+  img {
+    min-width: 28rem;
+    width: fit-content;
+    max-width: calc(33% - 0.5rem) !important;
+    height: initial;
+    margin-bottom: 0 !important;
+    @include bp-max(599.98px) {
+      max-width: fit-content !important;
+    }
+    @include bp(sm) {
+      max-width: calc(50% - 0.5rem) !important;
     }
   }
 }
