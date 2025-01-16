@@ -99,3 +99,16 @@
     }
   }
 }
+
+.accordion--sm {
+  .accordion-button {
+    padding: 1rem 1rem 1rem 0 !important;
+    font-size: 1.6rem;
+    .icon {
+      font-size: 1.6rem !important;
+    }
+  }
+  .accordion-content::before {
+    margin-bottom: -1rem !important;
+  }
+}
