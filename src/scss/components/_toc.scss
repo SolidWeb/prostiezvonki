@@ -31,4 +31,7 @@
     left: 0;
     font-size: 1.2rem;
   }
+  &[data-number*='.']:not([data-number$='.']) {
+    margin-left: 2.6rem;
+  }
 }
