@@ -31,9 +31,13 @@
   & > img,
   & > picture img,
   & > p > img,
+  & > ol img,
+  & > ul img,
   .accordion-content > img,
   .accordion-content > picture img,
   .accordion-content > p > img,
+  .accordion-content > ol img,
+  .accordion-content > ul img,
   .edu-article__section > img,
   .edu-article__section > picture img,
   .edu-article__sub-section > img,
@@ -49,9 +53,20 @@
     }
   }
 
+  & > ol img,
+  & > ul img {
+    margin-top: 0;
+    margin-bottom: 0;
+    @include bp(md) {
+      margin-top: 0;
+    }
+  }
+
   .accordion-content > img,
   .accordion-content > picture img,
-  .accordion-content > p > img {
+  .accordion-content > p > img,
+  .accordion-content > ol img,
+  .accordion-content > ul img {
     max-width: calc(100%);
     height: initial;
     margin-top: 0;
