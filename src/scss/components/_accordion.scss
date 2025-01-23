@@ -112,3 +112,42 @@
     margin-bottom: -1rem !important;
   }
 }
+
+.accordion[data-number] {
+  position: relative;
+  margin-top: 4rem;
+  margin-left: 4rem;
+  @include bp(md) {
+    margin-left: 5rem;
+  }
+  &::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 2rem;
+    left: -4rem;
+    font-variant-numeric: tabular-nums;
+    color: rgba(30, 30, 30, 0.4);
+    @include bp(sm) {
+      top: 1.8rem;
+      font-size: 1.4rem;
+    }
+    @include bp(md) {
+      left: -5rem;
+    }
+  }
+  & + [data-number] {
+    margin-top: 2rem !important;
+  }
+  & + .accordion[data-number]:not(.accordion--sm) {
+    margin-top: 1rem !important;
+  }
+}
+
+.accordion--sm[data-number] {
+  &::before {
+    top: 1rem;
+    @include bp(sm) {
+      top: 1rem;
+    }
+  }
+}
