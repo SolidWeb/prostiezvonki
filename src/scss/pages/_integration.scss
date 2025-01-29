@@ -223,6 +223,13 @@
       }
     }
   }
+  &:last-child:not(.int-card--try) {
+    @include bp(lg) {
+      .int-card__content {
+        padding-right: 4rem;
+      }
+    }
+  }
 }
 
 .int-card__img {
@@ -552,6 +559,7 @@
   &::after {
     content: '';
     position: absolute;
+    z-index: -1;
     inset: -0.1rem;
     width: calc(100% + 0.2rem);
     height: calc(100% + 0.2rem);
@@ -667,11 +675,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
   gap: 2rem;
   padding: 3.9rem 4rem;
   border-radius: 1rem;
   background-color: var(--color-blue-lighter);
   @include bp(md) {
+    min-width: 34rem;
     max-width: 38rem;
     padding: 3.5rem 4rem;
   }
