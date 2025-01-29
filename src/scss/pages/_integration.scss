@@ -361,6 +361,9 @@
 }
 
 .functions-tab {
+  --border-color: var(--color-grey-light);
+  --border-color-active: var(--color-blue-light);
+
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -387,10 +390,18 @@
 
   &:hover,
   &:focus-visible {
-    border-color: var(--color-grey-light);
+    border-color: var(--border-color);
   }
   &.swiper-slide-thumb-active {
-    border-color: var(--color-blue-light);
+    border-color: var(--border-color-active);
+  }
+
+  &--disabled {
+    --border-color-active: var(--color-grey-light);
+
+    &::after {
+      background-image: url('@svg/icons/minus-circle.svg');
+    }
   }
 }
 
@@ -533,6 +544,55 @@
       margin: 0.3rem auto 0;
     }
   }
+}
+
+.swiper-slide:has(.function--disabled) {
+  display: flex;
+  align-self: stretch;
+  height: auto;
+  @include bp-max(599.98px) {
+    display: none;
+  }
+}
+
+.function--disabled {
+  width: 100%;
+  padding-top: 0;
+  @include bg-picture('slides/disabled-slide.png', 1852);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--color-grey-lighter);
+  @include bp(md) {
+    padding-top: 0;
+  }
+  &::before {
+    display: none;
+  }
+  .function__content {
+    align-items: center;
+    max-width: 61.8rem;
+    padding-right: 0;
+    padding-left: 0;
+    margin: auto;
+    text-align: center;
+    @include bp(sm) {
+      padding: 8rem 4rem;
+    }
+  }
+  .function__title {
+    @include bp(md) {
+      display: initial;
+    }
+  }
+  .function__text {
+    min-height: initial;
+  }
+}
+
+.function__dis-button {
+  max-width: 29.6rem;
+  margin-top: 1rem;
 }
 
 /* Info block */
