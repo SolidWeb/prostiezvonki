@@ -1,0 +1,36 @@
+/*! Accordion component */
+
+@use '../abstracts/' as *;
+
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+  &::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: -1rem;
+    bottom: calc(100% + 1rem);
+    z-index: 100;
+    display: none;
+    width: max-content;
+    max-width: 20rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.4rem;
+    background-color: var(--color-grey-dark);
+    color: var(--color-white);
+    animation: tooltip-show 0.2s ease-in-out;
+  }
+  &:hover::after,
+  &:focus::after {
+    display: block;
+  }
+}
+
+@keyframes tooltip-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -722,6 +722,39 @@
   }
 }
 
+.info-block--about {
+  @include bg-picture('layout/about-bg.png', 1174);
+  background-repeat: no-repeat;
+  @include bp(sm) {
+    padding-bottom: 30rem;
+    background-position: bottom -14.5rem center;
+  }
+  @include bp(md) {
+    padding-right: 43.8rem;
+    background-position: bottom -14.5rem right -13.4rem;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -5.6rem;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 20.2rem;
+    height: 17.9rem;
+    margin: 0 auto;
+    @include bg-picture('layout/about-icon.png', 404);
+    background-repeat: no-repeat;
+    @include bp(md) {
+      right: 10.2rem;
+      bottom: -5.6rem;
+      left: unset;
+      margin: unset;
+    }
+  }
+}
+
 .docs {
   display: flex;
   flex-direction: column;
