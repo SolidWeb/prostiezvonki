@@ -466,7 +466,7 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    @include bg-picture('slides/empty-function-1.png', 1040);
+    @include bg-picture('slides/empty-function-1.png', 1852);
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -498,7 +498,7 @@
       @include bg-picture('slides/function-2-icon.png', 237);
     }
     &::after {
-      @include bg-picture('slides/empty-function-2.png', 1040);
+      @include bg-picture('slides/empty-function-2.png', 1632);
     }
   }
   &--3 {
@@ -506,7 +506,7 @@
       @include bg-picture('slides/function-3-icon.png', 237);
     }
     &::after {
-      @include bg-picture('slides/empty-function-3.png', 1040);
+      @include bg-picture('slides/empty-function-3.png', 1852);
     }
   }
   &--4 {
@@ -514,7 +514,7 @@
       @include bg-picture('slides/function-4-icon.png', 237);
     }
     &::after {
-      @include bg-picture('slides/empty-function-4.png', 1040);
+      @include bg-picture('slides/empty-function-4.png', 1852);
     }
   }
   &--5 {
@@ -522,7 +522,7 @@
       @include bg-picture('slides/function-5-icon.png', 237);
     }
     &::after {
-      @include bg-picture('slides/empty-function-5.png', 1040);
+      @include bg-picture('slides/empty-function-5.png', 1852);
     }
   }
   &--6 {
@@ -530,7 +530,7 @@
       @include bg-picture('slides/function-6-icon.png', 237);
     }
     &::after {
-      @include bg-picture('slides/empty-function-6.png', 1040);
+      @include bg-picture('slides/empty-function-6.png', 1852);
     }
   }
 }
@@ -621,31 +621,31 @@
     display: none;
   }
   &::after {
-    @include bg-picture('slides/disabled-empty-function-1.png', 1040);
+    @include bg-picture('slides/disabled-empty-function-1.png', 1852);
   }
   &.function--2 {
     &::after {
-      @include bg-picture('slides/disabled-empty-function-2.png', 1040);
+      @include bg-picture('slides/disabled-empty-function-2.png', 1852);
     }
   }
   &.function--3 {
     &::after {
-      @include bg-picture('slides/disabled-empty-function-3.png', 1040);
+      @include bg-picture('slides/disabled-empty-function-3.png', 1852);
     }
   }
   &.function--4 {
     &::after {
-      @include bg-picture('slides/disabled-empty-function-4.png', 1040);
+      @include bg-picture('slides/disabled-empty-function-4.png', 1852);
     }
   }
   &.function--5 {
     &::after {
-      @include bg-picture('slides/disabled-empty-function-5.png', 1040);
+      @include bg-picture('slides/disabled-empty-function-5.png', 1852);
     }
   }
   &.function--6 {
     &::after {
-      @include bg-picture('slides/disabled-empty-function-6.png', 1040);
+      @include bg-picture('slides/disabled-empty-function-6.png', 1852);
     }
   }
   .function__content {
