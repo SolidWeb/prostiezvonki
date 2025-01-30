@@ -4,6 +4,12 @@ block globals
   - var pageUrl = 'int-newcrm';
   - var pageTitle = 'Интеграция NEWCRM';
 
+block styles
+  link(href='vendor/swiper/swiper-bundle.min.css', rel='stylesheet')
+
+block scripts
+  script(defer, src='vendor/swiper/swiper-bundle.min.js')
+
 block content
   //- prettier-ignore
   +breadcrumb([
@@ -22,6 +28,11 @@ block content
         span.int-card__label В разработке
         h2.h2.int-card__title NEWCRM
         p.int-card__text удобная web программа для анализа продаж, доступная в режиме online
+
+  // Functions section
+  section.functions-section.section.functions-section
+    h2.h1 Доступные функции
+    include @partials/blocks/functions-bg.pug
 
   // Possibilities section
   section.possibilities-section.section

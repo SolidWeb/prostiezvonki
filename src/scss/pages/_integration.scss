@@ -349,7 +349,7 @@
       margin-top: 4.1rem;
     }
   }
-  &--empty {
+  &--hidden-mobile {
     @include bp(sm) {
       display: none;
       & + .info-block {
@@ -424,7 +424,9 @@
     }
   }
   .swiper-slide {
-    height: 100%;
+    display: flex;
+    align-self: stretch;
+    height: auto;
   }
 }
 
@@ -459,29 +461,76 @@
     }
   }
 
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    @include bg-picture('slides/empty-function-1.png', 1040);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include bp-max(599.98px) {
+      position: relative;
+      height: 20rem;
+      margin-top: -3rem;
+    }
+  }
+
+  &:has(.function__img) {
+    &::after {
+      display: none;
+    }
+  }
+  &:not(:has(.function__img)) {
+    @include bp-min(600px) {
+      min-height: 50rem;
+    }
+    @include bp(md) {
+      aspect-ratio: 130 / 52;
+      width: 100%;
+      min-height: initial;
+    }
+  }
+
   &--2 {
     &::before {
       @include bg-picture('slides/function-2-icon.png', 237);
+    }
+    &::after {
+      @include bg-picture('slides/empty-function-2.png', 1040);
     }
   }
   &--3 {
     &::before {
       @include bg-picture('slides/function-3-icon.png', 237);
     }
+    &::after {
+      @include bg-picture('slides/empty-function-3.png', 1040);
+    }
   }
   &--4 {
     &::before {
       @include bg-picture('slides/function-4-icon.png', 237);
+    }
+    &::after {
+      @include bg-picture('slides/empty-function-4.png', 1040);
     }
   }
   &--5 {
     &::before {
       @include bg-picture('slides/function-5-icon.png', 237);
     }
+    &::after {
+      @include bg-picture('slides/empty-function-5.png', 1040);
+    }
   }
   &--6 {
     &::before {
       @include bg-picture('slides/function-6-icon.png', 237);
+    }
+    &::after {
+      @include bg-picture('slides/empty-function-6.png', 1040);
     }
   }
 }
@@ -555,9 +604,6 @@
 }
 
 .swiper-slide:has(.function--disabled) {
-  display: flex;
-  align-self: stretch;
-  height: auto;
   @include bp-max(599.98px) {
     display: none;
   }
@@ -566,10 +612,6 @@
 .function--disabled {
   width: 100%;
   padding-top: 0;
-  @include bg-picture('slides/disabled-slide.png', 1852);
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: contain;
   background-color: var(--color-grey-lighter);
   @include bp(md) {
     min-height: 40rem;
@@ -577,6 +619,34 @@
   }
   &::before {
     display: none;
+  }
+  &::after {
+    @include bg-picture('slides/disabled-empty-function-1.png', 1040);
+  }
+  &.function--2 {
+    &::after {
+      @include bg-picture('slides/disabled-empty-function-2.png', 1040);
+    }
+  }
+  &.function--3 {
+    &::after {
+      @include bg-picture('slides/disabled-empty-function-3.png', 1040);
+    }
+  }
+  &.function--4 {
+    &::after {
+      @include bg-picture('slides/disabled-empty-function-4.png', 1040);
+    }
+  }
+  &.function--5 {
+    &::after {
+      @include bg-picture('slides/disabled-empty-function-5.png', 1040);
+    }
+  }
+  &.function--6 {
+    &::after {
+      @include bg-picture('slides/disabled-empty-function-6.png', 1040);
+    }
   }
   .function__content {
     align-items: center;
@@ -602,6 +672,10 @@
 .function__dis-button {
   max-width: 29.6rem;
   margin-top: 1rem;
+}
+
+.functions-section + .possibilities-section {
+  margin-top: 6rem;
 }
 
 /* Info block */
