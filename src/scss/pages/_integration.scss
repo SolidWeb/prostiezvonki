@@ -349,6 +349,14 @@
       margin-top: 4.1rem;
     }
   }
+  &--empty {
+    @include bp(sm) {
+      display: none;
+      & + .info-block {
+        margin-top: 6rem;
+      }
+    }
+  }
 }
 
 .functions-tabs-slider {
@@ -564,6 +572,7 @@
   background-size: contain;
   background-color: var(--color-grey-lighter);
   @include bp(md) {
+    min-height: 40rem;
     padding-top: 0;
   }
   &::before {
