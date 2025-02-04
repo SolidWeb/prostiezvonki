@@ -24,7 +24,7 @@ export function initJustValidateSettings() {
           rule: 'customRegexp',
           errorMessage: 'Некорректный формат ввода',
           // Latin & russian letters, numbers, spaces, hyphens
-          value: /^[A-Za-z0-9А-Яа-я\s\-]+$/gi,
+          value: /^[A-Za-z0-9А-Яа-яЁё\s\-]+$/gi,
         },
         {
           rule: 'minLength',
@@ -51,7 +51,7 @@ export function initJustValidateSettings() {
           rule: 'customRegexp',
           errorMessage: 'Некорректный формат ввода',
           // Latin & russian letters, numbers, spaces, hyphens
-          value: /^[A-Za-z0-9А-Яа-я\s\-]+$/gi,
+          value: /^[A-Za-z0-9А-Яа-яЁё\s\-]+$/gi,
         },
         {
           rule: 'minLength',
