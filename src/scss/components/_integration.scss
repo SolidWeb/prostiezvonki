@@ -243,6 +243,18 @@
       display: none;
     }
   }
+
+  & > a {
+    --color-hover: var(--content-link-color-hover);
+    --color-active: var(--content-link-color-active);
+    &:hover,
+    &:focus-visible {
+      text-decoration: transparent;
+    }
+    .integration-item__name {
+      color: currentColor;
+    }
+  }
 }
 
 .integration-item__logo {
